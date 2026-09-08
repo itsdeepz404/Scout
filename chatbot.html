@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Waymark — Global & Local Opportunities Database</title>
+<title>Waymark — Unified Learning Pathways &amp; Opportunities Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -88,7 +88,7 @@
   }
 
   .wrap {
-    max-width: 860px;
+    max-width: 880px;
     margin: 0 auto;
     padding: 36px 24px 120px;
   }
@@ -98,7 +98,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--line-subtle);
   }
@@ -113,9 +113,9 @@
   }
 
   .brand-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 9px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
     background: var(--ink);
     display: flex;
     align-items: center;
@@ -195,7 +195,7 @@
     text-align: center;
   }
 
-  /* STEPPER HEADER */
+  /* STEPPER */
   .stepper-header {
     display: flex;
     align-items: center;
@@ -251,7 +251,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .section-intro { margin-bottom: 30px; }
+  .section-intro { margin-bottom: 28px; }
 
   .section-intro h2 {
     font-family: var(--font-serif);
@@ -266,7 +266,7 @@
     font-size: 1.05rem;
     color: var(--ink-soft);
     line-height: 1.55;
-    max-width: 65ch;
+    max-width: 68ch;
   }
 
   /* FORMS & INPUTS */
@@ -444,7 +444,7 @@
 
   .back-btn:hover { color: var(--ink); background: var(--paper-dim); }
 
-  /* ASSESSMENT QUESTIONS */
+  /* ASSESSMENT CARDS */
   .q-block {
     background: var(--paper-card);
     border: 1px solid var(--line);
@@ -452,7 +452,6 @@
     padding: 24px;
     margin-bottom: 22px;
     box-shadow: var(--shadow-sm);
-    transition: border-color 0.2s ease;
   }
 
   .q-header {
@@ -476,12 +475,6 @@
     justify-content: center;
     flex-shrink: 0;
     margin-top: 1px;
-  }
-
-  .q-block.answered .q-badge {
-    background: var(--sage-light);
-    border-color: var(--sage);
-    color: var(--sage);
   }
 
   .q-text {
@@ -566,11 +559,11 @@
   .loading-status {
     font-size: 0.92rem;
     color: var(--charcoal-muted);
-    max-width: 46ch;
+    max-width: 48ch;
     margin: 0 auto;
   }
 
-  /* RESULTS STAGE & HEADER BOX */
+  /* RESULTS VIEW */
   .results-header-box {
     background: var(--paper-card);
     border: 1px solid var(--line);
@@ -640,7 +633,7 @@
     flex-wrap: wrap;
   }
 
-  /* 4-PHASE STRATEGY ROADMAP */
+  /* DUAL ROADMAP STRATEGY */
   .roadmap-box {
     background: var(--paper-dim);
     border: 1px solid var(--ochre-border);
@@ -669,12 +662,6 @@
     gap: 8px;
   }
 
-  .roadmap-steps-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .roadmap-step-item {
     display: flex;
     align-items: flex-start;
@@ -683,6 +670,7 @@
     border: 1px solid var(--line);
     border-radius: var(--radius-sm);
     padding: 12px 14px;
+    margin-bottom: 10px;
     transition: all 0.15s ease;
   }
 
@@ -708,12 +696,52 @@
     color: var(--charcoal-muted);
   }
 
-  /* FILTER TABS & SECONDARY CONTROLS */
+  /* SECTION TOGGLE PILL TABS */
+  .section-view-toggle {
+    display: flex;
+    background: var(--paper-dim);
+    padding: 4px;
+    border-radius: 30px;
+    border: 1px solid var(--line);
+    margin-bottom: 20px;
+    gap: 4px;
+    overflow-x: auto;
+  }
+
+  .view-toggle-btn {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px 18px;
+    border-radius: 24px;
+    border: none;
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--charcoal-soft);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .view-toggle-btn:hover { color: var(--ink); }
+
+  .view-toggle-btn.active {
+    background: var(--ink);
+    color: #FFFFFF;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* FILTER CONTROLS */
   .filter-controls-wrap {
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
 
   .category-tabs {
@@ -728,8 +756,8 @@
     background: var(--paper-card);
     border: 1px solid var(--line);
     border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 0.85rem;
+    padding: 7px 15px;
+    font-size: 0.84rem;
     font-weight: 600;
     color: var(--charcoal-soft);
     cursor: pointer;
@@ -761,48 +789,19 @@
     flex-wrap: wrap;
   }
 
-  .search-filter-input {
-    flex: 1;
-    min-width: 240px;
-  }
+  .search-filter-input { flex: 1; min-width: 240px; }
+  .search-filter-input input { padding: 9px 12px 9px 36px; font-size: 0.88rem; margin-bottom: 0; }
 
-  .search-filter-input input {
-    padding: 9px 12px 9px 36px;
-    font-size: 0.88rem;
-    margin-bottom: 0;
-  }
-
-  .filter-pill-groups {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .filter-pill-btn {
-    font-size: 0.78rem;
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--line);
-    background: var(--paper-card);
-    color: var(--charcoal-soft);
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.15s ease;
-  }
-
-  .filter-pill-btn:hover { border-color: var(--ink-soft); color: var(--ink); }
-  .filter-pill-btn.active { background: var(--ink-soft); border-color: var(--ink-soft); color: #fff; }
-
-  /* OPPORTUNITY CARDS */
-  .opportunities-list {
+  /* CARDS LIST */
+  .items-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
     margin-bottom: 40px;
   }
 
-  .opportunity-card {
+  /* UNIFIED CARD STYLES */
+  .unified-card {
     background: var(--paper-card);
     border: 1px solid var(--line);
     border-radius: var(--radius-md);
@@ -815,13 +814,13 @@
     position: relative;
   }
 
-  .opportunity-card:hover {
+  .unified-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     border-color: var(--ink-muted);
   }
 
-  .opportunity-card-top {
+  .card-top-row {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -836,20 +835,20 @@
     flex: 1;
   }
 
-  .type-icon-box {
-    width: 40px;
-    height: 40px;
+  .card-icon-badge {
+    width: 38px;
+    height: 38px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     background: var(--paper-dim);
     color: var(--ink);
     flex-shrink: 0;
   }
 
-  .opportunity-title {
+  .card-title {
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--charcoal);
@@ -860,9 +859,9 @@
     gap: 6px;
   }
 
-  .opportunity-title:hover { color: var(--ink); }
+  .card-title:hover { color: var(--ink); }
 
-  .opportunity-org {
+  .card-org-sub {
     font-size: 0.82rem;
     color: var(--charcoal-muted);
     font-weight: 600;
@@ -893,6 +892,17 @@
   .tier-2 { background: var(--purple-light); color: var(--purple); border: 1px solid var(--purple-border); }
   .tier-3 { background: var(--sage-light); color: #2C5729; border: 1px solid #BCD3B7; }
 
+  .level-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+  .level-beginner { background: var(--sage-light); color: #2C5729; border: 1px solid #BCD3B7; }
+  .level-intermediate { background: var(--ochre-light); color: var(--rust); border: 1px solid var(--ochre-border); }
+  .level-advanced { background: var(--rust-light); color: var(--rust); border: 1px solid #E7BCA8; }
+
   .cost-badge {
     font-size: 0.72rem;
     font-weight: 600;
@@ -903,13 +913,13 @@
     border: 1px solid var(--line);
   }
 
-  .opportunity-desc {
+  .card-desc {
     font-size: 0.94rem;
     color: var(--charcoal);
     line-height: 1.55;
   }
 
-  .insider-tip-box {
+  .callout-tip-box {
     background: var(--paper-dim);
     border-left: 3px solid var(--ochre);
     padding: 10px 14px;
@@ -918,9 +928,9 @@
     color: var(--ink-soft);
   }
 
-  .insider-tip-box strong { color: var(--rust); }
+  .callout-tip-box strong { color: var(--rust); }
 
-  .opportunity-meta-row {
+  .meta-chips-row {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -929,7 +939,7 @@
     color: var(--charcoal-muted);
   }
 
-  .meta-tag {
+  .chip-tag {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -939,7 +949,7 @@
     border: 1px solid var(--line-subtle);
   }
 
-  .meta-tag.local {
+  .chip-tag.local {
     background: var(--ochre-light);
     color: var(--ochre);
     border-color: var(--ochre-border);
@@ -957,7 +967,7 @@
     flex-wrap: wrap;
   }
 
-  .apply-link-btn {
+  .action-link-btn {
     font-size: 0.88rem;
     font-weight: 600;
     color: var(--ink);
@@ -971,7 +981,7 @@
     transition: all 0.15s ease;
   }
 
-  .apply-link-btn:hover { background: var(--ink); color: #FFFFFF; }
+  .action-link-btn:hover { background: var(--ink); color: #FFFFFF; }
 
   .status-select-wrap {
     display: flex;
@@ -990,7 +1000,7 @@
     font-weight: 600;
   }
 
-  /* MODALS & DRAWERS */
+  /* MODALS */
   .drawer-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -1079,12 +1089,12 @@
   }
 
   @media print {
-    header.top, .stepper-header, .filter-controls-wrap, .results-toolbar, footer.app-footer {
+    header.top, .stepper-header, .section-view-toggle, .filter-controls-wrap, .results-toolbar, footer.app-footer {
       display: none !important;
     }
     body { background: #fff !important; color: #000 !important; }
     .wrap { max-width: 100% !important; padding: 0 !important; }
-    .opportunity-card { box-shadow: none !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
+    .unified-card { box-shadow: none !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
   }
 
   @media (max-width: 640px) {
@@ -1107,7 +1117,7 @@
       </div>
       <div class="brand-text">
         <h1>Waymark</h1>
-        <p>Global &amp; Local Opportunities Database</p>
+        <p>Learning Pathways &amp; Opportunities Hub</p>
       </div>
     </div>
 
@@ -1117,7 +1127,7 @@
         <svg id="theme-icon-moon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </button>
 
-      <button class="icon-btn" id="open-tracker-btn" title="View Application Tracker">
+      <button class="icon-btn" id="open-tracker-btn" title="View Application Tracker & Saved Library">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="11" y2="17"></line></svg>
         <span>My Tracker</span>
         <span class="btn-badge" id="tracker-badge" style="display:none;">0</span>
@@ -1129,61 +1139,61 @@
   <div class="stepper-header">
     <div class="step-pill active" id="pill-step-1">
       <div class="step-pill-num">1</div>
-      <span>Interest &amp; Location</span>
+      <span>Discipline &amp; City</span>
     </div>
     <div class="step-arrow">&rarr;</div>
     <div class="step-pill" id="pill-step-2">
       <div class="step-pill-num">2</div>
-      <span>Profile &amp; Ambition</span>
+      <span>Skill &amp; Goals</span>
     </div>
     <div class="step-arrow">&rarr;</div>
     <div class="step-pill" id="pill-step-3">
       <div class="step-pill-num">3</div>
-      <span>Curated Opportunities</span>
+      <span>Pathways &amp; Opportunities</span>
     </div>
   </div>
 
   <!-- ==================== STAGE 1: FIELD & LOCATION ==================== -->
   <section class="stage visible" id="stage-1">
     <div class="section-intro">
-      <h2>Discover Extracurriculars &amp; Fellowships</h2>
-      <p class="lede">Explore elite competitions, paid summer research programs, internships, grants, and local chapters fitted to your aspirations.</p>
+      <h2>Master Skills. Land Opportunities.</h2>
+      <p class="lede">Discover curated learning resources (tutorials, docs, apps) paired directly with real-world opportunities (competitions, summer research fellowships, internships, and grants).</p>
     </div>
 
-    <!-- Quick Interest Chips -->
+    <!-- Quick Inspiration Chips -->
     <div class="chips-container">
       <div class="chips-label">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         Featured Fields &amp; Disciplines
       </div>
       <div class="chips-grid">
-        <button type="button" class="chip-btn" data-topic="Computer Science & Artificial Intelligence" data-loc="San Francisco, CA">💻 Computer Science &amp; AI</button>
-        <button type="button" class="chip-btn" data-topic="Biology, Medicine & Pre-Med Research" data-loc="Boston, MA">🔬 Biology &amp; Medicine</button>
-        <button type="button" class="chip-btn" data-topic="Finance, Economics & Entrepreneurship" data-loc="New York, NY">📈 Finance &amp; Business</button>
+        <button type="button" class="chip-btn" data-topic="Computer Science & AI" data-loc="San Francisco, CA">💻 Computer Science &amp; AI</button>
+        <button type="button" class="chip-btn" data-topic="Biology & Pre-Med Research" data-loc="Boston, MA">🔬 Biology &amp; Medicine</button>
+        <button type="button" class="chip-btn" data-topic="Finance, Investing & Business" data-loc="New York, NY">📈 Finance &amp; Investing</button>
+        <button type="button" class="chip-btn" data-topic="Full-Stack Web Development" data-loc="Remote / Global">🌐 Full-Stack Web Dev</button>
         <button type="button" class="chip-btn" data-topic="Robotics & Mechanical Engineering" data-loc="Austin, TX">🤖 Robotics &amp; Engineering</button>
-        <button type="button" class="chip-btn" data-topic="Humanities, Creative Writing & Journalism" data-loc="London, UK">✍️ Writing &amp; Journalism</button>
-        <button type="button" class="chip-btn" data-topic="Social Impact, Law & Policy" data-loc="Washington, DC">⚖️ Law &amp; Public Policy</button>
-        <button type="button" class="chip-btn" data-topic="Visual Arts, Film & Design" data-loc="Los Angeles, CA">🎨 Visual Arts &amp; Film</button>
-        <button type="button" class="chip-btn" data-topic="Climate, Ecology & Clean Energy" data-loc="Seattle, WA">🌍 Climate &amp; Energy</button>
+        <button type="button" class="chip-btn" data-topic="Watercolor & Observational Drawing" data-loc="London, UK">🎨 Watercolor Painting</button>
+        <button type="button" class="chip-btn" data-topic="Cybersecurity & Ethical Hacking" data-loc="Washington, DC">🛡️ Cybersecurity</button>
+        <button type="button" class="chip-btn" data-topic="Creative Writing & Journalism" data-loc="Chicago, IL">✍️ Writing &amp; Journalism</button>
       </div>
     </div>
 
     <div class="form-group">
       <label class="field-label" for="topic-input">
-        Field or Extracurricular Interest
-        <span class="field-hint-inline">e.g. AI Research, Bioengineering, Debate, Astrophysics</span>
+        Subject, Discipline or Skill
+        <span class="field-hint-inline">e.g. Machine Learning, Neuroscience, Quantum Computing, Film</span>
       </label>
       <div class="input-wrap">
         <div class="input-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </div>
-        <input type="text" id="topic-input" placeholder="e.g. Computer Science, Molecular Biology, Investment Banking" autofocus autocomplete="off">
+        <input type="text" id="topic-input" placeholder="e.g. Computer Science, Molecular Biology, Personal Finance" autofocus autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
       <label class="field-label" for="loc-input">
-        Your City or Region
+        Your Location (City / Region)
         <span class="field-hint-inline">For regional science fairs, local chapters, and university labs</span>
       </label>
       <div class="input-wrap">
@@ -1202,11 +1212,11 @@
     </div>
   </section>
 
-  <!-- ==================== STAGE 2: PROFILE & AMBITION ==================== -->
+  <!-- ==================== STAGE 2: PROFILE & GOALS ==================== -->
   <section class="stage" id="stage-2">
     <div class="section-intro">
-      <h2>Tailor Your Opportunity Set</h2>
-      <p class="lede">Help us calibrate by grade level and target competitiveness so we display both accessible entry points and elite tier programs.</p>
+      <h2>Calibrate Your Dual Curriculum</h2>
+      <p class="lede">We tailor both your learning materials (from fundamentals to mastery) and your extracurricular target list (from starter contests to Tier 1 honors).</p>
     </div>
 
     <!-- Question 1: Education Level -->
@@ -1214,87 +1224,79 @@
       <div class="q-header">
         <div class="q-badge">1</div>
         <div>
-          <div class="q-text">What is your current education level?</div>
-          <div class="q-desc">Filters eligibility criteria.</div>
+          <div class="q-text">What is your education or career stage?</div>
+          <div class="q-desc">Filters opportunity eligibility.</div>
         </div>
       </div>
       <div class="choices-grid" data-q="grade">
         <div class="choice-card selected" data-v="High School (Grades 9-12)">
           <div class="choice-title">High School (Grades 9-12)</div>
-          <div class="choice-sub">Pre-college olympiads, summer research, youth councils.</div>
+          <div class="choice-sub">Olympiads, ISEF science fairs, summer research, youth leadership.</div>
         </div>
         <div class="choice-card" data-v="Undergraduate / College">
           <div class="choice-title">Undergraduate / College</div>
-          <div class="choice-sub">Fellowships, REUs, venture incubators, corporate internships.</div>
+          <div class="choice-sub">REU research fellowships, venture grants, tech internships.</div>
         </div>
-        <div class="choice-card" data-v="Middle School / Early Learner">
-          <div class="choice-title">Middle School / Early Learner</div>
-          <div class="choice-sub">Junior olympiads, community fairs, starter clubs.</div>
-        </div>
-        <div class="choice-card" data-v="All Ages / Independent">
-          <div class="choice-title">All Ages / Independent</div>
-          <div class="choice-sub">Open-access hackathons, open source, grant competitions.</div>
+        <div class="choice-card" data-v="Independent / Lifelong Learner">
+          <div class="choice-title">Independent / Lifelong</div>
+          <div class="choice-sub">Open-source grants, open competitions, professional mastery.</div>
         </div>
       </div>
     </div>
 
-    <!-- Question 2: Experience & Past Proof -->
+    <!-- Question 2: Starting Knowledge -->
     <div class="q-block">
       <div class="q-header">
         <div class="q-badge">2</div>
         <div>
-          <div class="q-text">What is your prior extracurricular experience in this field?</div>
-          <div class="q-desc">Determines your readiness for selective programs.</div>
+          <div class="q-text">How much do you already know about this subject?</div>
+          <div class="q-desc">Calibrates course and reading levels.</div>
         </div>
       </div>
       <div class="choices-grid" data-q="prior">
-        <div class="choice-card selected" data-v="Starting out, looking for starter opportunities">
-          <div class="choice-title">Starter (Building Portfolio)</div>
-          <div class="choice-sub">High acceptance, great for learning and early wins.</div>
+        <div class="choice-card selected" data-v="Starting from scratch">
+          <div class="choice-title">Starting from scratch</div>
+          <div class="choice-sub">Total beginner; building fundamental foundations.</div>
         </div>
-        <div class="choice-card" data-v="Solid foundation, ready for competitive tier">
-          <div class="choice-title">Intermediate (Regional Level)</div>
-          <div class="choice-sub">Ready for state/national selective competitions.</div>
+        <div class="choice-card" data-v="Comfortable with fundamentals">
+          <div class="choice-title">Comfortable with fundamentals</div>
+          <div class="choice-sub">Ready for intermediate projects and competitive regional programs.</div>
         </div>
-        <div class="choice-card" data-v="Advanced, targeting top 1% national programs">
-          <div class="choice-title">Advanced (Aiming for Top 1%)</div>
-          <div class="choice-sub">RSI, ISEF, USACO Gold, national fellowships.</div>
+        <div class="choice-card" data-v="Advanced practitioner">
+          <div class="choice-title">Advanced practitioner</div>
+          <div class="choice-sub">Targeting national awards, publication, and elite fellowships.</div>
         </div>
       </div>
     </div>
 
-    <!-- Question 3: Primary Opportunity Type Goal -->
+    <!-- Question 3: Preferred Learning Format -->
     <div class="q-block">
       <div class="q-header">
         <div class="q-badge">3</div>
         <div>
-          <div class="q-text">What type of opportunity are you most eager to pursue?</div>
-          <div class="q-desc">We will weight this category prominently.</div>
+          <div class="q-text">What learning format works best for you?</div>
+          <div class="q-desc">Weights video vs. interactive projects vs. documentation.</div>
         </div>
       </div>
-      <div class="choices-grid" data-q="goal">
-        <div class="choice-card selected" data-v="Competitions & Hackathons">
-          <div class="choice-title">🏆 Competitions &amp; Contests</div>
-          <div class="choice-sub">Win awards, test skills against top peers.</div>
+      <div class="choices-grid" data-q="format">
+        <div class="choice-card selected" data-v="Watching video walkthroughs">
+          <div class="choice-title">📺 Video Walkthroughs</div>
+          <div class="choice-sub">Visual breakdowns, channel lectures & demos.</div>
         </div>
-        <div class="choice-card" data-v="Summer Research & University Programs">
-          <div class="choice-title">🔬 Summer Research Programs</div>
-          <div class="choice-sub">Work in prestigious labs, get mentor recommendations.</div>
+        <div class="choice-card" data-v="Hands-on practice & projects">
+          <div class="choice-title">🛠️ Hands-on Projects</div>
+          <div class="choice-sub">Code sandboxes, building real portfolio pieces.</div>
         </div>
-        <div class="choice-card" data-v="Internships & Industry Fellowships">
-          <div class="choice-title">💼 Internships &amp; Fellowships</div>
-          <div class="choice-sub">Paid work experience, industry network.</div>
-        </div>
-        <div class="choice-card" data-v="Founding a Project or Chapter (Grants)">
-          <div class="choice-title">💰 Grants &amp; Founding a Chapter</div>
-          <div class="choice-sub">Start a non-profit, secure micro-grants, lead others.</div>
+        <div class="choice-card" data-v="Documentation & Deep Reading">
+          <div class="choice-title">📖 Reading & Documentation</div>
+          <div class="choice-sub">Official manuals, research papers & books.</div>
         </div>
       </div>
     </div>
 
     <div class="actions">
       <button class="btn" id="to-results">
-        Find Verified Opportunities
+        Generate Unified Pathway
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </button>
       <button class="back-btn" id="back-to-1">
@@ -1304,13 +1306,13 @@
     </div>
   </section>
 
-  <!-- ==================== STAGE 3: RESULTS VIEW ==================== -->
+  <!-- ==================== STAGE 3: UNIFIED RESULTS VIEW ==================== -->
   <section class="stage" id="stage-3">
     <!-- Loading Animation -->
     <div id="loading-block" class="loading-container">
       <div class="compass-spinner"></div>
-      <h3 class="loading-title">Scanning Global &amp; Local Opportunity Networks</h3>
-      <p class="loading-status">Aggregating verified competitions, research programs, and grants...</p>
+      <h3 class="loading-title">Synthesizing Learning Resources &amp; Opportunities</h3>
+      <p class="loading-status">Connecting top educational materials with active competitions, research fellowships, and grants...</p>
     </div>
 
     <!-- Results Block -->
@@ -1320,7 +1322,7 @@
   <!-- APP FOOTER -->
   <footer class="app-footer">
     <div>
-      <strong>Waymark</strong> &bull; Extracurricular &amp; Career Opportunity Database. Verified against official organizers.
+      <strong>Waymark</strong> &bull; Complete Learning Curriculum &amp; Opportunities Database. Verified and updated.
     </div>
     <div>
       <span>100% Free &bull; Stored Locally &bull; Private</span>
@@ -1328,11 +1330,11 @@
   </footer>
 </div>
 
-<!-- ==================== APPLICATION TRACKER MODAL ==================== -->
+<!-- ==================== APPLICATION TRACKER & LIBRARY MODAL ==================== -->
 <div class="drawer-overlay" id="tracker-modal" role="dialog" aria-modal="true">
   <div class="modal-dialog">
     <div class="modal-header">
-      <h3>My Opportunity Tracker</h3>
+      <h3>My Opportunity Tracker &amp; Library</h3>
       <button class="modal-close-btn" id="close-tracker-btn">&times;</button>
     </div>
     <div id="tracker-stats-row" style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
@@ -1347,22 +1349,21 @@
 <!-- TOAST MESSAGE -->
 <div class="toast" id="app-toast">Notification message</div>
 
-<!-- ==================== DATABASE & SCRIPT ==================== -->
+<!-- ==================== DATABASE & JAVASCRIPT LOGIC ==================== -->
 <script>
 /* -------------------------------------------------------------
- * STATE & LOCAL STORAGE
+ * STATE MANAGEMENT
  * -----------------------------------------------------------*/
 const state = {
   topic: '',
   location: '',
   answers: {
     grade: 'High School (Grades 9-12)',
-    prior: 'Starting out, looking for starter opportunities',
-    goal: 'Competitions & Hackathons'
+    prior: 'Starting from scratch',
+    format: 'Watching video walkthroughs'
   },
+  currentViewMode: 'all', // 'all', 'opportunities', 'learning'
   activeCategory: 'all',
-  tierFilter: 'all',
-  costFilter: 'all',
   searchQuery: '',
   trackedOpportunities: JSON.parse(localStorage.getItem('waymark_tracker') || '[]'),
   roadmapProgress: JSON.parse(localStorage.getItem('waymark_roadmap') || '{}'),
@@ -1373,9 +1374,7 @@ document.documentElement.setAttribute('data-theme', state.theme);
 updateThemeIcons();
 updateTrackerBadge();
 
-/* -------------------------------------------------------------
- * THEME TOGGLE
- * -----------------------------------------------------------*/
+/* Theme Toggle */
 document.getElementById('theme-toggle').addEventListener('click', () => {
   state.theme = state.theme === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', state.theme);
@@ -1389,9 +1388,7 @@ function updateThemeIcons() {
   document.getElementById('theme-icon-moon').style.display = isDark ? 'block' : 'none';
 }
 
-/* -------------------------------------------------------------
- * NAVIGATION & STEP CONTROLLER
- * -----------------------------------------------------------*/
+/* Step Navigation */
 function setStage(n) {
   for (let i = 1; i <= 3; i++) {
     const pill = document.getElementById('pill-step-' + i);
@@ -1435,7 +1432,7 @@ document.getElementById('to-stage-2').addEventListener('click', () => {
   setStage(2);
 });
 
-/* Choice cards selection */
+/* Choice card selection */
 document.querySelectorAll('.choices-grid').forEach(group => {
   const qKey = group.dataset.q;
   group.querySelectorAll('.choice-card').forEach(card => {
@@ -1450,7 +1447,7 @@ document.querySelectorAll('.choices-grid').forEach(group => {
 /* Stage 2 -> Results */
 document.getElementById('to-results').addEventListener('click', () => {
   setStage(3);
-  loadOpportunities();
+  loadUnifiedData();
 });
 
 function showToast(msg) {
@@ -1461,64 +1458,69 @@ function showToast(msg) {
 }
 
 /* -------------------------------------------------------------
- * COMPREHENSIVE OPPORTUNITIES KNOWLEDGE BASE
+ * COMPREHENSIVE UNIFIED KNOWLEDGE BASE
+ * (Both Learning Resources & EC Database Opportunities)
  * -----------------------------------------------------------*/
-const OPPORTUNITIES_DB = {
+const UNIFIED_DB = {
   "computer science": {
     roadmap: [
-      "Phase 1 (Proof of Work): Build 2 standalone software projects or open-source PRs; compete in starter hackathons (MLH).",
-      "Phase 2 (Regional Recognition): Enter the Congressional App Challenge or regional hackathon; earn Bronze/Silver in USACO.",
-      "Phase 3 (Selective Research): Apply to elite institutes (MIT Beaver Works, Stanford AIMI) or email professors with a tailored research proposal.",
-      "Phase 4 (National Capstone): Compete in USACO Gold/Platinum, Imagine Cup, or launch a tech initiative backed by micro-grants."
+      "Phase 1 (Foundations): Master Python & Data Structures via CS50 / Karpathy; build 2 GitHub projects.",
+      "Phase 2 (Contests & Club): Join USACO Bronze/Silver, enter the Congressional App Challenge, or start a Hack Club chapter.",
+      "Phase 3 (Selective Research): Apply to elite summer fellowships (MIT Beaver Works, Stanford AIMI) or cold-email university labs.",
+      "Phase 4 (National Honor & Grants): Compete in USACO Gold, Microsoft Imagine Cup, or secure a $1,000 Medici innovation grant."
     ],
-    items: [
+    opportunities: [
       {
         id: "cs_usaco",
+        type: "opportunity",
+        category: "competition",
         name: "USA Computing Olympiad (USACO)",
         org: "USACO Foundation",
-        category: "competition",
         tier: "Tier 1 Elite",
         cost: "100% Free",
-        eligibility: "High School & Middle School",
+        eligibility: "Middle & High School",
         scope: "Global Online",
         deadline: "4 Contests Annually (Dec - Mar)",
         url: "http://www.usaco.org/",
-        desc: "The most prestigious algorithmic programming competition in the United States. Contestants solve challenging algorithmic problems in C++, Java, or Python across Bronze, Silver, Gold, and Platinum divisions.",
-        tip: "USACO Silver/Gold is widely considered one of the highest-weight STEM achievements on competitive college applications. Focus heavily on binary search, dynamic programming, and graph algorithms on USACO Guide."
+        desc: "The gold-standard national algorithmic programming competition. Contestants advance through Bronze, Silver, Gold, and Platinum divisions solving complex algorithmic challenges.",
+        tip: "USACO Silver/Gold is one of the highest-weight STEM achievements on competitive college applications. Use USACO Guide and practice dynamic programming and graphs."
       },
       {
         id: "cs_cac",
+        type: "opportunity",
+        category: "competition",
         name: "Congressional App Challenge",
         org: "U.S. House of Representatives",
-        category: "competition",
         tier: "Tier 1 Elite",
         cost: "100% Free",
-        eligibility: "Middle & High School (U.S. Residents)",
-        scope: "National by Congressional District",
+        eligibility: "Grades 6-12 (U.S.)",
+        scope: "By Congressional District",
         deadline: "Annual October Deadline",
         url: "https://www.congressionalappchallenge.us/",
-        desc: "Official competition hosted by Members of Congress. Students code an app on any platform (web, mobile, desktop) solving a community or national problem. Winning apps are displayed in the U.S. Capitol.",
-        tip: "Judges prioritize civic impact and practical utility just as much as technical complexity. Build an app that solves an authentic problem in your local school or municipality."
+        desc: "Official competition hosted by Members of Congress. Students build software apps solving community or civic problems; winners are invited to #HouseOfCode in the Capitol.",
+        tip: "Judges prioritize civic impact and practical utility just as much as technical complexity. Solve an authentic problem in your local community."
       },
       {
         id: "cs_bwsi",
+        type: "opportunity",
+        category: "research",
         name: "MIT Beaver Works Summer Institute (BWSI)",
         org: "MIT Lincoln Laboratory",
-        category: "research",
         tier: "Tier 1 Elite",
-        cost: "100% Free / Need-based Aid",
+        cost: "100% Free / Aid Available",
         eligibility: "Rising High School Seniors",
-        scope: "Hybrid (Cambridge, MA & Virtual)",
+        scope: "Cambridge, MA & Virtual",
         deadline: "Annual March Deadline",
         url: "https://beaverworks.ll.mit.edu/CMS/cms/",
-        desc: "World-class 4-week STEM program where teams design autonomous RACECAR vehicles, build quantum algorithms, and deploy embedded cybersecurity systems guided by MIT researchers.",
-        tip: "Complete their prerequisite online course modules (independent study) thoroughly—your completion metrics and quiz scores directly influence acceptance."
+        desc: "World-class 4-week STEM program where high schoolers program autonomous RACECAR vehicles, build quantum algorithms, and deploy embedded cybersecurity systems.",
+        tip: "Complete their prerequisite online course modules thoroughly—your quiz scores and code submissions directly influence selection."
       },
       {
         id: "cs_aimi",
-        name: "Stanford AIMI Summer Research Internship",
-        org: "Stanford Center for AI in Medicine & Imaging",
+        type: "opportunity",
         category: "research",
+        name: "Stanford AIMI Summer Research Internship",
+        org: "Stanford University School of Medicine",
         tier: "Tier 1 Elite",
         cost: "100% Free",
         eligibility: "High School Students (Ages 14+)",
@@ -1526,161 +1528,257 @@ const OPPORTUNITIES_DB = {
         deadline: "Annual March Deadline",
         url: "https://aimi.stanford.edu/summer-research-internship",
         desc: "A selective 2-week virtual program introducing high schoolers to medical AI, computer vision on MRI/CT scans, and direct research mentorship from Stanford clinical AI fellows.",
-        tip: "Emphasize your specific curiosity for healthcare problems. Mentioning specific published papers from AIMI in your essay demonstrates true alignment."
+        tip: "Emphasize your specific curiosity for healthcare problems. Mentioning specific published papers from AIMI in your essay demonstrates genuine passion."
       },
       {
         id: "cs_gsoc",
+        type: "opportunity",
+        category: "internship",
         name: "Google Summer of Code (GSoC)",
         org: "Google Open Source",
-        category: "internship",
         tier: "Tier 1 Elite",
         cost: "Paid Stipend ($1,500 - $3,300+)",
-        eligibility: "Ages 18+ (University & Non-traditional)",
+        eligibility: "Ages 18+ (University & Adult)",
         scope: "Global Remote",
         deadline: "Annual April Application Cycle",
         url: "https://summerofcode.withgoogle.com/",
         desc: "Google funds student developers to write code for major open-source organizations (Linux Foundation, Python, Apache, Blender) over an 8-to-12 week mentored program.",
-        tip: "Start contributing pull requests to your target organization 2 months before applications open so the organization administrators already know your name."
+        tip: "Start contributing small pull requests to your target organization 2 months before applications open so the organization administrators already know your work."
       },
       {
         id: "cs_medici",
+        type: "opportunity",
+        category: "grant",
         name: "1517 Medici Project Micro-Grant",
         org: "1517 Fund",
-        category: "grant",
         tier: "Tier 1 Elite",
         cost: "$1,000 Cash Grant (Zero Equity)",
         eligibility: "Students under 21",
         scope: "Global Remote",
         deadline: "Rolling Applications Year-Round",
         url: "https://www.1517fund.com/medici-project",
-        desc: "Fast, non-dilutive $1,000 checks given directly to young hackers, makers, and scientists building ambitious hardware, software, or scientific experiments outside of traditional school work.",
-        tip: "Keep your application concise. Show working code, screenshots, or physical prototypes rather than corporate buzzwords."
+        desc: "Fast, non-dilutive $1,000 checks given directly to young hackers, makers, and scientists building ambitious hardware, software, or scientific experiments.",
+        tip: "Show working code, screenshots, or physical prototypes rather than corporate slide decks."
       },
       {
         id: "cs_hackclub",
-        name: "Hack Club Leadership & Hardware Grants",
-        org: "Hack Club (501c3 Non-profit)",
+        type: "opportunity",
         category: "leadership",
+        name: "Hack Club Leadership & Hardware Grants",
+        org: "Hack Club",
         tier: "Tier 2 Selective",
-        cost: "100% Free + $500 Grants / Free Microcontrollers",
+        cost: "100% Free + $500 Grants",
         eligibility: "High School Students Worldwide",
         scope: "Global & In-School Chapters",
         deadline: "Rolling (Join Anytime)",
         url: "https://hackclub.com/",
         desc: "Global student-led non-profit network. Hack Club gives high schoolers free bank accounts, $500 hardware grants, and curriculum to start coding clubs and in-person hackathons.",
-        tip: "Founding a Hack Club chapter at your school gives you direct, verifiable leadership and project-funding credentials that admissions officers recognize."
+        tip: "Founding a Hack Club chapter at your school gives you direct, verifiable leadership and project-funding credentials that admissions officers love."
+      }
+    ],
+    learning: [
+      {
+        id: "cs_lrn_3b1b",
+        type: "learning",
+        category: "youtube_channel",
+        name: "3Blue1Brown (Essence of Linear Algebra & Neural Networks)",
+        org: "Grant Sanderson",
+        level: "Beginner to Intermediate",
+        cost: "100% Free",
+        time_commitment: "15-20 min / video",
+        prerequisites: "High school math",
+        url: "https://www.youtube.com/@3blue1brown",
+        desc: "The gold-standard geometric intuition for matrices, vector transformations, and neural network backpropagation mathematics.",
+        tip: "Essential foundation before diving into machine learning algorithms or computer graphics."
       },
       {
-        id: "cs_mlh",
-        name: "Major League Hacking (MLH) Global Hackathons",
-        org: "Major League Hacking",
-        category: "competition",
-        tier: "Tier 2 Selective",
-        cost: "100% Free / Travel Reimbursements Available",
-        eligibility: "High School & University",
-        scope: "Global In-Person & Virtual",
-        deadline: "Every Weekend Year-Round",
-        url: "https://mlh.io/seasons/2025/events",
-        desc: "The official student hackathon league running 200+ weekend competitions each year. Teams build working prototypes within 36 hours and pitch to tech company sponsors.",
-        tip: "Focus on creating a tight 2-minute demonstration video and clean GitHub README; judges judge on working demos, not slides."
+        id: "cs_lrn_karpathy",
+        type: "learning",
+        category: "youtube_video",
+        name: "Neural Networks: Zero to Hero (Full Series)",
+        org: "Andrej Karpathy",
+        level: "Intermediate",
+        cost: "100% Free",
+        time_commitment: "15-20 hours hands-on",
+        prerequisites: "Python fundamentals",
+        url: "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+        desc: "Former Tesla AI Director & OpenAI founding member builds GPT and backprop from scratch in pure Python with no external deep learning libraries.",
+        tip: "Type the code line-by-line alongside Karpathy rather than watching passively."
+      },
+      {
+        id: "cs_lrn_odin",
+        type: "learning",
+        category: "website",
+        name: "The Odin Project (Full-Stack Curriculum)",
+        org: "Open Source Community",
+        level: "Beginner to Advanced",
+        cost: "100% Free / Open Source",
+        time_commitment: "300+ hours self-paced",
+        prerequisites: "None",
+        url: "https://www.theodinproject.com/",
+        desc: "Comprehensive curriculum guiding you to build real-world web applications locally using Git, JavaScript, Node.js, and relational databases.",
+        tip: "Build every milestone project locally in Git and deploy to GitHub Pages or Render for your portfolio."
+      },
+      {
+        id: "cs_lrn_usacoguide",
+        type: "learning",
+        category: "website",
+        name: "USACO Guide (Complete Contest Preparation)",
+        org: "USACO Guide Team",
+        level: "Intermediate to Advanced",
+        cost: "100% Free",
+        time_commitment: "100+ hours practice",
+        prerequisites: "Comfort in C++, Java, or Python",
+        url: "https://usaco.guide/",
+        desc: "High-quality, free platform curated by past USACO finalists detailing every algorithm, data structure, and practice problem by division.",
+        tip: "Work through Bronze and Silver modules systematically before contest season."
+      },
+      {
+        id: "cs_lrn_colab",
+        type: "learning",
+        category: "app",
+        name: "Google Colab (Interactive Cloud Jupyter Labs)",
+        org: "Google Research",
+        level: "Beginner to Advanced",
+        cost: "Free GPU/TPU Access",
+        time_commitment: "Immediate setup",
+        prerequisites: "Google account",
+        url: "https://colab.research.google.com/",
+        desc: "Browser-based Python environment with free GPU acceleration for training deep learning models and data science experiments without local setup.",
+        tip: "Ideal for training vision and language models without buying an expensive graphics card."
       }
     ]
   },
 
   "biology": {
     roadmap: [
-      "Phase 1 (Foundations): Compete in local science fairs or USABO Open Exam; complete online bio-data analysis modules.",
-      "Phase 2 (Regional Lab): Cold-email professors at regional university medical centers; enter regional ISEF-affiliated fair.",
-      "Phase 3 (Selective Fellowship): Apply to competitive residential research programs (Simons, NIH SIP, Jackson Lab, Clark Scholars).",
-      "Phase 4 (National Honor): Submit research to Regeneron STS / ISEF, co-author a peer-reviewed paper, or present at a biomedical symposium."
+      "Phase 1 (Knowledge): Master Campbell Biology and explore NCBI PubMed literature reviews.",
+      "Phase 2 (Local Science Fair): Enter your local ISEF-affiliated regional fair or compete in the USABO Open Exam.",
+      "Phase 3 (Selective Laboratory): Apply to top summer research institutes (Simons, NIH SIP, Jackson Lab, Clark Scholars) or cold-email university professors.",
+      "Phase 4 (Publication & ISEF): Compete at the Regeneron International Science and Engineering Fair or co-author a peer-reviewed paper."
     ],
-    items: [
+    opportunities: [
       {
         id: "bio_isef",
-        name: "Regeneron ISEF (International Science Fair)",
-        org: "Society for Science",
+        type: "opportunity",
         category: "competition",
+        name: "Regeneron ISEF (International Science & Engineering Fair)",
+        org: "Society for Science",
         tier: "Tier 1 Elite",
-        cost: "100% Free / All Expenses Paid for Finalists",
+        cost: "100% Free / Travel Funded for Finalists",
         eligibility: "Grades 9-12 Worldwide",
         scope: "Local -> Regional -> Global Finals",
         deadline: "Annual Spring Qualification",
         url: "https://www.societyforscience.org/isef/",
-        desc: "The world's premier pre-college STEM competition. Nearly 2,000 high school scientists from 80+ nations compete for over $9 million in awards and university scholarships.",
-        tip: "You must first win your local ISEF-affiliated regional fair. Review previous winning abstracts in your category to understand experimental rigor and statistical power requirements."
+        desc: "The world's premier high school research competition. 1,800+ international student researchers compete for over $9 million in scholarships and grand awards.",
+        tip: "You must first win your local ISEF-affiliated regional fair. Focus on rigorous statistical power and clear novelty in your experimental methodology."
       },
       {
         id: "bio_usabo",
+        type: "opportunity",
+        category: "competition",
         name: "USA Biology Olympiad (USABO)",
         org: "Center for Excellence in Education (CEE)",
-        category: "competition",
         tier: "Tier 1 Elite",
-        cost: "$95 school registration fee (waivers available)",
+        cost: "Low-cost school fee / Waivers available",
         eligibility: "High School Students (U.S.)",
         scope: "School -> Semifinal -> National Finals",
         deadline: "Annual February Open Exam",
         url: "https://www.usabo-trc.org/",
-        desc: "The premiere biology competition in the US. Top 20 national finalists attend a 2-week residential training camp to represent Team USA at the International Biology Olympiad (IBO).",
-        tip: "Master Campbell Biology cover to cover, and supplement genetics and biochemistry with Alberts' 'Molecular Biology of the Cell'."
+        desc: "The pinnacle of high school biology academics. Top 20 national finalists attend a 2-week residential training camp to represent Team USA at the International Biology Olympiad (IBO).",
+        tip: "Read Campbell Biology multiple times; supplement advanced physiology with Guyton and Hall."
       },
       {
         id: "bio_simons",
+        type: "opportunity",
+        category: "research",
         name: "Simons Summer Research Program",
         org: "Stony Brook University",
-        category: "research",
         tier: "Tier 1 Elite",
         cost: "100% Free (Fellowship Stipend Included)",
         eligibility: "High School Juniors (Grade 11)",
-        scope: "Residential (Stony Brook, NY)",
+        scope: "Stony Brook, NY",
         deadline: "Annual February Deadline",
         url: "https://www.stonybrook.edu/simons/",
-        desc: "Prestigious 7-week residential research fellowship where students join active biomedical, cancer, and neurobiology laboratories under senior faculty.",
-        tip: "Requires a school nomination. Approach your biology teacher in December to secure your high school's nomination slot early."
+        desc: "Prestigious 7-week residential research fellowship where students join active biomedical, cancer, and neurobiology laboratories under senior faculty investigators.",
+        tip: "Requires a formal school nomination. Approach your science department head in December to secure your school's candidate spot."
       },
       {
-        id: "bio_nih_sip",
+        id: "bio_nih",
+        type: "opportunity",
+        category: "internship",
         name: "NIH Summer Internship Program (SIP)",
         org: "National Institutes of Health",
-        category: "internship",
         tier: "Tier 1 Elite",
         cost: "Paid Monthly Stipend ($2,300 - $3,000/mo)",
-        eligibility: "High School (Ages 17+) & Undergrad",
+        eligibility: "Ages 17+ (High School & College)",
         scope: "Bethesda, MD & Regional NIH Campuses",
         deadline: "Annual February Deadline",
         url: "https://www.training.nih.gov/programs/sip",
-        desc: "Full-time 8-week hands-on biomedical research side-by-side with leading clinical and laboratory scientists at the world's premier health research center.",
-        tip: "Don't just submit the general application: proactively email 5-10 specific NIH Principal Investigators (PIs) whose papers interest you with your application ID."
+        desc: "Full-time 8-week hands-on biomedical research working side-by-side with leading clinical and laboratory scientists at the world's premier health research center.",
+        tip: "Directly email 5-10 specific NIH Principal Investigators (PIs) whose research aligns with your background to increase selection chances."
+      }
+    ],
+    learning: [
+      {
+        id: "bio_lrn_nih_pubmed",
+        type: "learning",
+        category: "website",
+        name: "NCBI PubMed Central (Open Access Research Papers)",
+        org: "National Library of Medicine",
+        level: "Intermediate to Advanced",
+        cost: "100% Free",
+        time_commitment: "Reference manual",
+        prerequisites: "Basic biology",
+        url: "https://pubmed.ncbi.nlm.nih.gov/",
+        desc: "The world's central archive of peer-reviewed biomedical literature, clinical trial findings, and scientific review papers.",
+        tip: "Filter by 'Free full text' and 'Review' to quickly get up to speed on the latest breakthroughs in any biological sub-discipline."
       },
       {
-        id: "bio_clark",
-        name: "Clark Scholars Summer Program",
-        org: "Texas Tech University",
-        category: "research",
-        tier: "Tier 1 Elite",
-        cost: "Free + $750 Stipend + Room & Board",
-        eligibility: "High School Juniors & Seniors (Ages 17+)",
-        scope: "Residential (Lubbock, TX)",
-        deadline: "Annual Mid-February Deadline",
-        url: "https://www.depts.ttu.edu/honors/academicsandenrichment/affiliatedandspecialprograms/clarks/",
-        desc: "An intensive 7-week research program accepting only 12 students internationally across sciences, medicine, and engineering with 1-on-1 faculty mentorship.",
-        tip: "Admissions is sub-3% acceptance. Highlight previous laboratory independence and clear scientific essay voice."
+        id: "bio_lrn_mit_bio",
+        type: "learning",
+        category: "youtube_channel",
+        name: "MIT OpenCourseWare (Introductory & Molecular Biology)",
+        org: "MIT OCW (Prof. Eric Lander)",
+        level: "Beginner to Intermediate",
+        cost: "100% Free",
+        time_commitment: "45 min / lecture",
+        prerequisites: "None",
+        url: "https://www.youtube.com/playlist?list=PLUl4u3cNGP63lmSVluMNWHWQDsqExt17b",
+        desc: "Human Genome Project leader Prof. Eric Lander delivers world-renowned lectures breaking down genetics, recombinant DNA, and molecular medicine.",
+        tip: "Outstanding preparation for Olympiads and lab interviews."
+      },
+      {
+        id: "bio_lrn_benchling",
+        type: "learning",
+        category: "app",
+        name: "Benchling (Molecular Biology Research Suite)",
+        org: "Benchling",
+        level: "Intermediate",
+        cost: "Free Academic Tier",
+        time_commitment: "1-2 hours to learn",
+        prerequisites: "Basic genetics",
+        url: "https://www.benchling.com/",
+        desc: "The cloud platform used by biotech companies and university labs to design CRISPR guides, align DNA sequences, and document electronic lab notebooks.",
+        tip: "Listing familiarity with Benchling on research emails immediately distinguishes you from other student applicants."
       }
     ]
   },
 
   "finance": {
     roadmap: [
-      "Phase 1 (Knowledge & Simulation): Compete in free market simulations (Wharton Investment Competition, SIFMA Stock Market Game).",
-      "Phase 2 (Club & Pitch): Founded or lead a financial literacy / investment club chapter; enter regional pitch competitions (Diamond Challenge).",
-      "Phase 3 (Selective Fellowship): Apply to Bank of America Student Leaders or university summer incubators (LaunchX).",
-      "Phase 4 (Capital & Enterprise): Launch an authentic revenue-generating venture or micro-fund; apply for Thiel Fellowship or seed grants."
+      "Phase 1 (Foundations): Learn accounting and DCF modeling via Khan Academy & Damodaran; compete in Wharton Investment Simulation.",
+      "Phase 2 (Club & Pitch): Found an investment club chapter or enter The Diamond Challenge with a validated business plan.",
+      "Phase 3 (Selective Fellowship): Apply for the Bank of America Student Leaders program or selective summer incubators.",
+      "Phase 4 (Enterprise & Capital): Launch a revenue-generating enterprise or apply for the $100,000 Thiel Fellowship."
     ],
-    items: [
+    opportunities: [
       {
         id: "fin_wharton",
-        name: "Wharton Global High School Investment Competition",
-        org: "Wharton School, University of Pennsylvania",
+        type: "opportunity",
         category: "competition",
+        name: "Wharton Global High School Investment Competition",
+        org: "Wharton School, Univ of Pennsylvania",
         tier: "Tier 1 Elite",
         cost: "100% Free",
         eligibility: "High School Students (Teams of 4-7)",
@@ -1688,13 +1786,14 @@ const OPPORTUNITIES_DB = {
         deadline: "Annual September Registration",
         url: "https://globalyouth.wharton.upenn.edu/investment-competition/",
         desc: "Teams manage a $100,000 virtual portfolio over 10 weeks to develop a customized quantitative and qualitative investment strategy for an authentic client profile.",
-        tip: "Winning teams are judged on strategic coherence and risk management, NOT short-term portfolio gains. Speculative day-trading will disqualify you."
+        tip: "Winning teams are judged on strategic coherence and risk management, NOT short-term portfolio gains. Avoid speculative trading."
       },
       {
         id: "fin_diamond",
+        type: "opportunity",
+        category: "competition",
         name: "The Diamond Challenge for High School Entrepreneurs",
         org: "University of Delaware Horn Entrepreneurship",
-        category: "competition",
         tier: "Tier 1 Elite",
         cost: "100% Free ($100,000+ in Cash Prizes)",
         eligibility: "Grades 9-12 Worldwide",
@@ -1702,27 +1801,29 @@ const OPPORTUNITIES_DB = {
         deadline: "Annual January Deadline",
         url: "https://diamondchallenge.org/",
         desc: "The world's top entrepreneurship competition for teens. Tracks in Business Innovation and Social Innovation where students pitch validated business models.",
-        tip: "Customer discovery interviews are paramount. Teams that interviewed 50+ prospective users and demonstrate real pilot demand consistently win."
+        tip: "Customer discovery is key. Teams that interview 50+ prospective users and demonstrate real pilot demand consistently win."
       },
       {
         id: "fin_bofa",
-        name: "Bank of America Student Leaders Program",
-        org: "Bank of America Charitable Foundation",
+        type: "opportunity",
         category: "internship",
+        name: "Bank of America Student Leaders Program",
+        org: "Bank of America Foundation",
         tier: "Tier 1 Elite",
-        cost: "Paid 8-Week Internship + All-Expenses-Paid DC Summit",
+        cost: "Paid 8-Week Internship + DC Summit",
         eligibility: "High School Juniors & Seniors (U.S.)",
         scope: "Local Non-Profit Placement + Washington, DC",
         deadline: "Annual January Deadline",
         url: "https://about.bankofamerica.com/en/making-an-impact/student-leaders",
         desc: "Awardees receive an 8-week paid summer internship at a leading local non-profit in their community and attend a week-long national leadership summit in Washington, DC.",
-        tip: "Focus your essays on service leadership in your local neighborhood rather than corporate ambitions."
+        tip: "Focus your essays on community service and neighborhood impact rather than corporate ambitions."
       },
       {
         id: "fin_thiel",
+        type: "opportunity",
+        category: "grant",
         name: "The Thiel Fellowship ($100,000)",
         org: "Thiel Foundation",
-        category: "grant",
         tier: "Tier 1 Elite",
         cost: "$100,000 Grant + Mentorship Network",
         eligibility: "Ages 22 or Younger",
@@ -1730,47 +1831,79 @@ const OPPORTUNITIES_DB = {
         deadline: "Rolling Applications Year-Round",
         url: "https://thielfellowship.org/",
         desc: "A two-year, $100,000 grant given to young founders who want to build new tech and ventures instead of sitting in a college classroom.",
-        tip: "They want extreme builders who have already started creating products with early customer traction or revolutionary breakthroughs."
+        tip: "They look for extreme builders who have already started creating products with early customer traction or revolutionary breakthroughs."
+      }
+    ],
+    learning: [
+      {
+        id: "fin_lrn_damodaran",
+        type: "learning",
+        category: "youtube_channel",
+        name: "Aswath Damodaran (The Dean of Valuation)",
+        org: "NYU Stern School of Business",
+        level: "Intermediate to Advanced",
+        cost: "100% Free",
+        time_commitment: "1 hour / lecture",
+        prerequisites: "Basic accounting",
+        url: "https://www.youtube.com/@AswathDamodaranonValuation",
+        desc: "Legendary corporate finance and equity valuation lectures covering cash flow modeling, intrinsic value, and risk premiums.",
+        tip: "His free valuation spreadsheets and corporate finance web materials are used by Wall Street analysts worldwide."
+      },
+      {
+        id: "fin_lrn_bogle",
+        type: "learning",
+        category: "website",
+        name: "Bogleheads Wiki & Indexing Philosophy",
+        org: "Bogleheads Non-Profit",
+        level: "Beginner to Intermediate",
+        cost: "100% Free",
+        time_commitment: "Self-paced",
+        prerequisites: "None",
+        url: "https://www.bogleheads.org/wiki/Main_Page",
+        desc: "The holy grail of evidence-based passive investing, asset allocation, compound growth, and low-expense wealth accumulation.",
+        tip: "Master the Three-Fund Portfolio principles to understand how institutional asset allocation works."
       }
     ]
   }
 };
 
 /* -------------------------------------------------------------
- * HEURISTIC OPPORTUNITY SYNTHESIZER FOR ANY NICHES
+ * HEURISTIC GENERATOR FOR CUSTOM TOPICS
  * -----------------------------------------------------------*/
-function synthesizeDynamicOpportunities(topic, location) {
+function synthesizeDynamicData(topic, location) {
   const clean = topic.trim();
   const enc = encodeURIComponent(clean);
   const locEnc = location ? encodeURIComponent(location) : '';
 
   return {
     roadmap: [
-      `Phase 1 (Proof of Concept): Complete foundational self-directed projects in ${clean}; document your workflow on a public portfolio or GitHub.`,
-      `Phase 2 (Regional Contest & Chapter): Form a local student interest group or chapter; enter regional fairs, essay awards, or showcase challenges in ${clean}.`,
-      `Phase 3 (Mentor Fellowship): Cold-contact 5-10 professors or industry researchers in ${clean} proposing a collaborative sub-study.`,
-      `Phase 4 (National Honor): Submit to national competitions, apply for independent innovation grants, or publish your findings.`
+      `Phase 1 (Learn the Foundations): Complete core guides and video walkthroughs in ${clean}; build 2 portfolio proof-of-work projects.`,
+      `Phase 2 (Regional Contest & Chapter): Enter regional challenges in ${clean} or establish a local high school / university student chapter.`,
+      `Phase 3 (Selective Mentorship): Cold-contact 5-10 professors or industry leaders in ${clean} proposing a collaborative study.`,
+      `Phase 4 (National Honor & Capstone): Submit to national competitions, apply for independent innovation micro-grants, or publish your work.`
     ],
-    items: [
+    opportunities: [
       {
-        id: `dyn_comp_${Math.random().toString(36).substr(2,6)}`,
-        name: `National & Global ${clean} Youth Awards & Competitions`,
-        org: `International Association for ${clean}`,
+        id: `dyn_opp_comp_${Math.random().toString(36).substr(2,6)}`,
+        type: "opportunity",
         category: "competition",
+        name: `National & Global ${clean} Youth Competitions`,
+        org: `International Association for ${clean}`,
         tier: "Tier 1 Elite",
         cost: "100% Free / Entry Grants Available",
         eligibility: state.answers.grade,
         scope: "Global & Regional",
         deadline: "Annual Spring & Fall Cycles",
         url: `https://www.google.com/search?q=${enc}+high+school+competitions+awards`,
-        desc: `Prestigious competitive showcase where students submit original research papers, prototypes, or creative portfolios in ${clean} evaluated by subject-matter authorities.`,
-        tip: `Focus on originality and measurable impact. Judges evaluate projects that present a novel angle or real-world application rather than generic summaries.`
+        desc: `Competitive showcase where students submit original research papers, prototypes, or creative portfolios in ${clean} evaluated by leading authorities.`,
+        tip: `Focus on originality and measurable impact. Judges reward projects that present a novel angle or real-world application.`
       },
       {
-        id: `dyn_res_${Math.random().toString(36).substr(2,6)}`,
-        name: `University Summer Research & Lab Fellowships in ${clean}`,
-        org: "Collegiate STEM & Humanities Research Hub",
+        id: `dyn_opp_res_${Math.random().toString(36).substr(2,6)}`,
+        type: "opportunity",
         category: "research",
+        name: `University Summer Research & Lab Fellowships in ${clean}`,
+        org: "Collegiate Research Hub",
         tier: "Tier 1 Elite",
         cost: "Stipends / Financial Aid Available",
         eligibility: state.answers.grade,
@@ -1778,13 +1911,14 @@ function synthesizeDynamicOpportunities(topic, location) {
         deadline: "Applications open Nov - March",
         url: `https://www.google.com/search?q=${enc}+summer+research+program+for+students`,
         desc: `Intensive 6-8 week laboratory programs pairing students with faculty investigators working on state-of-the-art developments in ${clean}.`,
-        tip: `When drafting your outreach statement, cite 2 recent papers from the laboratory and specify which technical tools you can immediately contribute.`
+        tip: `Cite 2 recent papers from the target laboratory and specify which technical tools you can contribute.`
       },
       {
-        id: `dyn_grant_${Math.random().toString(36).substr(2,6)}`,
-        name: `Emergent & Independent Project Grants for ${clean}`,
-        org: "Youth Innovation Venture Funds",
+        id: `dyn_opp_grant_${Math.random().toString(36).substr(2,6)}`,
+        type: "opportunity",
         category: "grant",
+        name: `Independent Project Grants & Seed Funding for ${clean}`,
+        org: "Youth Innovation Venture Funds",
         tier: "Tier 2 Selective",
         cost: "$500 to $5,000 Micro-Grants",
         eligibility: "Students & Independent Builders",
@@ -1792,65 +1926,110 @@ function synthesizeDynamicOpportunities(topic, location) {
         deadline: "Rolling Deadlines",
         url: `https://www.google.com/search?q=${enc}+student+project+grants+funding`,
         desc: `Non-dilutive seed funding provided to young makers and researchers to purchase equipment, cover lab fees, or launch community initiatives in ${clean}.`,
-        tip: `Provide a specific itemized budget and demonstrable prototype milestones to prove operational readiness.`
+        tip: `Provide a specific itemized budget and demonstrable prototype milestones to prove execution capability.`
+      }
+    ],
+    learning: [
+      {
+        id: `dyn_lrn_yt_${Math.random().toString(36).substr(2,6)}`,
+        type: "learning",
+        category: "youtube_channel",
+        name: `${clean} Masterclasses & Channel Guides`,
+        org: "Curated Video Creators",
+        level: "Beginner to Intermediate",
+        cost: "100% Free",
+        time_commitment: "15-20 min / video",
+        prerequisites: "None",
+        url: `https://www.youtube.com/results?search_query=${enc}+masterclass+tutorial`,
+        desc: `High-engagement video lecture series breaking down fundamental principles, real-world case studies, and advanced techniques in ${clean}.`,
+        tip: `Focus on mastering key concepts sequentially before jumping into complex theoretical debates.`
       },
       {
-        id: `dyn_local_${Math.random().toString(36).substr(2,6)}`,
-        name: `${clean} Regional Chapter, Club & Science Fair Networks`,
-        org: location ? `${location} Regional Hub` : "Regional Affiliate Networks",
-        category: "leadership",
-        tier: "Tier 2 Selective",
-        cost: "Free / Community",
-        eligibility: "All Students",
-        scope: location ? `In-Person (${location})` : "Local Chapters Globally",
-        deadline: "Rolling Enrollment",
-        url: `https://www.meetup.com/find/?keywords=${enc}${locEnc ? '&location=' + locEnc : ''}`,
-        desc: `Connect with local chapters, high school clubs, and student leaders running hands-on collaborative workshops in ${clean}.`,
-        tip: `Founding or holding a board position in a local regional chapter demonstrates verifiable leadership and community initiative.`
+        id: `dyn_lrn_doc_${Math.random().toString(36).substr(2,6)}`,
+        type: "learning",
+        category: "website",
+        name: `Official ${clean} Documentation & Knowledge Repository`,
+        org: "Standards & Literature Hub",
+        level: "Intermediate",
+        cost: "100% Free",
+        time_commitment: "Ongoing reference",
+        prerequisites: "Basic interest",
+        url: `https://www.google.com/search?q=${enc}+official+documentation+guide`,
+        desc: `The authoritative literature and standard documentation outlining terminology, frameworks, and methodologies for ${clean}.`,
+        tip: `Use this as your primary technical reference when designing project methodology.`
+      },
+      {
+        id: `dyn_lrn_app_${Math.random().toString(36).substr(2,6)}`,
+        type: "learning",
+        category: "app",
+        name: `Anki Spaced Repetition for ${clean}`,
+        org: "AnkiWeb",
+        level: "Beginner to Advanced",
+        cost: "Free (Desktop/Web)",
+        time_commitment: "10 min daily",
+        prerequisites: "None",
+        url: "https://apps.ankiweb.net/",
+        desc: `Cement core vocabulary, formulas, shortcuts, and key papers into long-term recall using automated spaced repetition.`,
+        tip: `Review your cards daily for maximum memory retention with minimal time spent.`
       }
     ]
   };
 }
 
-function fetchOpportunities(topic, location) {
+/* -------------------------------------------------------------
+ * DATA RETRIEVAL CONTROLLER
+ * -----------------------------------------------------------*/
+let currentDataSet = null;
+
+function fetchUnifiedData(topic, location) {
   const norm = topic.toLowerCase();
-  for (const [key, data] of Object.entries(OPPORTUNITIES_DB)) {
+  for (const [key, data] of Object.entries(UNIFIED_DB)) {
     if (norm.includes(key) || key.includes(norm)) {
       const cloned = JSON.parse(JSON.stringify(data));
       if (location) {
-        cloned.items.push({
+        cloned.opportunities.push({
           id: `local_fair_${Math.random().toString(36).substr(2,6)}`,
-          name: `ISEF-Affiliated Regional Science & Engineering Fair (${location})`,
-          org: "Society for Science Regional Affiliates",
+          type: "opportunity",
           category: "competition",
+          name: `ISEF-Affiliated Regional Science Fair (${location})`,
+          org: "Society for Science Regional Network",
           tier: "Tier 1 Elite",
           cost: "Free / Nominal Entry",
           eligibility: "Grades 6-12",
           scope: `Local (${location} Metro)`,
           deadline: "Annual Winter/Spring Fair",
           url: "https://findafair.societyforscience.org/",
-          desc: `Your mandatory official feeder competition to qualify for Regeneron ISEF, National Junior Science & Humanities Symposium, and state honors.`,
-          tip: `Visit the official Society for Science Fair Finder to identify your regional fair coordinator and submit paperwork by December.`
+          desc: `Your mandatory official feeder competition to qualify for Regeneron ISEF and national science honors.`,
+          tip: `Visit the Society for Science Fair Finder to register with your regional fair coordinator before deadlines.`
+        });
+        cloned.learning.push({
+          id: `local_club_${Math.random().toString(36).substr(2,6)}`,
+          type: "learning",
+          category: "website",
+          name: `${topic} Community Meetups & Workshops (${location})`,
+          org: "Regional Study Circles",
+          level: "All Levels",
+          cost: "Free / Community",
+          time_commitment: "1-2 hrs / month",
+          prerequisites: "None",
+          url: `https://www.meetup.com/find/?keywords=${encodeURIComponent(topic)}&location=${encodeURIComponent(location)}`,
+          desc: `Connect with local peer groups, university labs, and collaborative workshops in and around ${location}.`,
+          tip: `Great for networking, finding study partners, and meeting local mentors.`
         });
       }
       return cloned;
     }
   }
-  return synthesizeDynamicOpportunities(topic, location);
+  return synthesizeDynamicData(topic, location);
 }
 
-/* -------------------------------------------------------------
- * MAIN LOAD CONTROLLER
- * -----------------------------------------------------------*/
-let currentDataSet = null;
-
-async function loadOpportunities() {
+async function loadUnifiedData() {
   document.getElementById('loading-block').style.display = 'block';
   document.getElementById('results-block').style.display = 'none';
 
-  await new Promise(r => setTimeout(r, 550));
+  await new Promise(r => setTimeout(r, 600));
 
-  const data = fetchOpportunities(state.topic, state.location);
+  const data = fetchUnifiedData(state.topic, state.location);
   currentDataSet = data;
 
   document.getElementById('loading-block').style.display = 'none';
@@ -1859,7 +2038,7 @@ async function loadOpportunities() {
 }
 
 /* -------------------------------------------------------------
- * RENDERING RESULTS
+ * RENDERING RESULTS VIEW
  * -----------------------------------------------------------*/
 function escapeHtml(s) {
   if (!s) return '';
@@ -1873,14 +2052,26 @@ function getCategoryIcon(cat) {
     case 'internship': return '💼';
     case 'grant': return '💰';
     case 'leadership': return '🌍';
+    case 'youtube_channel': return '📺';
+    case 'youtube_video': return '🎬';
+    case 'website': return '🌐';
+    case 'app': return '📱';
     default: return '🌟';
   }
 }
 
 function getTierClass(tier) {
+  if (!tier) return '';
   if (tier.includes('Tier 1')) return 'tier-1';
   if (tier.includes('Tier 2')) return 'tier-2';
   return 'tier-3';
+}
+
+function getLevelBadgeClass(level) {
+  const l = (level || '').toLowerCase();
+  if (l.includes('beginner')) return 'level-beginner';
+  if (l.includes('advanced')) return 'level-advanced';
+  return 'level-intermediate';
 }
 
 function getTrackedStatus(id) {
@@ -1888,58 +2079,65 @@ function getTrackedStatus(id) {
   return item ? item.status : 'None';
 }
 
-function renderCard(item) {
+function renderUnifiedCard(item) {
+  const isOpportunity = item.type === 'opportunity';
   const currentStatus = getTrackedStatus(item.id);
-  const tierClass = getTierClass(item.tier);
+  const tierClass = item.tier ? getTierClass(item.tier) : '';
+  const levelClass = item.level ? getLevelBadgeClass(item.level) : '';
 
   return `
-    <article class="opportunity-card" data-category="${item.category}" data-tier="${escapeHtml(item.tier)}" data-cost="${escapeHtml(item.cost)}" id="card-${item.id}">
-      <div class="opportunity-card-top">
+    <article class="unified-card" data-mode="${item.type}" data-cat="${item.category}" id="card-${item.id}">
+      <div class="card-top-row">
         <div class="card-title-group">
-          <div class="type-icon-box">${getCategoryIcon(item.category)}</div>
+          <div class="card-icon-badge">${getCategoryIcon(item.category)}</div>
           <div>
-            <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="opportunity-title">
+            <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="card-title">
               ${escapeHtml(item.name)}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
-            <div class="opportunity-org">${escapeHtml(item.org)}</div>
+            <div class="card-org-sub">${escapeHtml(item.org)}</div>
           </div>
         </div>
 
         <div class="badge-cluster">
-          <span class="tier-badge ${tierClass}">${escapeHtml(item.tier)}</span>
-          <span class="cost-badge">${escapeHtml(item.cost)}</span>
+          ${item.tier ? `<span class="tier-badge ${tierClass}">${escapeHtml(item.tier)}</span>` : ''}
+          ${item.level ? `<span class="level-tag ${levelClass}">${escapeHtml(item.level)}</span>` : ''}
+          ${item.cost ? `<span class="cost-badge">${escapeHtml(item.cost)}</span>` : ''}
         </div>
       </div>
 
-      <div class="opportunity-desc">
+      <div class="card-desc">
         ${escapeHtml(item.desc)}
       </div>
 
-      <div class="insider-tip-box">
-        <strong>💡 Selection Insight:</strong> ${escapeHtml(item.tip)}
+      <div class="callout-tip-box">
+        <strong>${isOpportunity ? '💡 Selection Insight:' : '🎯 How this helps:'}</strong> ${escapeHtml(item.tip)}
       </div>
 
-      <div class="opportunity-meta-row">
-        <span class="meta-tag">📅 ${escapeHtml(item.deadline)}</span>
-        <span class="meta-tag">🎓 ${escapeHtml(item.eligibility)}</span>
-        <span class="meta-tag ${item.scope.includes('Local') ? 'local' : ''}">📍 ${escapeHtml(item.scope)}</span>
+      <div class="meta-chips-row">
+        ${item.deadline ? `<span class="chip-tag">📅 ${escapeHtml(item.deadline)}</span>` : ''}
+        ${item.time_commitment ? `<span class="chip-tag">⏱️ ${escapeHtml(item.time_commitment)}</span>` : ''}
+        ${item.eligibility ? `<span class="chip-tag">🎓 ${escapeHtml(item.eligibility)}</span>` : ''}
+        ${item.prerequisites ? `<span class="chip-tag">🔑 Pre: ${escapeHtml(item.prerequisites)}</span>` : ''}
+        ${item.scope ? `<span class="chip-tag ${item.scope.includes('Local') ? 'local' : ''}">📍 ${escapeHtml(item.scope)}</span>` : ''}
       </div>
 
       <div class="card-footer-actions">
-        <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="apply-link-btn">
-          Visit Official Portal
+        <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="action-link-btn">
+          ${isOpportunity ? 'Visit Official Portal' : 'Open Resource'}
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
 
         <div class="status-select-wrap">
-          <span>Tracker Status:</span>
+          <span>${isOpportunity ? 'Tracker Status:' : 'Library:'}</span>
           <select class="status-select" onchange="updateItemStatus('${item.id}', this.value)">
             <option value="None" ${currentStatus === 'None' ? 'selected' : ''}>Not Tracked</option>
             <option value="Saved" ${currentStatus === 'Saved' ? 'selected' : ''}>📌 Saved</option>
+            ${isOpportunity ? `
             <option value="In Progress" ${currentStatus === 'In Progress' ? 'selected' : ''}>⏳ In Progress</option>
             <option value="Applied" ${currentStatus === 'Applied' ? 'selected' : ''}>🚀 Applied</option>
             <option value="Accepted" ${currentStatus === 'Accepted' ? 'selected' : ''}>🎉 Accepted</option>
+            ` : ''}
           </select>
         </div>
       </div>
@@ -1951,6 +2149,10 @@ function renderResultsView(data) {
   const block = document.getElementById('results-block');
   let html = '';
 
+  const opps = data.opportunities || [];
+  const lrns = data.learning || [];
+  const totalCount = opps.length + lrns.length;
+
   // 1. Header Box
   html += `
     <div class="results-header-box">
@@ -1960,14 +2162,14 @@ function renderResultsView(data) {
         </span>
         ${state.location ? `<span style="font-size:0.85rem; color:var(--ochre); font-weight:700;">📍 Local Scope: ${escapeHtml(state.location)}</span>` : ''}
       </div>
-      <h2 class="results-topic-title">${escapeHtml(state.topic)} Opportunities</h2>
+      <h2 class="results-topic-title">${escapeHtml(state.topic)} Pathway</h2>
       <p class="results-narrative">
-        Showing verified opportunities ranked by prestige, admissions value, and geographic eligibility for your background.
+        A unified roadmap combining top-tier learning resources with competitive extracurricular opportunities.
       </p>
 
       <div class="results-toolbar">
         <button class="btn sm ghost" id="copy-summary-btn">
-          📋 Export Opportunity List (Markdown)
+          📋 Export Study &amp; Opportunity Plan (Markdown)
         </button>
         <button class="btn sm ghost" onclick="window.print()">
           🖨️ Print / Save PDF
@@ -1979,7 +2181,7 @@ function renderResultsView(data) {
     </div>
   `;
 
-  // 2. Extracurricular Roadmap
+  // 2. Dual Roadmap Strategy
   if (data.roadmap && data.roadmap.length) {
     const topicKey = state.topic.toLowerCase().replace(/[^a-z0-9]/g, '');
     let checkedCount = 0;
@@ -2001,10 +2203,10 @@ function renderResultsView(data) {
         <div class="roadmap-header">
           <h3>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            Strategic Extracurricular Roadmap
+            Strategic Skill &amp; Extracurricular Roadmap
           </h3>
           <span style="font-size:0.78rem; background:var(--paper-card); padding:3px 10px; border-radius:10px; border:1px solid var(--line);" id="roadmap-status-pill">
-            ${checkedCount} of ${data.roadmap.length} milestones checked
+            ${checkedCount} of ${data.roadmap.length} milestones completed
           </span>
         </div>
         <div class="roadmap-steps-list">
@@ -2014,35 +2216,48 @@ function renderResultsView(data) {
     `;
   }
 
-  // Count items for category badges
-  const items = data.items || [];
-  const compCount = items.filter(i => i.category === 'competition').length;
-  const resCount = items.filter(i => i.category === 'research').length;
-  const internCount = items.filter(i => i.category === 'internship').length;
-  const grantCount = items.filter(i => i.category === 'grant').length;
-  const leadCount = items.filter(i => i.category === 'leadership').length;
+  // 3. Primary Mode Switch
+  html += `
+    <div class="section-view-toggle">
+      <button class="view-toggle-btn ${state.currentViewMode === 'all' ? 'active' : ''}" data-mode="all">
+        🌟 All Combined (${totalCount})
+      </button>
+      <button class="view-toggle-btn ${state.currentViewMode === 'opportunities' ? 'active' : ''}" data-mode="opportunities">
+        🏆 Extracurricular Opportunities (${opps.length})
+      </button>
+      <button class="view-toggle-btn ${state.currentViewMode === 'learning' ? 'active' : ''}" data-mode="learning">
+        📚 Learning &amp; Research Library (${lrns.length})
+      </button>
+    </div>
+  `;
 
-  // 3. Filter Controls
+  // 4. Category Filter Tabs
   html += `
     <div class="filter-controls-wrap">
       <div class="category-tabs" role="tablist">
         <button class="category-tab ${state.activeCategory === 'all' ? 'active' : ''}" data-cat="all">
-          All Opportunities <span class="tab-count">${items.length}</span>
+          All Tags <span class="tab-count">${totalCount}</span>
         </button>
         <button class="category-tab ${state.activeCategory === 'competition' ? 'active' : ''}" data-cat="competition">
-          🏆 Competitions <span class="tab-count">${compCount}</span>
+          🏆 Competitions
         </button>
         <button class="category-tab ${state.activeCategory === 'research' ? 'active' : ''}" data-cat="research">
-          🔬 Summer &amp; Research <span class="tab-count">${resCount}</span>
+          🔬 Summer Labs
         </button>
         <button class="category-tab ${state.activeCategory === 'internship' ? 'active' : ''}" data-cat="internship">
-          💼 Internships <span class="tab-count">${internCount}</span>
+          💼 Internships
         </button>
         <button class="category-tab ${state.activeCategory === 'grant' ? 'active' : ''}" data-cat="grant">
-          💰 Grants &amp; Funding <span class="tab-count">${grantCount}</span>
+          💰 Grants
         </button>
-        <button class="category-tab ${state.activeCategory === 'leadership' ? 'active' : ''}" data-cat="leadership">
-          🌍 Leadership <span class="tab-count">${leadCount}</span>
+        <button class="category-tab ${state.activeCategory === 'youtube_channel' ? 'active' : ''}" data-cat="youtube_channel">
+          📺 Channels
+        </button>
+        <button class="category-tab ${state.activeCategory === 'website' ? 'active' : ''}" data-cat="website">
+          🌐 Documentation
+        </button>
+        <button class="category-tab ${state.activeCategory === 'app' ? 'active' : ''}" data-cat="app">
+          📱 Apps &amp; Labs
         </button>
       </div>
 
@@ -2051,23 +2266,20 @@ function renderResultsView(data) {
           <div class="input-icon">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           </div>
-          <input type="text" id="live-search-box" placeholder="Search opportunities by title, org, or keyword..." value="${escapeHtml(state.searchQuery)}">
-        </div>
-
-        <div class="filter-pill-groups">
-          <button class="filter-pill-btn ${state.tierFilter === 'all' ? 'active' : ''}" data-tier="all">All Tiers</button>
-          <button class="filter-pill-btn ${state.tierFilter === 'tier 1' ? 'active' : ''}" data-tier="tier 1">🌟 Tier 1 Elite</button>
-          <button class="filter-pill-btn ${state.tierFilter === 'tier 2' ? 'active' : ''}" data-tier="tier 2">⚡ Tier 2</button>
+          <input type="text" id="live-search-box" placeholder="Search opportunities, channels, or platforms..." value="${escapeHtml(state.searchQuery)}">
         </div>
       </div>
     </div>
   `;
 
-  // 4. List of Cards
-  html += `<div class="opportunities-list" id="cards-container">`;
-  items.forEach(it => {
-    html += renderCard(it);
-  });
+  // 5. Unified Cards Stream
+  html += `<div class="items-list" id="cards-container">`;
+  
+  // Render opportunities
+  opps.forEach(o => { html += renderUnifiedCard(o); });
+  // Render learning resources
+  lrns.forEach(l => { html += renderUnifiedCard(l); });
+
   html += `</div>`;
 
   block.innerHTML = html;
@@ -2079,6 +2291,17 @@ function renderResultsView(data) {
  * EVENT HANDLERS & FILTERS
  * -----------------------------------------------------------*/
 function attachEvents() {
+  // Primary view toggle buttons (All vs Opportunities vs Learning)
+  document.querySelectorAll('.view-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.currentViewMode = btn.dataset.mode;
+      document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterVisibleCards();
+    });
+  });
+
+  // Category tags
   document.querySelectorAll('.category-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       state.activeCategory = tab.dataset.cat;
@@ -2088,15 +2311,7 @@ function attachEvents() {
     });
   });
 
-  document.querySelectorAll('.filter-pill-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.tierFilter = btn.dataset.tier;
-      document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterVisibleCards();
-    });
-  });
-
+  // Live search
   const searchBox = document.getElementById('live-search-box');
   if (searchBox) {
     searchBox.addEventListener('input', (e) => {
@@ -2105,6 +2320,7 @@ function attachEvents() {
     });
   }
 
+  // Roadmap checkboxes
   document.querySelectorAll('.step-checkbox').forEach(chk => {
     chk.addEventListener('change', () => {
       state.roadmapProgress[chk.dataset.key] = chk.checked;
@@ -2114,7 +2330,7 @@ function attachEvents() {
       const total = document.querySelectorAll('.step-checkbox').length;
       const checked = document.querySelectorAll('.step-checkbox:checked').length;
       const pill = document.getElementById('roadmap-status-pill');
-      if (pill) pill.textContent = `${checked} of ${total} milestones checked`;
+      if (pill) pill.textContent = `${checked} of ${total} milestones completed`;
     });
   });
 
@@ -2126,28 +2342,28 @@ function attachEvents() {
     copyBtn.addEventListener('click', () => {
       const md = generateMarkdownExport();
       navigator.clipboard.writeText(md).then(() => {
-        showToast("Opportunities list copied in Markdown format!");
+        showToast("Complete plan copied in Markdown format!");
       }).catch(() => showToast("Unable to copy directly."));
     });
   }
 }
 
 function filterVisibleCards() {
-  const cards = document.querySelectorAll('.opportunity-card');
+  const cards = document.querySelectorAll('.unified-card');
+  const mode = state.currentViewMode;
   const cat = state.activeCategory;
-  const tier = state.tierFilter.toLowerCase();
   const query = state.searchQuery.trim().toLowerCase();
 
   cards.forEach(card => {
-    const cardCat = card.dataset.category;
-    const cardTier = card.dataset.tier.toLowerCase();
+    const cardMode = card.dataset.mode;
+    const cardCat = card.dataset.cat;
     const text = card.textContent.toLowerCase();
 
+    const matchesMode = (mode === 'all') || (cardMode === (mode === 'opportunities' ? 'opportunity' : 'learning'));
     const matchesCat = (cat === 'all') || (cardCat === cat);
-    const matchesTier = (tier === 'all') || cardTier.includes(tier);
     const matchesQuery = !query || text.includes(query);
 
-    if (matchesCat && matchesTier && matchesQuery) {
+    if (matchesMode && matchesCat && matchesQuery) {
       card.style.display = 'flex';
     } else {
       card.style.display = 'none';
@@ -2156,11 +2372,16 @@ function filterVisibleCards() {
 }
 
 /* -------------------------------------------------------------
- * APPLICATION TRACKER SYSTEM
+ * APPLICATION TRACKER & SAVED LIBRARY SYSTEM
  * -----------------------------------------------------------*/
 window.updateItemStatus = function(id, newStatus) {
   const existingIdx = state.trackedOpportunities.findIndex(t => t.id === id);
-  const foundItem = (currentDataSet && currentDataSet.items) ? currentDataSet.items.find(i => i.id === id) : null;
+  
+  let found = null;
+  if (currentDataSet) {
+    found = (currentDataSet.opportunities || []).find(i => i.id === id) ||
+            (currentDataSet.learning || []).find(i => i.id === id);
+  }
 
   if (newStatus === 'None') {
     if (existingIdx >= 0) state.trackedOpportunities.splice(existingIdx, 1);
@@ -2168,14 +2389,13 @@ window.updateItemStatus = function(id, newStatus) {
   } else {
     if (existingIdx >= 0) {
       state.trackedOpportunities[existingIdx].status = newStatus;
-    } else if (foundItem) {
+    } else if (found) {
       state.trackedOpportunities.push({
-        id: foundItem.id,
-        name: foundItem.name,
-        org: foundItem.org,
-        url: foundItem.url,
-        deadline: foundItem.deadline,
-        tier: foundItem.tier,
+        id: found.id,
+        name: found.name,
+        org: found.org,
+        url: found.url,
+        type: found.type,
         status: newStatus
       });
     }
@@ -2220,34 +2440,34 @@ function renderTrackerModal() {
   const listContainer = document.getElementById('tracker-list-container');
 
   const total = state.trackedOpportunities.length;
-  const inProg = state.trackedOpportunities.filter(t => t.status === 'In Progress').length;
-  const applied = state.trackedOpportunities.filter(t => t.status === 'Applied').length;
-  const accepted = state.trackedOpportunities.filter(t => t.status === 'Accepted').length;
+  const oppsCount = state.trackedOpportunities.filter(t => t.type === 'opportunity').length;
+  const lrnCount = state.trackedOpportunities.filter(t => t.type === 'learning').length;
+  const appliedCount = state.trackedOpportunities.filter(t => t.status === 'Applied' || t.status === 'Accepted').length;
 
   statsBox.innerHTML = `
     <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
-      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">TOTAL TRACKED</div>
+      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">SAVED ITEMS</div>
       <div style="font-size:1.3rem; font-weight:700; color:var(--ink);">${total}</div>
     </div>
     <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
-      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">IN PROGRESS</div>
-      <div style="font-size:1.3rem; font-weight:700; color:var(--ochre);">${inProg}</div>
+      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">OPPORTUNITIES</div>
+      <div style="font-size:1.3rem; font-weight:700; color:var(--ochre);">${oppsCount}</div>
+    </div>
+    <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
+      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">LEARNING DOCS</div>
+      <div style="font-size:1.3rem; font-weight:700; color:var(--sage);">${lrnCount}</div>
     </div>
     <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
       <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">SUBMITTED</div>
-      <div style="font-size:1.3rem; font-weight:700; color:var(--purple);">${applied}</div>
-    </div>
-    <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
-      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">ACCEPTED</div>
-      <div style="font-size:1.3rem; font-weight:700; color:#2C5729;">${accepted}</div>
+      <div style="font-size:1.3rem; font-weight:700; color:var(--purple);">${appliedCount}</div>
     </div>
   `;
 
   if (total === 0) {
     listContainer.innerHTML = `
       <div style="text-align:center; padding:40px 20px; color:var(--charcoal-muted);">
-        <p style="font-size:1.05rem; margin-bottom:6px;">No opportunities tracked yet.</p>
-        <p style="font-size:0.85rem;">Use the "Tracker Status" dropdown on any card to add it here.</p>
+        <p style="font-size:1.05rem; margin-bottom:6px;">Your tracker and library are empty.</p>
+        <p style="font-size:0.85rem;">Use the dropdown on any card to pin learning resources or track applications.</p>
       </div>
     `;
     return;
@@ -2259,14 +2479,16 @@ function renderTrackerModal() {
       <div style="display:flex; align-items:center; justify-content:space-between; background:var(--paper); padding:12px 16px; border-radius:var(--radius-sm); border:1px solid var(--line); flex-wrap:wrap; gap:10px;">
         <div>
           <a href="${escapeHtml(it.url)}" target="_blank" style="font-weight:700; color:var(--ink); text-decoration:none;">${escapeHtml(it.name)}</a>
-          <div style="font-size:0.78rem; color:var(--charcoal-muted);">${escapeHtml(it.org)} &bull; ${escapeHtml(it.deadline)}</div>
+          <div style="font-size:0.78rem; color:var(--charcoal-muted);">${escapeHtml(it.org)} &bull; ${it.type === 'opportunity' ? 'Opportunity' : 'Learning Resource'}</div>
         </div>
         <div style="display:flex; align-items:center; gap:8px;">
           <select class="status-select" onchange="changeTrackedFromModal(${idx}, this.value)">
             <option value="Saved" ${it.status === 'Saved' ? 'selected' : ''}>📌 Saved</option>
+            ${it.type === 'opportunity' ? `
             <option value="In Progress" ${it.status === 'In Progress' ? 'selected' : ''}>⏳ In Progress</option>
             <option value="Applied" ${it.status === 'Applied' ? 'selected' : ''}>🚀 Applied</option>
             <option value="Accepted" ${it.status === 'Accepted' ? 'selected' : ''}>🎉 Accepted</option>
+            ` : ''}
             <option value="Delete">❌ Remove</option>
           </select>
         </div>
@@ -2289,29 +2511,43 @@ window.changeTrackedFromModal = function(idx, val) {
   if (currentDataSet) renderResultsView(currentDataSet);
 };
 
+/* -------------------------------------------------------------
+ * MARKDOWN EXPORT
+ * -----------------------------------------------------------*/
 function generateMarkdownExport() {
   if (!currentDataSet) return '';
-  let md = `# ${state.topic} Opportunities — Waymark Hub\n`;
+  let md = `# ${state.topic} Pathway & Opportunity Plan — Waymark\n`;
   md += `**Target Profile:** ${state.answers.grade}\n`;
   if (state.location) md += `**Location Focus:** ${state.location}\n`;
   md += `\n---\n\n`;
 
   if (currentDataSet.roadmap) {
-    md += `## Strategic Extracurricular Roadmap\n`;
+    md += `## Strategic Skill & Extracurricular Roadmap\n`;
     currentDataSet.roadmap.forEach((s, i) => md += `${i+1}. ${s}\n`);
     md += `\n`;
   }
 
-  md += `## Verified Opportunities\n\n`;
-  currentDataSet.items.forEach(it => {
-    md += `### [${it.name}](${it.url}) — ${it.tier}\n`;
-    md += `- **Organization:** ${it.org}\n`;
-    md += `- **Cost & Eligibility:** ${it.cost} | ${it.eligibility}\n`;
-    md += `- **Deadline:** ${it.deadline}\n`;
-    md += `- **Scope:** ${it.scope}\n`;
-    md += `- **Description:** ${it.desc}\n`;
-    md += `- **Selection Tip:** ${it.tip}\n\n`;
-  });
+  const opps = currentDataSet.opportunities || [];
+  if (opps.length) {
+    md += `## Extracurricular Opportunities\n\n`;
+    opps.forEach(it => {
+      md += `### [${it.name}](${it.url}) — ${it.tier || 'Opportunity'}\n`;
+      md += `- **Organization:** ${it.org}\n`;
+      md += `- **Cost & Scope:** ${it.cost} | ${it.scope}\n`;
+      md += `- **Selection Tip:** ${it.tip}\n\n`;
+    });
+  }
+
+  const lrns = currentDataSet.learning || [];
+  if (lrns.length) {
+    md += `## Learning & Research Resources\n\n`;
+    lrns.forEach(it => {
+      md += `### [${it.name}](${it.url}) (${it.level || 'All Levels'})\n`;
+      md += `- **Creator / Hub:** ${it.org}\n`;
+      if (it.time_commitment) md += `- **Time:** ${it.time_commitment}\n`;
+      md += `- **Why it helps:** ${it.tip}\n\n`;
+    });
+  }
 
   return md;
 }
