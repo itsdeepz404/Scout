@@ -1,23 +1,26 @@
-# 🧭 Resource Navigator
+# 🧭 Waymark — Global & Local Opportunities Database
 
-> Curated educational pathways tailored to your skill level.
-
-A responsive, level-aware learning navigator built with vanilla HTML5, CSS3, and modern JavaScript. It evaluates starting proficiency and builds a personalized curriculum featuring verified YouTube channels, video deep-dives, documentation hubs, interactive labs, bridging roadmaps, and bookmarking.
+> Inspired by platforms like **EC Database** (ecdatabase.org). High-impact extracurriculars, elite competitions, paid summer research fellowships, internships, grants, and leadership chapters.
 
 ---
 
 ## ✨ Features
 
-- **Zero-Failure Curation Engine**: Built-in verified knowledge base for Machine Learning, Full-Stack Web Dev, Python, Watercolor, Personal Finance, Cybersecurity, UI/UX, Photography, Music Theory, and Strength Training.
-- **Dynamic Heuristic Synthesizer**: Generates authentic learning tracks and deep-search URLs for any custom topic.
-- **Interactive Bridging Milestones**: Step-by-step checklist to bridge intermediate learners to advanced mastery with state saved in `localStorage`.
-- **Editorial Design System**:
-  - Typography powered by Google Fonts (`Fraunces` variable serif + `Inter`).
-  - Warm Paper & Midnight Forest dark theme toggle.
-- **Category Filtering & Live Search**: Instant filtering across YouTube channels, videos, websites, and apps.
-- **Personal Library & Bookmarks**: Save resources to a local drawer anytime.
-- **Export Capabilities**: One-click **Markdown Study Plan** export and clean print layout.
-- **Optional AI Mode**: Connect personal Anthropic Claude, OpenAI ChatGPT, Google Gemini, or local Ollama keys.
+- **Global & Local Extracurriculars**:
+  - 🏆 **Competitions & Olympiads**: USACO, Regeneron ISEF, Congressional App Challenge, Wharton Investment Comp, Diamond Challenge, Imagine Cup.
+  - 🔬 **Prestigious Summer Research Fellowships**: MIT Beaver Works, Simons Summer Research, Stanford AIMI, Clark Scholars, Jackson Laboratory.
+  - 💼 **Internships & Labs**: Bank of America Student Leaders, NIH SIP, Google Summer of Code.
+  - 💰 **Grants & Venture Funding**: 1517 Medici Project ($1,000 checks), Emergent Ventures, Thiel Fellowship.
+  - 🌍 **Youth Leadership & Chapters**: Hack Club, DECA, Model UN, FIRST Robotics.
+  - 📍 **Hyper-Local Discovery**: Feeds into regional ISEF science fairs, local MLH hackathons, and regional university chapters for any city/region.
+- **Prestige Tiering System**:
+  - **Tier 1 Elite**: Highest national and global recognition (RSI, ISEF, USACO Gold).
+  - **Tier 2 Selective**: Competitive state and regional honors.
+  - **Tier 3 Open Access**: Great for starters building an initial portfolio.
+- **Insider Selection Tips**: Every card provides actionable insights into what selection committees, judges, and lab professors look for.
+- **Interactive Application Tracker**: Track your opportunities across `📌 Saved`, `⏳ In Progress`, `🚀 Applied`, and `🎉 Accepted` with live local statistics.
+- **Strategic 4-Phase Roadmap**: Step-by-step milestone timeline to guide learners from foundation to national honors.
+- **One-Click Export**: Export opportunity portfolios as Markdown or print cleanly to PDF.
 
 ---
 
@@ -28,9 +31,9 @@ Deployable on **GitHub Pages**:
 
 ---
 
-## 💻 Local Setup
+## 💻 Local Usage
 
-No build tools or package managers required:
+No build tools needed:
 1. Clone or download this repository.
 2. Double-click `index.html` or `chatbot.html` in your browser.
 
