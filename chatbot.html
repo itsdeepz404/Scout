@@ -800,6 +800,64 @@
     margin-bottom: 40px;
   }
 
+  /* SECTION DIVIDER HEADERS inside the cards stream */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+
+  .section-divider-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .section-divider-label h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .section-divider-label .section-count {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: var(--paper-dim);
+    border: 1px solid var(--line);
+    color: var(--charcoal-soft);
+    padding: 2px 9px;
+    border-radius: 12px;
+  }
+
+  .section-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .section-divider-sub {
+    font-size: 0.86rem;
+    color: var(--charcoal-muted);
+    margin-bottom: 4px;
+    padding-left: 2px;
+  }
+
+  /* Learning section accent — sage/green left border on cards */
+  .unified-card[data-mode="learning"] {
+    border-left: 3px solid var(--sage);
+  }
+
+  /* Opportunity section accent — ochre/gold left border on cards */
+  .unified-card[data-mode="opportunity"] {
+    border-left: 3px solid var(--ochre);
+  }
+
   /* UNIFIED CARD STYLES */
   .unified-card {
     background: var(--paper-card);
@@ -2216,17 +2274,17 @@ function renderResultsView(data) {
     `;
   }
 
-  // 3. Primary Mode Switch
+  // 3. Primary Mode Switch — Learning listed first to reinforce the site's identity
   html += `
     <div class="section-view-toggle">
       <button class="view-toggle-btn ${state.currentViewMode === 'all' ? 'active' : ''}" data-mode="all">
-        🌟 All Combined (${totalCount})
-      </button>
-      <button class="view-toggle-btn ${state.currentViewMode === 'opportunities' ? 'active' : ''}" data-mode="opportunities">
-        🏆 Extracurricular Opportunities (${opps.length})
+        🌟 All (${totalCount})
       </button>
       <button class="view-toggle-btn ${state.currentViewMode === 'learning' ? 'active' : ''}" data-mode="learning">
-        📚 Learning &amp; Research Library (${lrns.length})
+        📚 Learn &amp; Research (${lrns.length})
+      </button>
+      <button class="view-toggle-btn ${state.currentViewMode === 'opportunities' ? 'active' : ''}" data-mode="opportunities">
+        🏆 Opportunities (${opps.length})
       </button>
     </div>
   `;
@@ -2272,13 +2330,37 @@ function renderResultsView(data) {
     </div>
   `;
 
-  // 5. Unified Cards Stream
+  // 5. Cards Stream — Learning First, then Opportunities
   html += `<div class="items-list" id="cards-container">`;
-  
-  // Render opportunities
-  opps.forEach(o => { html += renderUnifiedCard(o); });
-  // Render learning resources
+
+  // — Learning & Research Library section header —
+  html += `
+    <div class="section-divider" id="section-header-learning">
+      <div class="section-divider-label">
+        <h3>📚 Learning &amp; Research Library</h3>
+        <span class="section-count">${lrns.length} resources</span>
+      </div>
+      <div class="section-divider-line"></div>
+    </div>
+    <p class="section-divider-sub" id="section-sub-learning">Curated tutorials, YouTube channels, documentation, and tools — the foundation you build before competing.</p>
+  `;
   lrns.forEach(l => { html += renderUnifiedCard(l); });
+
+  // — Divider between the two sections —
+  html += `<div style="height:18px;" id="section-gap"></div>`;
+
+  // — Extracurricular Opportunities section header —
+  html += `
+    <div class="section-divider" id="section-header-opportunities">
+      <div class="section-divider-label">
+        <h3>🏆 Extracurricular Opportunities</h3>
+        <span class="section-count">${opps.length} programs</span>
+      </div>
+      <div class="section-divider-line"></div>
+    </div>
+    <p class="section-divider-sub" id="section-sub-opportunities">Competitions, summer research fellowships, internships, and grants — where your skills earn real recognition.</p>
+  `;
+  opps.forEach(o => { html += renderUnifiedCard(o); });
 
   html += `</div>`;
 
@@ -2369,7 +2451,24 @@ function filterVisibleCards() {
       card.style.display = 'none';
     }
   });
+
+  // Show/hide the section headers based on view mode
+  const learningHeader = document.getElementById('section-header-learning');
+  const learningSubText = document.getElementById('section-sub-learning');
+  const oppsHeader = document.getElementById('section-header-opportunities');
+  const oppsSubText = document.getElementById('section-sub-opportunities');
+  const sectionGap = document.getElementById('section-gap');
+
+  const showLearningHeader = mode === 'all' || mode === 'learning';
+  const showOppsHeader = mode === 'all' || mode === 'opportunities';
+
+  if (learningHeader) learningHeader.style.display = showLearningHeader ? 'flex' : 'none';
+  if (learningSubText) learningSubText.style.display = showLearningHeader ? 'block' : 'none';
+  if (oppsHeader) oppsHeader.style.display = showOppsHeader ? 'flex' : 'none';
+  if (oppsSubText) oppsSubText.style.display = showOppsHeader ? 'block' : 'none';
+  if (sectionGap) sectionGap.style.display = (mode === 'all') ? 'block' : 'none';
 }
+
 
 /* -------------------------------------------------------------
  * APPLICATION TRACKER & SAVED LIBRARY SYSTEM
