@@ -3,104 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Waymark — Global & Local Opportunities Database</title>
+<title>Waymark — Open Learning, Research &amp; Opportunities Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #F7F5EE;
-    --paper-dim: #EDE7D7;
-    --paper-card: #FFFEFA;
-    --paper-card-hover: #FFFFFF;
-    --ink: #143D34;
-    --ink-soft: #2E5C52;
-    --ink-muted: #5D8078;
-    --charcoal: #232724;
-    --charcoal-soft: #555E5A;
-    --charcoal-muted: #7E8984;
-    --ochre: #BF8220;
-    --ochre-light: #FDF5E6;
-    --ochre-border: #E8CA8C;
-    --rust: #994E2C;
-    --rust-light: #FAECE5;
-    --sage: #7D9370;
-    --sage-light: #EAF0E7;
-    --line: #DAD4C0;
-    --line-subtle: #E8E3D3;
-    --gold: #D48806;
-    --gold-light: #FFFBE6;
-    --gold-border: #FFE58F;
-    --purple: #531DAB;
-    --purple-light: #F9F0FF;
-    --purple-border: #D3ADF7;
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --shadow-sm: 0 1px 3px rgba(20, 61, 52, 0.04), 0 1px 2px rgba(0,0,0,0.03);
-    --shadow-md: 0 4px 14px rgba(20, 61, 52, 0.06), 0 1px 3px rgba(0,0,0,0.04);
-    --shadow-lg: 0 12px 32px rgba(20, 61, 52, 0.09), 0 2px 6px rgba(0,0,0,0.05);
-    --font-serif: 'Fraunces', Georgia, serif;
+    /* Refined Modern Blue Palette */
+    --bg-canvas: #F8FAFC;
+    --bg-subtle: #F0F6FF;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F8FBFF;
+    --bg-card-alt: #F1F5F9;
+    
+    --primary-navy: #0F172A;
+    --primary-blue: #1D4ED8;
+    --primary-blue-hover: #1E40AF;
+    --primary-blue-subtle: #EFF6FF;
+    
+    --accent-sky: #0284C7;
+    --accent-sky-light: #E0F2FE;
+    --accent-cyan: #06B6D4;
+    --accent-cyan-light: #ECFEFF;
+    
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --text-subtle: #94A3B8;
+    --text-navy: #0F172A;
+    
+    --border-line: #E2E8F0;
+    --border-blue: #BFDBFE;
+    --border-focus: #3B82F6;
+    
+    --badge-free-bg: #DCFCE7;
+    --badge-free-text: #15803D;
+    --badge-free-border: #86EFAC;
+    
+    --badge-star-bg: #FEF3C7;
+    --badge-star-text: #B45309;
+    --badge-star-border: #FDE68A;
+    
+    --badge-level-beg-bg: #E0F2FE;
+    --badge-level-beg-text: #0369A1;
+    --badge-level-int-bg: #E0E7FF;
+    --badge-level-int-text: #4338CA;
+    --badge-level-adv-bg: #F3E8FF;
+    --badge-level-adv-text: #6B21A8;
+
+    --badge-online-bg: #E0F2FE;
+    --badge-online-text: #0284C7;
+    --badge-online-border: #BAE6FD;
+
+    --badge-offline-bg: #FEF3C7;
+    --badge-offline-text: #B45309;
+    --badge-offline-border: #FDE68A;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-full: 9999px;
+    
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 14px rgba(37, 99, 235, 0.07), 0 2px 5px rgba(15, 23, 42, 0.04);
+    --shadow-lg: 0 12px 30px rgba(37, 99, 235, 0.12), 0 4px 10px rgba(15, 23, 42, 0.06);
+    
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-serif: 'Fraunces', Georgia, serif;
   }
 
   [data-theme="dark"] {
-    --paper: #111A16;
-    --paper-dim: #182520;
-    --paper-card: #1D2E28;
-    --paper-card-hover: #243831;
-    --ink: #7FD1C2;
-    --ink-soft: #A4E2D6;
-    --ink-muted: #789E96;
-    --charcoal: #E3E9E5;
-    --charcoal-soft: #ADC0B9;
-    --charcoal-muted: #758A82;
-    --ochre: #E09F36;
-    --ochre-light: #2E2514;
-    --ochre-border: #6B5122;
-    --rust: #E58661;
-    --rust-light: #331F17;
-    --sage: #96B588;
-    --sage-light: #1E2E1A;
-    --line: #2B3D36;
-    --line-subtle: #22322C;
-    --gold: #F5B041;
-    --gold-light: #332712;
-    --gold-border: #6B5122;
-    --purple: #B37FEB;
-    --purple-light: #29183B;
-    --purple-border: #532977;
+    --bg-canvas: #0B132B;
+    --bg-subtle: #111E3D;
+    --bg-card: #142144;
+    --bg-card-hover: #182852;
+    --bg-card-alt: #101B37;
+    
+    --primary-navy: #F8FAFC;
+    --primary-blue: #38BDF8;
+    --primary-blue-hover: #60A5FA;
+    --primary-blue-subtle: #172554;
+    
+    --accent-sky: #38BDF8;
+    --accent-sky-light: #172554;
+    --accent-cyan: #22D3EE;
+    --accent-cyan-light: #164E63;
+    
+    --text-main: #F1F5F9;
+    --text-muted: #94A3B8;
+    --text-subtle: #64748B;
+    --text-navy: #F8FAFC;
+    
+    --border-line: #1E293B;
+    --border-blue: #1E3A8A;
+    --border-focus: #60A5FA;
+    
+    --badge-free-bg: #064E3B;
+    --badge-free-text: #6EE7B7;
+    --badge-free-border: #047857;
+    
+    --badge-star-bg: #451A03;
+    --badge-star-text: #FDE68A;
+    --badge-star-border: #78350F;
+    
+    --badge-level-beg-bg: #0C4A6E;
+    --badge-level-beg-text: #BAE6FD;
+    --badge-level-int-bg: #312E81;
+    --badge-level-int-text: #C7D2FE;
+    --badge-level-adv-bg: #581C87;
+    --badge-level-adv-text: #E9D5FF;
+
+    --badge-online-bg: #0C4A6E;
+    --badge-online-text: #7DD3FC;
+    --badge-online-border: #0284C7;
+
+    --badge-offline-bg: #451A03;
+    --badge-offline-text: #FDE68A;
+    --badge-offline-border: #92400E;
+    
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
     --shadow-md: 0 4px 14px rgba(0,0,0,0.4);
-    --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+    --shadow-lg: 0 12px 30px rgba(0,0,0,0.5);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   
   body {
-    background: var(--paper);
-    color: var(--charcoal);
+    background-color: var(--bg-canvas);
+    color: var(--text-main);
     font-family: var(--font-sans);
     line-height: 1.6;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
 
   .wrap {
-    max-width: 860px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 36px 24px 120px;
+    padding: 32px 24px 120px;
   }
 
-  /* TOP HEADER */
+  /* ==================== HEADER ==================== */
   header.top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line-subtle);
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-line);
+    margin-bottom: 32px;
   }
 
   .brand {
@@ -108,103 +158,85 @@
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: inherit;
     cursor: pointer;
   }
 
   .brand-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 9px;
-    background: var(--ink);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #1D4ED8 0%, #0284C7 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--paper);
-    box-shadow: 0 2px 8px rgba(20, 61, 52, 0.2);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .brand-icon::after {
-    content: '';
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--ochre);
-    top: 6px;
-    right: 6px;
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(29, 78, 216, 0.25);
   }
 
   .brand-text h1 {
     font-family: var(--font-serif);
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-    line-height: 1.2;
+    color: var(--text-navy);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
   .brand-text p {
-    font-size: 0.76rem;
-    color: var(--charcoal-muted);
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
   }
 
   .header-actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
   }
 
   .icon-btn {
-    background: var(--paper-dim);
-    border: 1px solid var(--line);
-    color: var(--charcoal);
-    height: 38px;
-    padding: 0 12px;
-    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border-line);
+    color: var(--text-main);
+    padding: 8px 14px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
+    gap: 8px;
     cursor: pointer;
-    font-size: 0.84rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    position: relative;
+    transition: all 0.15s ease;
+    box-shadow: var(--shadow-sm);
   }
 
   .icon-btn:hover {
-    background: var(--paper-card-hover);
-    border-color: var(--ink);
-    color: var(--ink);
+    border-color: var(--border-blue);
+    background: var(--bg-subtle);
+    color: var(--primary-blue);
   }
 
   .btn-badge {
-    background: var(--ochre);
-    color: #fff;
-    font-size: 0.68rem;
+    background: var(--primary-blue);
+    color: #FFFFFF;
+    font-size: 0.72rem;
     font-weight: 700;
-    padding: 1px 6px;
-    border-radius: 10px;
-    min-width: 16px;
-    text-align: center;
+    padding: 2px 7px;
+    border-radius: var(--radius-full);
   }
 
-  /* STEPPER HEADER */
+  /* ==================== STEP PROGRESS BAR ==================== */
   .stepper-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 28px;
-    padding: 14px 20px;
-    background: var(--paper-dim);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--line-subtle);
+    background: var(--bg-card);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-full);
+    padding: 8px 16px;
+    margin-bottom: 36px;
+    box-shadow: var(--shadow-sm);
   }
 
   .step-pill {
@@ -213,80 +245,106 @@
     gap: 8px;
     font-size: 0.86rem;
     font-weight: 600;
-    color: var(--charcoal-muted);
-    transition: all 0.2s ease;
+    color: var(--text-subtle);
+    cursor: default;
+    transition: color 0.2s ease;
   }
 
-  .step-pill.active { color: var(--ink); }
-  .step-pill.done { color: var(--ochre); }
+  .step-pill.active {
+    color: var(--primary-blue);
+  }
+
+  .step-pill.done {
+    color: var(--text-main);
+    cursor: pointer;
+  }
 
   .step-pill-num {
     width: 24px;
     height: 24px;
     border-radius: 50%;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-line);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
+    font-size: 0.76rem;
     font-weight: 700;
-    background: var(--line);
-    color: var(--charcoal);
+    color: var(--text-muted);
   }
 
-  .step-pill.active .step-pill-num { background: var(--ink); color: var(--paper); }
-  .step-pill.done .step-pill-num { background: var(--ochre); color: #fff; }
+  .step-pill.active .step-pill-num {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: #FFFFFF;
+  }
 
-  .step-arrow { color: var(--line); font-size: 0.75rem; }
+  .step-pill.done .step-pill-num {
+    background: var(--badge-free-bg);
+    border-color: var(--badge-free-border);
+    color: var(--badge-free-text);
+  }
 
-  /* STAGES */
+  .step-arrow {
+    color: var(--border-line);
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  /* ==================== STAGES ==================== */
   .stage {
     display: none;
-    animation: fadeInRise 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeIn 0.3s ease forwards;
   }
 
-  .stage.visible { display: block; }
+  .stage.visible {
+    display: block;
+  }
 
-  @keyframes fadeInRise {
-    from { opacity: 0; transform: translateY(10px); }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .section-intro { margin-bottom: 30px; }
+  .section-intro {
+    margin-bottom: 28px;
+  }
 
   .section-intro h2 {
     font-family: var(--font-serif);
-    font-size: 2.1rem;
-    font-weight: 600;
-    color: var(--ink);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-navy);
     line-height: 1.2;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
   }
 
-  .lede {
+  .section-intro p.lede {
     font-size: 1.05rem;
-    color: var(--ink-soft);
-    line-height: 1.55;
-    max-width: 65ch;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 68ch;
   }
 
-  /* FORMS & INPUTS */
-  .form-group { margin-bottom: 24px; }
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 22px;
+  }
 
-  label.field-label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--rust);
+  .field-label {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-navy);
     margin-bottom: 8px;
-    letter-spacing: 0.01em;
   }
 
   .field-hint-inline {
-    font-size: 0.78rem;
     font-weight: 400;
-    color: var(--charcoal-muted);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-left: 6px;
   }
 
   .input-wrap {
@@ -295,48 +353,51 @@
     align-items: center;
   }
 
-  .input-wrap .input-icon {
+  .input-icon {
     position: absolute;
     left: 14px;
-    color: var(--charcoal-muted);
+    color: var(--primary-blue);
     pointer-events: none;
     display: flex;
     align-items: center;
   }
 
-  input[type=text], select {
+  input[type="text"] {
     width: 100%;
-    font-family: var(--font-sans);
-    font-size: 1.02rem;
     padding: 13px 16px 13px 44px;
-    border: 1.5px solid var(--line);
-    border-radius: var(--radius-sm);
-    background: var(--paper-card);
-    color: var(--charcoal);
-    transition: all 0.2s ease;
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-line);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
     box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
   }
 
-  input[type=text]:focus, select:focus {
+  input[type="text"]:focus {
     outline: none;
-    border-color: var(--ink);
-    background: var(--paper-card-hover);
-    box-shadow: 0 0 0 3px rgba(20, 61, 52, 0.12);
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
   }
 
-  /* INSPIRATION CHIPS */
+  /* Inspiration Chips */
   .chips-container {
-    margin-top: 14px;
-    margin-bottom: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 26px;
+    box-shadow: var(--shadow-sm);
   }
 
   .chips-label {
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--charcoal-muted);
-    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    color: var(--primary-blue);
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -349,305 +410,286 @@
   }
 
   .chip-btn {
-    background: var(--paper-dim);
-    border: 1px solid var(--line);
-    border-radius: 30px;
-    padding: 7px 14px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-blue);
+    color: var(--primary-navy);
+    padding: 8px 14px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-sans);
     font-size: 0.86rem;
-    font-family: var(--font-sans);
-    font-weight: 500;
-    color: var(--charcoal);
-    cursor: pointer;
-    transition: all 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .chip-btn:hover {
-    background: var(--paper-card-hover);
-    border-color: var(--ochre);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .chip-btn.active {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: #fff;
-  }
-
-  /* BUTTONS */
-  .btn {
-    font-family: var(--font-sans);
-    font-size: 0.96rem;
     font-weight: 600;
-    padding: 13px 26px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--ink);
-    background: var(--ink);
-    color: #FFFFFF;
     cursor: pointer;
-    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-decoration: none;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .btn:hover:not(:disabled) {
-    background: var(--ink-soft);
-    border-color: var(--ink-soft);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .btn:active:not(:disabled) { transform: translateY(0); }
-  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
-
-  .btn.ghost {
-    background: transparent;
-    color: var(--ink);
-    border-color: var(--line);
-  }
-
-  .btn.ghost:hover {
-    background: var(--paper-dim);
-    border-color: var(--ink-soft);
-  }
-
-  .btn.sm { padding: 7px 14px; font-size: 0.84rem; }
-
-  .actions {
-    margin-top: 36px;
-    display: flex;
-    gap: 16px;
-    align-items: center;
-  }
-
-  .back-btn {
-    font-size: 0.9rem;
-    color: var(--charcoal-muted);
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 10px 14px;
-    border-radius: var(--radius-sm);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-weight: 500;
     transition: all 0.15s ease;
   }
 
-  .back-btn:hover { color: var(--ink); background: var(--paper-dim); }
+  .chip-btn:hover, .chip-btn.active {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
+  }
 
-  /* ASSESSMENT QUESTIONS */
+  /* Choice Cards Grid (Stage 2) */
   .q-block {
-    background: var(--paper-card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    padding: 24px;
-    margin-bottom: 22px;
-    box-shadow: var(--shadow-sm);
-    transition: border-color 0.2s ease;
+    margin-bottom: 30px;
   }
 
   .q-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .q-badge {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: var(--ochre-light);
-    border: 1px solid var(--ochre-border);
-    color: var(--ochre);
-    font-size: 0.78rem;
-    font-weight: 700;
+    background: var(--primary-blue-subtle);
+    color: var(--primary-blue);
+    border: 1.5px solid var(--border-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .q-block.answered .q-badge {
-    background: var(--sage-light);
-    border-color: var(--sage);
-    color: var(--sage);
+    font-size: 0.85rem;
+    font-weight: 800;
   }
 
   .q-text {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--charcoal);
-    line-height: 1.4;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--text-navy);
   }
 
-  .q-desc { font-size: 0.85rem; color: var(--charcoal-muted); margin-top: 2px; }
+  .q-desc {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+  }
 
   .choices-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 10px;
+    gap: 12px;
   }
 
   .choice-card {
-    background: var(--paper);
-    border: 1.5px solid var(--line);
-    border-radius: var(--radius-sm);
-    padding: 14px 16px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-line);
+    border-radius: var(--radius-md);
+    padding: 18px 16px;
     cursor: pointer;
-    transition: all 0.18s ease;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    user-select: none;
+    gap: 6px;
   }
 
   .choice-card:hover {
-    border-color: var(--ink-muted);
-    background: var(--paper-card-hover);
-    transform: translateY(-1px);
+    border-color: var(--border-blue);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
   }
 
   .choice-card.selected {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(20, 61, 52, 0.15);
+    border-color: var(--primary-blue);
+    background: var(--primary-blue-subtle);
+    box-shadow: 0 0 0 2px var(--primary-blue);
   }
 
-  .choice-title { font-size: 0.95rem; font-weight: 600; color: var(--charcoal); }
-  .choice-card.selected .choice-title { color: #FFFFFF; }
-  .choice-sub { font-size: 0.8rem; color: var(--charcoal-muted); line-height: 1.35; }
-  .choice-card.selected .choice-sub { color: rgba(255, 255, 255, 0.85); }
+  .choice-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-navy);
+  }
 
-  /* LOADING STATE */
+  .choice-sub {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  /* Buttons */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    background: linear-gradient(135deg, #1D4ED8 0%, #0284C7 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 13px 24px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-sans);
+    font-size: 0.96rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(29, 78, 216, 0.35);
+  }
+
+  .btn.secondary {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-line);
+    color: var(--text-navy);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn.secondary:hover {
+    border-color: var(--border-blue);
+    color: var(--primary-blue);
+    background: var(--bg-subtle);
+  }
+
+  .btn.sm {
+    padding: 8px 16px;
+    font-size: 0.84rem;
+  }
+
+  .back-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: var(--radius-full);
+  }
+
+  .back-btn:hover {
+    color: var(--primary-blue);
+    background: var(--bg-subtle);
+  }
+
+  /* Loading State */
   .loading-container {
-    padding: 60px 20px;
     text-align: center;
-    background: var(--paper-card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    padding: 60px 20px;
   }
 
   .compass-spinner {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 20px;
-    border: 3px solid var(--line);
-    border-top: 3px solid var(--ochre);
-    border-right: 3px solid var(--ink);
+    width: 48px;
+    height: 48px;
+    border: 3.5px solid var(--border-blue);
+    border-top-color: var(--primary-blue);
     border-radius: 50%;
-    animation: compassSpin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 20px;
   }
 
-  @keyframes compassSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
   }
 
   .loading-title {
     font-family: var(--font-serif);
     font-size: 1.4rem;
-    color: var(--ink);
+    color: var(--text-navy);
     margin-bottom: 8px;
   }
 
   .loading-status {
     font-size: 0.92rem;
-    color: var(--charcoal-muted);
-    max-width: 46ch;
-    margin: 0 auto;
+    color: var(--text-muted);
   }
 
-  /* RESULTS STAGE & HEADER BOX */
+  /* ==================== STAGE 3: RESULTS HUB ==================== */
   .results-header-box {
-    background: var(--paper-card);
-    border: 1px solid var(--line);
+    background: var(--bg-card);
+    border: 1px solid var(--border-line);
     border-radius: var(--radius-lg);
-    padding: 28px 32px;
-    margin-bottom: 24px;
+    padding: 28px;
+    margin-bottom: 28px;
     box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .results-header-box::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--ink), var(--ochre), var(--rust));
+    border-left: 6px solid var(--primary-blue);
   }
 
   .results-meta-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 12px;
   }
 
   .profile-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    background: var(--sage-light);
-    color: #2D582A;
-    border: 1px solid #B8CEB3;
+    background: var(--primary-blue-subtle);
+    color: var(--primary-blue);
+    border: 1px solid var(--border-blue);
+  }
+
+  .location-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 700;
+    background: var(--bg-subtle);
+    color: var(--accent-sky);
+    border: 1px solid var(--border-blue);
   }
 
   .results-topic-title {
     font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--ink);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--text-navy);
     line-height: 1.2;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
   }
 
   .results-narrative {
-    font-size: 0.96rem;
-    color: var(--ink-soft);
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 72ch;
     line-height: 1.6;
-    max-width: 68ch;
   }
 
   .results-toolbar {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 18px;
-    padding-top: 16px;
-    border-top: 1px solid var(--line-subtle);
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-line);
     flex-wrap: wrap;
   }
 
-  /* 4-PHASE STRATEGY ROADMAP */
+  /* Roadmap Section */
   .roadmap-box {
-    background: var(--paper-dim);
-    border: 1px solid var(--ochre-border);
-    border-left: 5px solid var(--ochre);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-blue);
+    border-radius: var(--radius-md);
     padding: 24px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-sm);
   }
 
   .roadmap-header {
@@ -661,9 +703,9 @@
 
   .roadmap-header h3 {
     font-family: var(--font-serif);
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--rust);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -679,86 +721,109 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    background: var(--paper-card);
-    border: 1px solid var(--line);
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-line);
     border-radius: var(--radius-sm);
     padding: 12px 14px;
     transition: all 0.15s ease;
   }
 
-  .roadmap-step-item:hover { border-color: var(--ochre); }
+  .roadmap-step-item:hover {
+    border-color: var(--border-blue);
+  }
 
   .step-checkbox {
     margin-top: 3px;
     width: 18px;
     height: 18px;
-    accent-color: var(--ink);
+    accent-color: var(--primary-blue);
     cursor: pointer;
     flex-shrink: 0;
   }
 
   .step-text {
     font-size: 0.92rem;
-    color: var(--charcoal);
+    color: var(--text-main);
     line-height: 1.45;
   }
 
   .roadmap-step-item.checked .step-text {
     text-decoration: line-through;
-    color: var(--charcoal-muted);
+    color: var(--text-muted);
   }
 
-  /* FILTER TABS & SECONDARY CONTROLS */
+  /* Filter Controls */
   .filter-controls-wrap {
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    box-shadow: var(--shadow-sm);
   }
 
-  .category-tabs {
+  .filter-top-row {
     display: flex;
-    gap: 6px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: thin;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
   }
 
-  .category-tab {
-    background: var(--paper-card);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 0.85rem;
+  .filter-tags-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-tag-btn {
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-full);
+    padding: 6px 14px;
+    font-size: 0.84rem;
     font-weight: 600;
-    color: var(--charcoal-soft);
+    color: var(--text-muted);
     cursor: pointer;
-    white-space: nowrap;
     transition: all 0.15s ease;
     display: inline-flex;
     align-items: center;
     gap: 6px;
   }
 
-  .category-tab:hover { border-color: var(--ink-muted); color: var(--ink); }
-  .category-tab.active { background: var(--ink); border-color: var(--ink); color: #FFFFFF; }
-
-  .tab-count {
-    font-size: 0.72rem;
-    padding: 1px 6px;
-    border-radius: 10px;
-    background: var(--paper-dim);
-    color: var(--charcoal);
+  .filter-tag-btn:hover {
+    border-color: var(--border-blue);
+    color: var(--primary-blue);
   }
 
-  .category-tab.active .tab-count { background: rgba(255, 255, 255, 0.25); color: #FFFFFF; }
+  .filter-tag-btn.active {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: #FFFFFF;
+  }
 
-  .filter-secondary-bar {
-    display: flex;
+  .free-toggle-wrap {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 8px;
+    background: var(--badge-free-bg);
+    border: 1px solid var(--badge-free-border);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--badge-free-text);
+    user-select: none;
+  }
+
+  .free-toggle-wrap input {
+    accent-color: #15803D;
+    cursor: pointer;
   }
 
   .search-filter-input {
@@ -767,61 +832,99 @@
   }
 
   .search-filter-input input {
-    padding: 9px 12px 9px 36px;
+    padding: 10px 14px 10px 40px;
     font-size: 0.88rem;
-    margin-bottom: 0;
   }
 
-  .filter-pill-groups {
+  /* Section Dividers */
+  .section-divider {
     display: flex;
     align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
+    gap: 14px;
+    margin: 36px 0 12px;
   }
 
-  .filter-pill-btn {
-    font-size: 0.78rem;
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--line);
-    background: var(--paper-card);
-    color: var(--charcoal-soft);
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.15s ease;
+  .section-divider-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
   }
 
-  .filter-pill-btn:hover { border-color: var(--ink-soft); color: var(--ink); }
-  .filter-pill-btn.active { background: var(--ink-soft); border-color: var(--ink-soft); color: #fff; }
+  .section-divider-label h3 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-navy);
+  }
 
-  /* OPPORTUNITY CARDS */
-  .opportunities-list {
+  .section-count {
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 700;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-blue);
+    color: var(--primary-blue);
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+  }
+
+  .section-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border-line);
+  }
+
+  .section-divider-sub {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+  }
+
+  /* Cards List */
+  .items-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
     margin-bottom: 40px;
   }
 
-  .opportunity-card {
-    background: var(--paper-card);
-    border: 1px solid var(--line);
+  /* Unified Card Styling */
+  .unified-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-line);
     border-radius: var(--radius-md);
-    padding: 22px;
+    padding: 22px 24px;
     box-shadow: var(--shadow-sm);
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     position: relative;
   }
 
-  .opportunity-card:hover {
+  .unified-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    border-color: var(--ink-muted);
+    border-color: var(--border-blue);
   }
 
-  .opportunity-card-top {
+  /* Recommended highlight */
+  .unified-card.recommended-card {
+    border-left: 5px solid #F59E0B;
+    background: linear-gradient(to right, rgba(254, 243, 199, 0.25) 0%, var(--bg-card) 20%);
+  }
+
+  .unified-card.recommended-card-opp {
+    border-left: 5px solid var(--primary-blue);
+    background: linear-gradient(to right, rgba(224, 242, 254, 0.3) 0%, var(--bg-card) 20%);
+  }
+
+  .unified-card.offline-card {
+    border-left: 5px solid #D97706;
+  }
+
+  .card-top-row {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -836,38 +939,39 @@
     flex: 1;
   }
 
-  .type-icon-box {
+  .card-icon-badge {
     width: 40px;
     height: 40px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    background: var(--paper-dim);
-    color: var(--ink);
+    font-size: 1.25rem;
     flex-shrink: 0;
   }
 
-  .opportunity-title {
-    font-size: 1.15rem;
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 1.22rem;
     font-weight: 700;
-    color: var(--charcoal);
-    line-height: 1.3;
+    color: var(--text-navy);
     text-decoration: none;
+    line-height: 1.3;
     display: inline-flex;
     align-items: center;
     gap: 6px;
   }
 
-  .opportunity-title:hover { color: var(--ink); }
+  .card-title:hover {
+    color: var(--primary-blue);
+  }
 
-  .opportunity-org {
-    font-size: 0.82rem;
-    color: var(--charcoal-muted);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+  .card-org-sub {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    font-weight: 500;
     margin-top: 2px;
   }
 
@@ -878,124 +982,362 @@
     flex-wrap: wrap;
   }
 
-  .tier-badge {
-    font-size: 0.72rem;
+  .tag-pill {
+    font-size: 0.75rem;
     font-weight: 700;
     padding: 3px 9px;
-    border-radius: 12px;
+    border-radius: var(--radius-full);
     letter-spacing: 0.02em;
     display: inline-flex;
     align-items: center;
     gap: 4px;
   }
 
-  .tier-1 { background: var(--gold-light); color: var(--gold); border: 1px solid var(--gold-border); }
-  .tier-2 { background: var(--purple-light); color: var(--purple); border: 1px solid var(--purple-border); }
-  .tier-3 { background: var(--sage-light); color: #2C5729; border: 1px solid #BCD3B7; }
-
-  .cost-badge {
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 12px;
-    background: var(--paper-dim);
-    color: var(--charcoal-soft);
-    border: 1px solid var(--line);
+  .tag-rec {
+    background: var(--badge-star-bg);
+    color: var(--badge-star-text);
+    border: 1px solid var(--badge-star-border);
   }
 
-  .opportunity-desc {
+  .tag-free {
+    background: var(--badge-free-bg);
+    color: var(--badge-free-text);
+    border: 1px solid var(--badge-free-border);
+  }
+
+  .tag-level-beg { background: var(--badge-level-beg-bg); color: var(--badge-level-beg-text); }
+  .tag-level-int { background: var(--badge-level-int-bg); color: var(--badge-level-int-text); }
+  .tag-level-adv { background: var(--badge-level-adv-bg); color: var(--badge-level-adv-text); }
+
+  .tag-online {
+    background: var(--badge-online-bg);
+    color: var(--badge-online-text);
+    border: 1px solid var(--badge-online-border);
+  }
+
+  .tag-offline {
+    background: var(--badge-offline-bg);
+    color: var(--badge-offline-text);
+    border: 1px solid var(--badge-offline-border);
+    font-weight: 700;
+  }
+
+  .tag-instructor {
+    background: var(--bg-subtle);
+    color: var(--primary-navy);
+    border: 1px solid var(--border-blue);
+  }
+
+  .tag-scope {
+    background: var(--bg-subtle);
+    color: var(--text-muted);
+    border: 1px solid var(--border-line);
+  }
+
+  .tag-scope.local-match {
+    background: #FEF3C7;
+    color: #92400E;
+    border-color: #FDE68A;
+    font-weight: 700;
+  }
+
+  .card-desc {
     font-size: 0.94rem;
-    color: var(--charcoal);
+    color: var(--text-main);
     line-height: 1.55;
   }
 
-  .insider-tip-box {
-    background: var(--paper-dim);
-    border-left: 3px solid var(--ochre);
-    padding: 10px 14px;
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
+  /* "What You Will Learn" Highlight Box */
+  .learn-box {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-blue);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
   }
 
-  .insider-tip-box strong { color: var(--rust); }
-
-  .opportunity-meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
+  .learn-box-title {
     font-size: 0.8rem;
-    color: var(--charcoal-muted);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--primary-blue);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
-  .meta-tag {
+  .learn-box-content {
+    font-size: 0.88rem;
+    color: var(--text-main);
+    line-height: 1.45;
+  }
+
+  /* Structured Details Grid */
+  .detail-chips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+  }
+
+  .detail-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .detail-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+
+  .detail-val {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-navy);
+  }
+
+  .meta-chips-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .chip-tag {
+    font-size: 0.78rem;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-line);
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    color: var(--text-muted);
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    background: var(--paper);
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid var(--line-subtle);
+    gap: 4px;
   }
 
-  .meta-tag.local {
-    background: var(--ochre-light);
-    color: var(--ochre);
-    border-color: var(--ochre-border);
-    font-weight: 600;
-  }
-
+  /* Card Footer Actions */
   .card-footer-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 4px;
     padding-top: 14px;
-    border-top: 1px solid var(--line-subtle);
-    gap: 12px;
+    border-top: 1px solid var(--border-line);
     flex-wrap: wrap;
+    gap: 12px;
   }
 
-  .apply-link-btn {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--ink);
+  .action-link-btn {
+    background: var(--primary-blue);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    text-decoration: none;
-    padding: 6px 14px;
-    border-radius: var(--radius-sm);
-    background: var(--paper-dim);
     transition: all 0.15s ease;
   }
 
-  .apply-link-btn:hover { background: var(--ink); color: #FFFFFF; }
+  .action-link-btn:hover {
+    background: var(--primary-blue-hover);
+    transform: translateY(-1px);
+  }
 
   .status-select-wrap {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 0.82rem;
-  }
-
-  .status-select {
-    padding: 5px 8px;
-    font-size: 0.8rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--line);
-    background: var(--paper);
-    color: var(--charcoal);
+    color: var(--text-muted);
     font-weight: 600;
   }
 
-  /* MODALS & DRAWERS */
+  .status-select {
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-line);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* ==================== BRANCHING DECISION CALLOUT ==================== */
+  .branch-callout-box {
+    background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
+    color: #FFFFFF;
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    margin: 48px 0 32px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .branch-callout-box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .branch-callout-title {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .branch-callout-sub {
+    font-size: 1rem;
+    color: #BAE6FD;
+    max-width: 65ch;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .branch-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .branch-btn-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #FFFFFF;
+  }
+
+  .branch-btn-card:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: #38BDF8;
+    transform: translateY(-2px);
+  }
+
+  .branch-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .branch-card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .branch-card-sub {
+    font-size: 0.88rem;
+    color: #E0F2FE;
+    line-height: 1.45;
+  }
+
+  .branch-card-cta {
+    margin-top: 8px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #38BDF8;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Educational Stage Selection Box (inside Opportunities section) */
+  .edu-stage-box {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-blue);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .edu-stage-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-navy);
+    margin-bottom: 4px;
+  }
+
+  .edu-stage-sub {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .edu-options-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .edu-stage-chip {
+    background: var(--bg-subtle);
+    border: 1.5px solid var(--border-line);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-navy);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .edu-stage-chip:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+  }
+
+  .edu-stage-chip.active {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
+  }
+
+  /* ==================== TRACKER MODAL ==================== */
   .drawer-overlay {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(3px);
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
     z-index: 1000;
     display: none;
     align-items: center;
@@ -1006,54 +1348,58 @@
   .drawer-overlay.active { display: flex; }
 
   .modal-dialog {
-    background: var(--paper-card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
+    background: var(--bg-card);
     width: 100%;
     max-width: 680px;
     max-height: 85vh;
-    overflow-y: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-line);
     box-shadow: var(--shadow-lg);
-    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-line);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--line-subtle);
   }
 
   .modal-header h3 {
     font-family: var(--font-serif);
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--ink);
+    font-size: 1.3rem;
+    color: var(--text-navy);
   }
 
   .modal-close-btn {
-    background: none;
+    background: transparent;
     border: none;
-    font-size: 1.4rem;
-    color: var(--charcoal-muted);
+    font-size: 1.6rem;
+    color: var(--text-muted);
     cursor: pointer;
+    line-height: 1;
   }
 
-  .modal-close-btn:hover { color: var(--ink); }
+  .modal-body {
+    padding: 24px;
+    overflow-y: auto;
+  }
 
-  /* TOAST */
+  /* Toast Notification */
   .toast {
     position: fixed;
-    bottom: 28px; right: 28px;
-    background: var(--ink);
-    color: #fff;
+    bottom: 28px;
+    right: 28px;
+    background: var(--primary-navy);
+    color: #FFFFFF;
     padding: 12px 20px;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1065,33 +1411,34 @@
 
   .toast.show { transform: translateY(0); opacity: 1; }
 
+  /* App Footer */
   footer.app-footer {
     margin-top: 80px;
     padding-top: 24px;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--border-line);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.82rem;
-    color: var(--charcoal-muted);
+    font-size: 0.84rem;
+    color: var(--text-muted);
     flex-wrap: wrap;
     gap: 14px;
   }
 
   @media print {
-    header.top, .stepper-header, .filter-controls-wrap, .results-toolbar, footer.app-footer {
+    header.top, .stepper-header, .filter-controls-wrap, .results-toolbar, .branch-callout-box, footer.app-footer {
       display: none !important;
     }
     body { background: #fff !important; color: #000 !important; }
     .wrap { max-width: 100% !important; padding: 0 !important; }
-    .opportunity-card { box-shadow: none !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
+    .unified-card { box-shadow: none !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
   }
 
   @media (max-width: 640px) {
-    .wrap { padding: 24px 16px 80px; }
-    .section-intro h2 { font-size: 1.65rem; }
+    .wrap { padding: 20px 16px 80px; }
+    .section-intro h2 { font-size: 1.8rem; }
     .choices-grid { grid-template-columns: 1fr; }
-    .stepper-header { padding: 10px 12px; }
+    .stepper-header { padding: 8px 12px; }
     .step-pill span:not(.step-pill-num) { display: none; }
   }
 </style>
@@ -1103,11 +1450,11 @@
   <header class="top">
     <div class="brand" id="brand-home" title="Return to start">
       <div class="brand-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
       </div>
       <div class="brand-text">
         <h1>Waymark</h1>
-        <p>Global &amp; Local Opportunities Database</p>
+        <p>Open Learning, Research &amp; Opportunity Navigator</p>
       </div>
     </div>
 
@@ -1117,9 +1464,9 @@
         <svg id="theme-icon-moon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </button>
 
-      <button class="icon-btn" id="open-tracker-btn" title="View Application Tracker">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="11" y2="17"></line></svg>
-        <span>My Tracker</span>
+      <button class="icon-btn" id="open-tracker-btn" title="View Saved Library &amp; Applications">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+        <span>My Saved</span>
         <span class="btn-badge" id="tracker-badge" style="display:none;">0</span>
       </button>
     </div>
@@ -1129,62 +1476,62 @@
   <div class="stepper-header">
     <div class="step-pill active" id="pill-step-1">
       <div class="step-pill-num">1</div>
-      <span>Interest &amp; Location</span>
+      <span>What to Learn</span>
     </div>
     <div class="step-arrow">&rarr;</div>
     <div class="step-pill" id="pill-step-2">
       <div class="step-pill-num">2</div>
-      <span>Profile &amp; Ambition</span>
+      <span>Learning Style</span>
     </div>
     <div class="step-arrow">&rarr;</div>
     <div class="step-pill" id="pill-step-3">
       <div class="step-pill-num">3</div>
-      <span>Curated Opportunities</span>
+      <span>Learning &amp; Research Hub</span>
     </div>
   </div>
 
-  <!-- ==================== STAGE 1: FIELD & LOCATION ==================== -->
+  <!-- ==================== STAGE 1: TOPIC & LOCALITY ==================== -->
   <section class="stage visible" id="stage-1">
     <div class="section-intro">
-      <h2>Discover Extracurriculars &amp; Fellowships</h2>
-      <p class="lede">Explore elite competitions, paid summer research programs, internships, grants, and local chapters fitted to your aspirations.</p>
+      <h2>Learn freely. Master anything.</h2>
+      <p class="lede">Explore top-tier tutorials, video courses, documentation, classes (online &amp; offline), and opportunities without paywalls. Build real skills at your own pace.</p>
     </div>
 
-    <!-- Quick Interest Chips -->
+    <!-- Quick Inspiration Chips -->
     <div class="chips-container">
       <div class="chips-label">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-        Featured Fields &amp; Disciplines
+        Popular Subjects &amp; Disciplines
       </div>
       <div class="chips-grid">
-        <button type="button" class="chip-btn" data-topic="Computer Science & Artificial Intelligence" data-loc="San Francisco, CA">💻 Computer Science &amp; AI</button>
-        <button type="button" class="chip-btn" data-topic="Biology, Medicine & Pre-Med Research" data-loc="Boston, MA">🔬 Biology &amp; Medicine</button>
-        <button type="button" class="chip-btn" data-topic="Finance, Economics & Entrepreneurship" data-loc="New York, NY">📈 Finance &amp; Business</button>
+        <button type="button" class="chip-btn" data-topic="Computer Science & AI" data-loc="Global">💻 Computer Science &amp; AI</button>
+        <button type="button" class="chip-btn" data-topic="Biology & Pre-Med Research" data-loc="Boston, MA">🔬 Biology &amp; Medicine</button>
+        <button type="button" class="chip-btn" data-topic="Full-Stack Web Development" data-loc="Global">🌐 Web Development</button>
+        <button type="button" class="chip-btn" data-topic="Personal Finance & Economics" data-loc="New York, NY">📈 Finance &amp; Economics</button>
         <button type="button" class="chip-btn" data-topic="Robotics & Mechanical Engineering" data-loc="Austin, TX">🤖 Robotics &amp; Engineering</button>
-        <button type="button" class="chip-btn" data-topic="Humanities, Creative Writing & Journalism" data-loc="London, UK">✍️ Writing &amp; Journalism</button>
-        <button type="button" class="chip-btn" data-topic="Social Impact, Law & Policy" data-loc="Washington, DC">⚖️ Law &amp; Public Policy</button>
-        <button type="button" class="chip-btn" data-topic="Visual Arts, Film & Design" data-loc="Los Angeles, CA">🎨 Visual Arts &amp; Film</button>
-        <button type="button" class="chip-btn" data-topic="Climate, Ecology & Clean Energy" data-loc="Seattle, WA">🌍 Climate &amp; Energy</button>
+        <button type="button" class="chip-btn" data-topic="Applied Mathematics & Statistics" data-loc="Global">📐 Applied Mathematics</button>
+        <button type="button" class="chip-btn" data-topic="Neuroscience & Cognitive Science" data-loc="Global">🧠 Neuroscience</button>
+        <button type="button" class="chip-btn" data-topic="Creative Writing & Journalism" data-loc="Global">✍️ Writing &amp; Journalism</button>
       </div>
     </div>
 
     <div class="form-group">
       <label class="field-label" for="topic-input">
-        Field or Extracurricular Interest
-        <span class="field-hint-inline">e.g. AI Research, Bioengineering, Debate, Astrophysics</span>
+        What do you want to learn or research?
+        <span class="field-hint-inline">e.g. Machine Learning, Neuroscience, Quantum Computing, Film</span>
       </label>
       <div class="input-wrap">
         <div class="input-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </div>
-        <input type="text" id="topic-input" placeholder="e.g. Computer Science, Molecular Biology, Investment Banking" autofocus autocomplete="off">
+        <input type="text" id="topic-input" placeholder="e.g. Computer Science, Molecular Biology, Personal Finance" autofocus autocomplete="off">
       </div>
     </div>
 
     <div class="form-group">
       <label class="field-label" for="loc-input">
-        Your City or Region
-        <span class="field-hint-inline">For regional science fairs, local chapters, and university labs</span>
+        Your City or Region (Optional)
+        <span class="field-hint-inline">Surfaces local in-person classes, public library workshops &amp; science fairs near you.</span>
       </label>
       <div class="input-wrap">
         <div class="input-icon">
@@ -1196,121 +1543,92 @@
 
     <div class="actions">
       <button class="btn" id="to-stage-2">
-        Continue to Profile Setup
+        Continue to Learning Preferences
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </button>
     </div>
   </section>
 
-  <!-- ==================== STAGE 2: PROFILE & AMBITION ==================== -->
+  <!-- ==================== STAGE 2: LEARNING PREFERENCES ==================== -->
   <section class="stage" id="stage-2">
     <div class="section-intro">
-      <h2>Tailor Your Opportunity Set</h2>
-      <p class="lede">Help us calibrate by grade level and target competitiveness so we display both accessible entry points and elite tier programs.</p>
+      <h2>Personalize your learning resources</h2>
+      <p class="lede">All resources remain open to everyone. We simply highlight a recommended set so you don't feel lost or overwhelmed.</p>
     </div>
 
-    <!-- Question 1: Education Level -->
+    <!-- Question 1: Experience Level -->
     <div class="q-block">
       <div class="q-header">
         <div class="q-badge">1</div>
         <div>
-          <div class="q-text">What is your current education level?</div>
-          <div class="q-desc">Filters eligibility criteria.</div>
+          <div class="q-text">What is your current experience with this topic?</div>
+          <div class="q-desc">Helps calibrate beginner vs. intermediate vs. advanced recommendations.</div>
         </div>
       </div>
-      <div class="choices-grid" data-q="grade">
-        <div class="choice-card selected" data-v="High School (Grades 9-12)">
-          <div class="choice-title">High School (Grades 9-12)</div>
-          <div class="choice-sub">Pre-college olympiads, summer research, youth councils.</div>
+      <div class="choices-grid" data-q="level">
+        <div class="choice-card selected" data-v="beginner">
+          <div class="choice-title">🌱 Beginner</div>
+          <div class="choice-sub">Starting fresh or have minimal exposure. Need clear intuitive foundations from ground zero.</div>
         </div>
-        <div class="choice-card" data-v="Undergraduate / College">
-          <div class="choice-title">Undergraduate / College</div>
-          <div class="choice-sub">Fellowships, REUs, venture incubators, corporate internships.</div>
+        <div class="choice-card" data-v="intermediate">
+          <div class="choice-title">📘 Intermediate</div>
+          <div class="choice-sub">Understand the core basics. Ready for practical projects, algorithms, and applied problem-solving.</div>
         </div>
-        <div class="choice-card" data-v="Middle School / Early Learner">
-          <div class="choice-title">Middle School / Early Learner</div>
-          <div class="choice-sub">Junior olympiads, community fairs, starter clubs.</div>
-        </div>
-        <div class="choice-card" data-v="All Ages / Independent">
-          <div class="choice-title">All Ages / Independent</div>
-          <div class="choice-sub">Open-access hackathons, open source, grant competitions.</div>
+        <div class="choice-card" data-v="advanced">
+          <div class="choice-title">⚡ Advanced</div>
+          <div class="choice-sub">Experienced practitioner. Looking for original research papers, complex systems, and mastery.</div>
         </div>
       </div>
     </div>
 
-    <!-- Question 2: Experience & Past Proof -->
+    <!-- Question 2: Learning Format -->
     <div class="q-block">
       <div class="q-header">
         <div class="q-badge">2</div>
         <div>
-          <div class="q-text">What is your prior extracurricular experience in this field?</div>
-          <div class="q-desc">Determines your readiness for selective programs.</div>
+          <div class="q-text">What is your preferred learning style?</div>
+          <div class="q-desc">Weights video vs. interactive projects vs. documentation.</div>
         </div>
       </div>
-      <div class="choices-grid" data-q="prior">
-        <div class="choice-card selected" data-v="Starting out, looking for starter opportunities">
-          <div class="choice-title">Starter (Building Portfolio)</div>
-          <div class="choice-sub">High acceptance, great for learning and early wins.</div>
+      <div class="choices-grid" data-q="format">
+        <div class="choice-card selected" data-v="video">
+          <div class="choice-title">📺 Video Walkthroughs</div>
+          <div class="choice-sub">Visual breakdowns, animated lectures, and step-by-step demos.</div>
         </div>
-        <div class="choice-card" data-v="Solid foundation, ready for competitive tier">
-          <div class="choice-title">Intermediate (Regional Level)</div>
-          <div class="choice-sub">Ready for state/national selective competitions.</div>
+        <div class="choice-card" data-v="projects">
+          <div class="choice-title">🛠️ Hands-on Projects</div>
+          <div class="choice-sub">Interactive code sandboxes, project-based guides, and building real things.</div>
         </div>
-        <div class="choice-card" data-v="Advanced, targeting top 1% national programs">
-          <div class="choice-title">Advanced (Aiming for Top 1%)</div>
-          <div class="choice-sub">RSI, ISEF, USACO Gold, national fellowships.</div>
+        <div class="choice-card" data-v="reading">
+          <div class="choice-title">📖 Reading &amp; Docs</div>
+          <div class="choice-sub">Official documentation, textbooks, papers, and in-depth articles.</div>
         </div>
-      </div>
-    </div>
-
-    <!-- Question 3: Primary Opportunity Type Goal -->
-    <div class="q-block">
-      <div class="q-header">
-        <div class="q-badge">3</div>
-        <div>
-          <div class="q-text">What type of opportunity are you most eager to pursue?</div>
-          <div class="q-desc">We will weight this category prominently.</div>
-        </div>
-      </div>
-      <div class="choices-grid" data-q="goal">
-        <div class="choice-card selected" data-v="Competitions & Hackathons">
-          <div class="choice-title">🏆 Competitions &amp; Contests</div>
-          <div class="choice-sub">Win awards, test skills against top peers.</div>
-        </div>
-        <div class="choice-card" data-v="Summer Research & University Programs">
-          <div class="choice-title">🔬 Summer Research Programs</div>
-          <div class="choice-sub">Work in prestigious labs, get mentor recommendations.</div>
-        </div>
-        <div class="choice-card" data-v="Internships & Industry Fellowships">
-          <div class="choice-title">💼 Internships &amp; Fellowships</div>
-          <div class="choice-sub">Paid work experience, industry network.</div>
-        </div>
-        <div class="choice-card" data-v="Founding a Project or Chapter (Grants)">
-          <div class="choice-title">💰 Grants &amp; Founding a Chapter</div>
-          <div class="choice-sub">Start a non-profit, secure micro-grants, lead others.</div>
+        <div class="choice-card" data-v="all">
+          <div class="choice-title">🎯 Balanced Mix</div>
+          <div class="choice-sub">Show me the top picks across all formats.</div>
         </div>
       </div>
     </div>
 
     <div class="actions">
       <button class="btn" id="to-results">
-        Find Verified Opportunities
+        Build My Learning &amp; Research Hub
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </button>
       <button class="back-btn" id="back-to-1">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        Edit Field
+        Change Subject
       </button>
     </div>
   </section>
 
-  <!-- ==================== STAGE 3: RESULTS VIEW ==================== -->
+  <!-- ==================== STAGE 3: RESULTS HUB ==================== -->
   <section class="stage" id="stage-3">
     <!-- Loading Animation -->
     <div id="loading-block" class="loading-container">
       <div class="compass-spinner"></div>
-      <h3 class="loading-title">Scanning Global &amp; Local Opportunity Networks</h3>
-      <p class="loading-status">Aggregating verified competitions, research programs, and grants...</p>
+      <h3 class="loading-title">Gathering free learning resources, classes &amp; research guides...</h3>
+      <p class="loading-status">Connecting open tutorials, live YouTuber cohorts, local workshops, and fellowships...</p>
     </div>
 
     <!-- Results Block -->
@@ -1320,26 +1638,24 @@
   <!-- APP FOOTER -->
   <footer class="app-footer">
     <div>
-      <strong>Waymark</strong> &bull; Extracurricular &amp; Career Opportunity Database. Verified against official organizers.
+      <strong>Waymark</strong> &bull; Free Open Learning, Classes (Online &amp; Offline) &amp; Opportunities Hub.
     </div>
     <div>
-      <span>100% Free &bull; Stored Locally &bull; Private</span>
+      <span>100% Free Resources &bull; Local &amp; Private</span>
     </div>
   </footer>
 </div>
 
-<!-- ==================== APPLICATION TRACKER MODAL ==================== -->
+<!-- ==================== SAVED / TRACKER MODAL ==================== -->
 <div class="drawer-overlay" id="tracker-modal" role="dialog" aria-modal="true">
   <div class="modal-dialog">
     <div class="modal-header">
-      <h3>My Opportunity Tracker</h3>
+      <h3>My Saved Library &amp; Applications</h3>
       <button class="modal-close-btn" id="close-tracker-btn">&times;</button>
     </div>
-    <div id="tracker-stats-row" style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
-      <!-- Populated via JS -->
-    </div>
-    <div id="tracker-list-container">
-      <!-- Populated via JS -->
+    <div class="modal-body">
+      <div id="tracker-stats-row" style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;"></div>
+      <div id="tracker-list-container"></div>
     </div>
   </div>
 </div>
@@ -1347,24 +1663,34 @@
 <!-- TOAST MESSAGE -->
 <div class="toast" id="app-toast">Notification message</div>
 
-<!-- ==================== DATABASE & SCRIPT ==================== -->
+<!-- ==================== JAVASCRIPT LOGIC & DATABASE ==================== -->
 <script>
 /* -------------------------------------------------------------
- * STATE & LOCAL STORAGE
+ * APPLICATION STATE
  * -----------------------------------------------------------*/
 const state = {
   topic: '',
   location: '',
-  answers: {
-    grade: 'High School (Grades 9-12)',
-    prior: 'Starting out, looking for starter opportunities',
-    goal: 'Competitions & Hackathons'
+  learningPrefs: {
+    level: 'beginner', // 'beginner', 'intermediate', 'advanced'
+    format: 'video'    // 'video', 'projects', 'reading', 'all'
   },
-  activeCategory: 'all',
-  tierFilter: 'all',
-  costFilter: 'all',
+  eduQualification: null, // null, 'highschool', 'college', 'lifelong'
+  
+  // Active filters
+  filterLevel: 'all',
+  filterFormat: 'all',
+  onlyFree: false,
   searchQuery: '',
-  trackedOpportunities: JSON.parse(localStorage.getItem('waymark_tracker') || '[]'),
+  
+  // Class specific filter
+  filterClassDelivery: 'all', // 'all', 'online', 'offline'
+  
+  // Active view extensions
+  showClassesSection: false,
+  showOpportunitiesSection: false,
+  
+  trackedItems: JSON.parse(localStorage.getItem('waymark_saved') || '[]'),
   roadmapProgress: JSON.parse(localStorage.getItem('waymark_roadmap') || '{}'),
   theme: localStorage.getItem('waymark_theme') || 'light'
 };
@@ -1373,9 +1699,7 @@ document.documentElement.setAttribute('data-theme', state.theme);
 updateThemeIcons();
 updateTrackerBadge();
 
-/* -------------------------------------------------------------
- * THEME TOGGLE
- * -----------------------------------------------------------*/
+/* Theme Toggle */
 document.getElementById('theme-toggle').addEventListener('click', () => {
   state.theme = state.theme === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', state.theme);
@@ -1389,9 +1713,7 @@ function updateThemeIcons() {
   document.getElementById('theme-icon-moon').style.display = isDark ? 'block' : 'none';
 }
 
-/* -------------------------------------------------------------
- * NAVIGATION & STEP CONTROLLER
- * -----------------------------------------------------------*/
+/* Stepper Stage Navigation */
 function setStage(n) {
   for (let i = 1; i <= 3; i++) {
     const pill = document.getElementById('pill-step-' + i);
@@ -1399,7 +1721,12 @@ function setStage(n) {
     if (stage) stage.classList.remove('visible');
     if (pill) {
       pill.classList.remove('active', 'done');
-      if (i < n) pill.classList.add('done');
+      if (i < n) {
+        pill.classList.add('done');
+        pill.onclick = () => setStage(i);
+      } else {
+        pill.onclick = null;
+      }
       if (i === n) pill.classList.add('active');
     }
   }
@@ -1411,13 +1738,17 @@ function setStage(n) {
 document.getElementById('brand-home').addEventListener('click', () => setStage(1));
 document.getElementById('back-to-1').addEventListener('click', () => setStage(1));
 
-/* Topic Chips */
+/* Quick Topic Chips */
 document.querySelectorAll('.chip-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('topic-input').value = btn.dataset.topic;
-    if (btn.dataset.loc) document.getElementById('loc-input').value = btn.dataset.loc;
+    if (btn.dataset.loc && btn.dataset.loc !== 'Global') {
+      document.getElementById('loc-input').value = btn.dataset.loc;
+    } else {
+      document.getElementById('loc-input').value = '';
+    }
     document.getElementById('topic-input').focus();
   });
 });
@@ -1427,7 +1758,7 @@ document.getElementById('to-stage-2').addEventListener('click', () => {
   const topic = document.getElementById('topic-input').value.trim();
   if (!topic) {
     document.getElementById('topic-input').focus();
-    showToast('Please enter an area of interest.');
+    showToast('Please enter a subject or skill you want to learn.');
     return;
   }
   state.topic = topic;
@@ -1435,22 +1766,22 @@ document.getElementById('to-stage-2').addEventListener('click', () => {
   setStage(2);
 });
 
-/* Choice cards selection */
+/* Stage 2 Choice Cards */
 document.querySelectorAll('.choices-grid').forEach(group => {
   const qKey = group.dataset.q;
   group.querySelectorAll('.choice-card').forEach(card => {
     card.addEventListener('click', () => {
       group.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
-      state.answers[qKey] = card.dataset.v;
+      state.learningPrefs[qKey] = card.dataset.v;
     });
   });
 });
 
-/* Stage 2 -> Results */
+/* Stage 2 -> Stage 3 Results */
 document.getElementById('to-results').addEventListener('click', () => {
   setStage(3);
-  loadOpportunities();
+  loadHubData();
 });
 
 function showToast(msg) {
@@ -1461,485 +1792,978 @@ function showToast(msg) {
 }
 
 /* -------------------------------------------------------------
- * COMPREHENSIVE OPPORTUNITIES KNOWLEDGE BASE
+ * EXTENSIVE KNOWLEDGE BASE (Free Resources, Diverse Classes & Opportunities)
  * -----------------------------------------------------------*/
-const OPPORTUNITIES_DB = {
+const KNOWLEDGE_BASE = {
   "computer science": {
     roadmap: [
-      "Phase 1 (Proof of Work): Build 2 standalone software projects or open-source PRs; compete in starter hackathons (MLH).",
-      "Phase 2 (Regional Recognition): Enter the Congressional App Challenge or regional hackathon; earn Bronze/Silver in USACO.",
-      "Phase 3 (Selective Research): Apply to elite institutes (MIT Beaver Works, Stanford AIMI) or email professors with a tailored research proposal.",
-      "Phase 4 (National Capstone): Compete in USACO Gold/Platinum, Imagine Cup, or launch a tech initiative backed by micro-grants."
+      "Phase 1 (Foundations): Master Python fundamentals, logic, and basic data structures (lists, dictionaries, trees).",
+      "Phase 2 (Hands-on Projects): Build 2 functional portfolio applications (e.g. web crawler, local API, mini game).",
+      "Phase 3 (Algorithmic Depth & Open Source): Dive into time complexity (Big-O) and contribute your first pull request to an open-source repo.",
+      "Phase 4 (Advanced Systems & Capstone): Explore neural network architectures, distributed databases, or submit to a competitive showcase."
     ],
-    items: [
+    resources: [
       {
-        id: "cs_usaco",
+        id: "cs_res_3b1b",
+        type: "learning",
+        format: "video",
+        level: "Beginner",
+        name: "3Blue1Brown: Essence of Linear Algebra & Neural Networks",
+        author: "Grant Sanderson",
+        cost: "100% Free",
+        isFree: true,
+        scope: "Global",
+        url: "https://www.youtube.com/@3blue1brown",
+        desc: "World-renowned geometric animations that make matrices, vectors, and neural network math intuitive rather than purely symbolic.",
+        whatYouLearn: "Vector spaces, dot & cross products, matrix transformations, eigenvalues, and how neural network gradient descent works geometrically.",
+        time: "15-20 min / video",
+        prereq: "High school algebra"
+      },
+      {
+        id: "cs_res_cs50_yt",
+        type: "learning",
+        format: "video",
+        level: "Beginner",
+        name: "CS50: Introduction to Computer Science (Open Lecture Series)",
+        author: "Prof. David J. Malan (Harvard University)",
+        cost: "100% Free",
+        isFree: true,
+        scope: "Global",
+        url: "https://www.youtube.com/playlist?list=PLhQjrBD2T382_RPoW387glVq38_vIzr0-",
+        desc: "The legendary Harvard course covering computational thinking, memory allocation in C, Python web architecture, and algorithmic design.",
+        whatYouLearn: "Low-level memory management, pointers, arrays, data structures (linked lists, hash tables), SQL databases, and full-stack web integration.",
+        time: "1-2 hrs / lecture",
+        prereq: "None (starts from zero)"
+      },
+      {
+        id: "cs_res_karpathy",
+        type: "learning",
+        format: "video",
+        level: "Intermediate",
+        name: "Neural Networks: Zero to Hero Series",
+        author: "Andrej Karpathy (Former Director of AI, Tesla)",
+        cost: "100% Free",
+        isFree: true,
+        scope: "Global",
+        url: "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+        desc: "Build backpropagation, micrograd, and a complete GPT transformer architecture from scratch in pure Python with no external frameworks.",
+        whatYouLearn: "Calculus of backpropagation, tensor broadcasting, language model tokenization, self-attention mechanisms, and training modern transformers.",
+        time: "15 hours total",
+        prereq: "Basic Python comfort"
+      },
+      {
+        id: "cs_res_odin",
+        type: "learning",
+        format: "projects",
+        level: "Beginner",
+        name: "The Odin Project (Full-Stack Open Curriculum)",
+        author: "Open Source Community",
+        cost: "100% Free & Open Source",
+        isFree: true,
+        scope: "Global",
+        url: "https://www.theodinproject.com/",
+        desc: "A completely free, community-maintained curriculum that teaches full-stack web development through genuine local projects using Git, JavaScript, Node.js, and React.",
+        whatYouLearn: "Modern HTML/CSS, Git workflow, responsive design, JavaScript ES6+, backend REST APIs, PostgreSQL databases, and deploying live production apps.",
+        time: "Self-paced (100-300 hours)",
+        prereq: "None"
+      },
+      {
+        id: "cs_res_usacoguide",
+        type: "learning",
+        format: "reading",
+        level: "Intermediate",
+        name: "USACO Guide: The Algorithmic Handbook",
+        author: "USACO Finalists & Volunteers",
+        cost: "100% Free",
+        isFree: true,
+        scope: "Global",
+        url: "https://usaco.guide/",
+        desc: "Free comprehensive training platform covering algorithms and competitive programming concepts categorized clearly from Bronze to Platinum.",
+        whatYouLearn: "Binary search, prefix sums, graph traversals (BFS/DFS), dynamic programming, segment trees, and rigorous time/space complexity optimization.",
+        time: "Ongoing practice",
+        prereq: "Proficiency in C++, Java, or Python"
+      },
+      {
+        id: "cs_res_papers_with_code",
+        type: "learning",
+        format: "reading",
+        level: "Advanced",
+        name: "Papers With Code (Open Research & Benchmarks)",
+        author: "Meta AI & Open Science Community",
+        cost: "100% Free",
+        isFree: true,
+        scope: "Global",
+        url: "https://paperswithcode.com/",
+        desc: "The central hub for tracking state-of-the-art machine learning research papers paired directly with their open-source code implementations.",
+        whatYouLearn: "How to read modern computer vision and NLP research papers, analyze benchmark datasets (ImageNet, GLUE), and reproduce peer-reviewed algorithms.",
+        time: "Reference library",
+        prereq: "Intermediate math & ML basics"
+      }
+    ],
+    classes: [
+      {
+        id: "cs_cls_karpathy_live",
+        name: "Deep Learning Foundations & Transformer Masterclass",
+        instructor: "Andrej Karpathy",
+        instructorType: "youtuber", // 'youtuber', 'teacher', 'university', 'community'
+        delivery: "online", // 'online', 'offline', 'hybrid'
+        deliveryLabel: "🌐 Online (Live Stream & Discord)",
+        location: "Global Virtual (YouTube & Discord Community)",
+        cost: "100% Free",
+        isFree: true,
+        duration: "Self-Paced / Regular Code Reviews",
+        audience: "Intermediate Programmers",
+        url: "https://github.com/karpathy/nn-zero-to-hero",
+        syllabus: "Hands-on implementation of micrograd, n-gram language models, multilayer perceptron, BatchNorm, manual backprop, and NanoGPT training.",
+        accessTip: "All lecture video archives, GitHub starter code, and Discord study groups are 100% open with zero paywall."
+      },
+      {
+        id: "cs_cls_traversy_web",
+        name: "Full-Stack Web Development Practical Cohort",
+        instructor: "Brad Traversy (Traversy Media)",
+        instructorType: "youtuber",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (Self-Paced Video Labs)",
+        location: "Global Online (YouTube)",
+        cost: "100% Free",
+        isFree: true,
+        duration: "8 Weeks (20+ Hands-on Projects)",
+        audience: "Beginners & Career Switchers",
+        url: "https://www.youtube.com/@TraversyMedia",
+        syllabus: "Frontend HTML/CSS/JS, modern React, Express.js backend, MongoDB integration, authentication, and deploying full-stack apps on Render.",
+        accessTip: "Full code repositories on GitHub accompanied by clear line-by-line coding walkthroughs."
+      },
+      {
+        id: "cs_cls_fcc_cohort",
+        name: "freeCodeCamp Live Interactive Cohorts & Workshops",
+        instructor: "Quincy Larson & Community Teachers",
+        instructorType: "teacher",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (Interactive Sandboxes & Forum Mentors)",
+        location: "Global Virtual",
+        cost: "100% Free & Open Source",
+        isFree: true,
+        duration: "Self-paced (300 hours per certificate)",
+        audience: "All Audiences & Absolute Beginners",
+        url: "https://www.freecodecamp.org/",
+        syllabus: "Responsive web design, JavaScript algorithms & data structures, backend development with Node.js, relational databases, and machine learning with Python.",
+        accessTip: "Includes real-time community forum support where volunteer teachers review and debug your code for free."
+      },
+      {
+        id: "cs_cls_cs50x",
+        name: "CS50x: Introduction to Computer Science",
+        instructor: "Prof. David J. Malan & Harvard Fellows",
+        instructorType: "university",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (edX Audit & Zoom Seminars)",
+        location: "Cambridge, MA / Global Online",
+        cost: "100% Free (Audit Mode)",
+        isFree: true,
+        duration: "12 Weeks (Self-Paced)",
+        audience: "Open to Everyone (High School, College, Adults)",
+        url: "https://cs50.harvard.edu/x/",
+        syllabus: "C, Algorithms, Data Structures, Python, SQL, HTML/CSS/JavaScript, and an independent software capstone.",
+        accessTip: "Select the free 'Audit Course' mode to access 100% of lectures, problem sets, and auto-graded tests without paying."
+      },
+      {
+        id: "cs_cls_mit_ocw_6001",
+        name: "MIT 6.0001: Intro to Computer Science & Python",
+        instructor: "Prof. John Guttag & MIT Faculty",
+        instructorType: "university",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (Lecture Archive & Problem Sets)",
+        location: "MIT OpenCourseWare (Global)",
+        cost: "100% Free (No Login Needed)",
+        isFree: true,
+        duration: "9 Weeks (Self-Paced)",
+        audience: "Beginners & Undergraduates",
+        url: "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/",
+        syllabus: "Computational thinking, Python syntax, recursion, testing & debugging, Big-O efficiency, object-oriented programming.",
+        accessTip: "All lecture videos, syllabus slides, and problem sets with solutions are permanently free with zero paywall."
+      }
+    ],
+    opportunities: [
+      {
+        id: "cs_opp_usaco",
         name: "USA Computing Olympiad (USACO)",
         org: "USACO Foundation",
-        category: "competition",
-        tier: "Tier 1 Elite",
-        cost: "100% Free",
-        eligibility: "High School & Middle School",
+        cost: "100% Free to Compete",
+        isFree: true,
         scope: "Global Online",
-        deadline: "4 Contests Annually (Dec - Mar)",
+        scopeType: "international",
+        eligibility: "Middle & High School Students Worldwide",
+        qualifications: "Basic algorithmic problem solving in C++, Java, or Python. No prior credentials needed.",
+        conducted: "100% Online across 4 weekend contest windows annually (December to March).",
+        whereWhen: "Global online &bull; December through March annually",
+        whatHappens: "Students solve 3 algorithmic challenges during a 4-hour window. Scoring high automatically promotes you from Bronze to Silver, Gold, and Platinum.",
         url: "http://www.usaco.org/",
-        desc: "The most prestigious algorithmic programming competition in the United States. Contestants solve challenging algorithmic problems in C++, Java, or Python across Bronze, Silver, Gold, and Platinum divisions.",
-        tip: "USACO Silver/Gold is widely considered one of the highest-weight STEM achievements on competitive college applications. Focus heavily on binary search, dynamic programming, and graph algorithms on USACO Guide."
+        admissionsWeight: "High (Gold & Platinum represent top national computer science honors)"
       },
       {
-        id: "cs_cac",
+        id: "cs_opp_cac",
         name: "Congressional App Challenge",
         org: "U.S. House of Representatives",
-        category: "competition",
-        tier: "Tier 1 Elite",
         cost: "100% Free",
-        eligibility: "Middle & High School (U.S. Residents)",
-        scope: "National by Congressional District",
-        deadline: "Annual October Deadline",
+        isFree: true,
+        scope: "U.S. Congressional Districts",
+        scopeType: "national",
+        eligibility: "Middle School & High School Students (U.S.)",
+        qualifications: "Students under 18 residing or attending school in a participating congressional district.",
+        conducted: "Virtual software submission followed by regional judging and Capitol Hill reception.",
+        whereWhen: "Online submission deadline each October; winners visit Washington, DC in Spring",
+        whatHappens: "Students code any software application (web, mobile, game, AI) addressing a community or civic issue. Winning apps are exhibited in the U.S. Capitol Building.",
         url: "https://www.congressionalappchallenge.us/",
-        desc: "Official competition hosted by Members of Congress. Students code an app on any platform (web, mobile, desktop) solving a community or national problem. Winning apps are displayed in the U.S. Capitol.",
-        tip: "Judges prioritize civic impact and practical utility just as much as technical complexity. Build an app that solves an authentic problem in your local school or municipality."
+        admissionsWeight: "Moderate to High (Civic recognition directly from Members of Congress)"
       },
       {
-        id: "cs_bwsi",
+        id: "cs_opp_bwsi",
         name: "MIT Beaver Works Summer Institute (BWSI)",
         org: "MIT Lincoln Laboratory",
-        category: "research",
-        tier: "Tier 1 Elite",
-        cost: "100% Free / Need-based Aid",
-        eligibility: "Rising High School Seniors",
-        scope: "Hybrid (Cambridge, MA & Virtual)",
-        deadline: "Annual March Deadline",
+        cost: "100% Free (Aid & Hardware Kits Provided)",
+        isFree: true,
+        scope: "Cambridge, MA & Virtual",
+        scopeType: "national",
+        eligibility: "Rising High School Seniors (Grade 11)",
+        qualifications: "Must complete free prerequisite online courses in Python and linear algebra before selection.",
+        conducted: "Intensive 4-week summer program (residential in Cambridge or synchronous virtual).",
+        whereWhen: "July annually; application deadline in late March",
+        whatHappens: "Students build autonomous mini-RACECARs, program embedded security hardware, and deploy deep learning models under MIT researchers.",
         url: "https://beaverworks.ll.mit.edu/CMS/cms/",
-        desc: "World-class 4-week STEM program where teams design autonomous RACECAR vehicles, build quantum algorithms, and deploy embedded cybersecurity systems guided by MIT researchers.",
-        tip: "Complete their prerequisite online course modules (independent study) thoroughly—your completion metrics and quiz scores directly influence acceptance."
+        admissionsWeight: "Extremely High (Premier selective STEM summer research institute)"
       },
       {
-        id: "cs_aimi",
+        id: "cs_opp_aimi",
         name: "Stanford AIMI Summer Research Internship",
-        org: "Stanford Center for AI in Medicine & Imaging",
-        category: "research",
-        tier: "Tier 1 Elite",
+        org: "Stanford University School of Medicine",
         cost: "100% Free",
-        eligibility: "High School Students (Ages 14+)",
+        isFree: true,
         scope: "Virtual (Global)",
-        deadline: "Annual March Deadline",
+        scopeType: "international",
+        eligibility: "High School Students (Ages 14+ Worldwide)",
+        qualifications: "Curiosity for machine learning applications in medicine. Basic Python helpful.",
+        conducted: "2-week live virtual program with daily faculty lectures and small-group research projects.",
+        whereWhen: "Late June &bull; Application deadline in March",
+        whatHappens: "Interns work directly with Stanford clinical AI fellows, training vision models on MRI/CT medical datasets to explore diagnostic healthcare AI.",
         url: "https://aimi.stanford.edu/summer-research-internship",
-        desc: "A selective 2-week virtual program introducing high schoolers to medical AI, computer vision on MRI/CT scans, and direct research mentorship from Stanford clinical AI fellows.",
-        tip: "Emphasize your specific curiosity for healthcare problems. Mentioning specific published papers from AIMI in your essay demonstrates true alignment."
+        admissionsWeight: "High (Prestigious clinical AI mentorship)"
       },
       {
-        id: "cs_gsoc",
+        id: "cs_opp_gsoc",
         name: "Google Summer of Code (GSoC)",
         org: "Google Open Source",
-        category: "internship",
-        tier: "Tier 1 Elite",
-        cost: "Paid Stipend ($1,500 - $3,300+)",
-        eligibility: "Ages 18+ (University & Non-traditional)",
+        cost: "Paid Monthly Stipend ($1,500 - $3,300+)",
+        isFree: true,
         scope: "Global Remote",
-        deadline: "Annual April Application Cycle",
+        scopeType: "global",
+        eligibility: "Ages 18+ (Undergraduates, Graduate Students & Adult Beginners)",
+        qualifications: "Proficiency in open-source development and familiarity with Git and target organization codebases.",
+        conducted: "12-week mentored remote programming fellowship during the summer.",
+        whereWhen: "Global remote &bull; Applications open in March/April annually",
+        whatHappens: "Google pays you a stipend to write code for major open-source organizations (Linux Foundation, Python, Apache, Blender) under dedicated mentors.",
         url: "https://summerofcode.withgoogle.com/",
-        desc: "Google funds student developers to write code for major open-source organizations (Linux Foundation, Python, Apache, Blender) over an 8-to-12 week mentored program.",
-        tip: "Start contributing pull requests to your target organization 2 months before applications open so the organization administrators already know your name."
+        admissionsWeight: "Extremely High (Gold-standard industry credential)"
       },
       {
-        id: "cs_medici",
-        name: "1517 Medici Project Micro-Grant",
+        id: "cs_opp_medici",
+        name: "1517 Medici Project Micro-Grant ($1,000)",
         org: "1517 Fund",
-        category: "grant",
-        tier: "Tier 1 Elite",
-        cost: "$1,000 Cash Grant (Zero Equity)",
-        eligibility: "Students under 21",
-        scope: "Global Remote",
-        deadline: "Rolling Applications Year-Round",
+        cost: "$1,000 Cash Grant (Zero Equity / 100% Free)",
+        isFree: true,
+        scope: "Global",
+        scopeType: "global",
+        eligibility: "Makers & Hackers under age 21 worldwide",
+        qualifications: "Must be building a functional hardware or software prototype or scientific experiment.",
+        conducted: "Simple online pitch review with rapid grant disbursement.",
+        whereWhen: "Rolling applications year-round &bull; Decided within weeks",
+        whatHappens: "Awardees receive a non-dilutive $1,000 grant check to buy servers, parts, or scientific equipment to bring an ambitious project to life.",
         url: "https://www.1517fund.com/medici-project",
-        desc: "Fast, non-dilutive $1,000 checks given directly to young hackers, makers, and scientists building ambitious hardware, software, or scientific experiments outside of traditional school work.",
-        tip: "Keep your application concise. Show working code, screenshots, or physical prototypes rather than corporate buzzwords."
-      },
-      {
-        id: "cs_hackclub",
-        name: "Hack Club Leadership & Hardware Grants",
-        org: "Hack Club (501c3 Non-profit)",
-        category: "leadership",
-        tier: "Tier 2 Selective",
-        cost: "100% Free + $500 Grants / Free Microcontrollers",
-        eligibility: "High School Students Worldwide",
-        scope: "Global & In-School Chapters",
-        deadline: "Rolling (Join Anytime)",
-        url: "https://hackclub.com/",
-        desc: "Global student-led non-profit network. Hack Club gives high schoolers free bank accounts, $500 hardware grants, and curriculum to start coding clubs and in-person hackathons.",
-        tip: "Founding a Hack Club chapter at your school gives you direct, verifiable leadership and project-funding credentials that admissions officers recognize."
-      },
-      {
-        id: "cs_mlh",
-        name: "Major League Hacking (MLH) Global Hackathons",
-        org: "Major League Hacking",
-        category: "competition",
-        tier: "Tier 2 Selective",
-        cost: "100% Free / Travel Reimbursements Available",
-        eligibility: "High School & University",
-        scope: "Global In-Person & Virtual",
-        deadline: "Every Weekend Year-Round",
-        url: "https://mlh.io/seasons/2025/events",
-        desc: "The official student hackathon league running 200+ weekend competitions each year. Teams build working prototypes within 36 hours and pitch to tech company sponsors.",
-        tip: "Focus on creating a tight 2-minute demonstration video and clean GitHub README; judges judge on working demos, not slides."
+        admissionsWeight: "High (Demonstrates genuine builder initiative)"
       }
     ]
   },
 
   "biology": {
     roadmap: [
-      "Phase 1 (Foundations): Compete in local science fairs or USABO Open Exam; complete online bio-data analysis modules.",
-      "Phase 2 (Regional Lab): Cold-email professors at regional university medical centers; enter regional ISEF-affiliated fair.",
-      "Phase 3 (Selective Fellowship): Apply to competitive residential research programs (Simons, NIH SIP, Jackson Lab, Clark Scholars).",
-      "Phase 4 (National Honor): Submit research to Regeneron STS / ISEF, co-author a peer-reviewed paper, or present at a biomedical symposium."
+      "Phase 1 (Foundations): Master cellular genetics, biochemistry, and physiology via OpenStax Biology and Khan Academy.",
+      "Phase 2 (Literature Review): Read free peer-reviewed review papers on NCBI PubMed to identify open biomedical questions.",
+      "Phase 3 (Lab Tools & Computational Bio): Learn sequence alignment and CRISPR guide design using free academic tiers of Benchling and BLAST.",
+      "Phase 4 (Research & Science Fairs): Formulate a testable hypothesis, write a scientific paper, and submit to an ISEF-affiliated regional fair."
     ],
-    items: [
+    resources: [
       {
-        id: "bio_isef",
-        name: "Regeneron ISEF (International Science Fair)",
+        id: "bio_res_nih_pubmed",
+        type: "learning",
+        format: "reading",
+        level: "Intermediate",
+        name: "NCBI PubMed Central (Open Access Medical Papers)",
+        author: "National Library of Medicine",
+        cost: "100% Free",
+        isFree: true,
+        scope: "Global",
+        url: "https://pubmed.ncbi.nlm.nih.gov/",
+        desc: "The world's premier open database containing millions of peer-reviewed biomedical research papers, clinical trials, and reviews.",
+        whatYouLearn: "How to read primary scientific literature, analyze statistical figures, evaluate experimental methodologies, and write academic bibliographies.",
+        time: "Continuous reference",
+        prereq: "Basic biology understanding"
+      },
+      {
+        id: "bio_res_benchling",
+        type: "learning",
+        format: "projects",
+        level: "Intermediate",
+        name: "Benchling Academic Suite (Molecular Biology Tools)",
+        author: "Benchling",
+        cost: "100% Free for Academics",
+        isFree: true,
+        scope: "Global",
+        url: "https://www.benchling.com/",
+        desc: "Cloud software used by top biotech researchers to design primers, simulate restriction cloning, and design CRISPR guide RNAs.",
+        whatYouLearn: "Plasmid mapping, sequence alignment, restriction enzyme digestion simulation, CRISPR guide RNA targeting, and electronic lab notebook documentation.",
+        time: "1-2 hours to master basics",
+        prereq: "Basic genetics knowledge"
+      }
+    ],
+    classes: [
+      {
+        id: "bio_cls_ninja_nerd",
+        name: "Ninja Nerd Clinical Science & Physiology Masterclasses",
+        instructor: "Zach Murphy (Ninja Nerd)",
+        instructorType: "youtuber",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (High-Detail Illustrated Whiteboards)",
+        location: "Global Online (YouTube)",
+        cost: "100% Free",
+        isFree: true,
+        duration: "Self-Paced (Over 200+ In-Depth Lectures)",
+        audience: "High School, Pre-Med & Medical Students",
+        url: "https://www.youtube.com/@NinjaNerdOfficial",
+        syllabus: "Cellular respiration, immunology, cardiovascular hemodynamics, neurophysiology, pharmacology, and renal physiology.",
+        accessTip: "Full hand-drawn blackboard lectures available completely free without subscription."
+      },
+      {
+        id: "bio_cls_khan_bio",
+        name: "High School & AP Biology Comprehensive Course",
+        instructor: "Sal Khan & Biology Teachers",
+        instructorType: "teacher",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (Interactive Exercises & Mastery Tracking)",
+        location: "Global Online",
+        cost: "100% Free Forever",
+        isFree: true,
+        duration: "Self-paced",
+        audience: "High School & College Beginners",
+        url: "https://www.khanacademy.org/science/biology",
+        syllabus: "Chemistry of life, cell structure, cellular energetics, cell communication, heredity, gene expression, and ecology.",
+        accessTip: "Completely free non-profit platform with instant practice quizzes and mastery tracking."
+      },
+      {
+        id: "bio_cls_mit_ocw_genetics",
+        name: "MIT 7.03: Genetics & Molecular Biology",
+        instructor: "MIT Faculty & Eric Lander",
+        instructorType: "university",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (Exam Archive & Problem Sets)",
+        location: "Cambridge, MA / Global Online",
+        cost: "100% Free",
+        isFree: true,
+        duration: "10 Weeks",
+        audience: "Undergraduate / Advanced Students",
+        url: "https://ocw.mit.edu/courses/7-03-genetics-fall-2004/",
+        syllabus: "Genetic mechanisms in bacteria, phage, yeast, and humans; chromosome structure, linkage, and gene mapping.",
+        accessTip: "Full exam archives with answer keys are open to download."
+      }
+    ],
+    opportunities: [
+      {
+        id: "bio_opp_isef",
+        name: "Regeneron International Science & Engineering Fair (ISEF)",
         org: "Society for Science",
-        category: "competition",
-        tier: "Tier 1 Elite",
-        cost: "100% Free / All Expenses Paid for Finalists",
-        eligibility: "Grades 9-12 Worldwide",
-        scope: "Local -> Regional -> Global Finals",
-        deadline: "Annual Spring Qualification",
+        cost: "100% Free / Finalist Travel Fully Funded",
+        isFree: true,
+        scope: "Local Regional Fair &bull; Global Finals",
+        scopeType: "international",
+        eligibility: "Grades 9-12 Students Worldwide",
+        qualifications: "Must conduct original scientific research and qualify through an affiliated regional/local fair.",
+        conducted: "Local science fair qualification leading to an annual week-long international grand championship.",
+        whereWhen: "Local fairs in Feb-March &bull; Global Finals in May annually",
+        whatHappens: "1,800+ top student scientists present original research projects to PhD judges, competing for over $9 million in awards and scholarships.",
         url: "https://www.societyforscience.org/isef/",
-        desc: "The world's premier pre-college STEM competition. Nearly 2,000 high school scientists from 80+ nations compete for over $9 million in awards and university scholarships.",
-        tip: "You must first win your local ISEF-affiliated regional fair. Review previous winning abstracts in your category to understand experimental rigor and statistical power requirements."
-      },
-      {
-        id: "bio_usabo",
-        name: "USA Biology Olympiad (USABO)",
-        org: "Center for Excellence in Education (CEE)",
-        category: "competition",
-        tier: "Tier 1 Elite",
-        cost: "$95 school registration fee (waivers available)",
-        eligibility: "High School Students (U.S.)",
-        scope: "School -> Semifinal -> National Finals",
-        deadline: "Annual February Open Exam",
-        url: "https://www.usabo-trc.org/",
-        desc: "The premiere biology competition in the US. Top 20 national finalists attend a 2-week residential training camp to represent Team USA at the International Biology Olympiad (IBO).",
-        tip: "Master Campbell Biology cover to cover, and supplement genetics and biochemistry with Alberts' 'Molecular Biology of the Cell'."
-      },
-      {
-        id: "bio_simons",
-        name: "Simons Summer Research Program",
-        org: "Stony Brook University",
-        category: "research",
-        tier: "Tier 1 Elite",
-        cost: "100% Free (Fellowship Stipend Included)",
-        eligibility: "High School Juniors (Grade 11)",
-        scope: "Residential (Stony Brook, NY)",
-        deadline: "Annual February Deadline",
-        url: "https://www.stonybrook.edu/simons/",
-        desc: "Prestigious 7-week residential research fellowship where students join active biomedical, cancer, and neurobiology laboratories under senior faculty.",
-        tip: "Requires a school nomination. Approach your biology teacher in December to secure your high school's nomination slot early."
-      },
-      {
-        id: "bio_nih_sip",
-        name: "NIH Summer Internship Program (SIP)",
-        org: "National Institutes of Health",
-        category: "internship",
-        tier: "Tier 1 Elite",
-        cost: "Paid Monthly Stipend ($2,300 - $3,000/mo)",
-        eligibility: "High School (Ages 17+) & Undergrad",
-        scope: "Bethesda, MD & Regional NIH Campuses",
-        deadline: "Annual February Deadline",
-        url: "https://www.training.nih.gov/programs/sip",
-        desc: "Full-time 8-week hands-on biomedical research side-by-side with leading clinical and laboratory scientists at the world's premier health research center.",
-        tip: "Don't just submit the general application: proactively email 5-10 specific NIH Principal Investigators (PIs) whose papers interest you with your application ID."
-      },
-      {
-        id: "bio_clark",
-        name: "Clark Scholars Summer Program",
-        org: "Texas Tech University",
-        category: "research",
-        tier: "Tier 1 Elite",
-        cost: "Free + $750 Stipend + Room & Board",
-        eligibility: "High School Juniors & Seniors (Ages 17+)",
-        scope: "Residential (Lubbock, TX)",
-        deadline: "Annual Mid-February Deadline",
-        url: "https://www.depts.ttu.edu/honors/academicsandenrichment/affiliatedandspecialprograms/clarks/",
-        desc: "An intensive 7-week research program accepting only 12 students internationally across sciences, medicine, and engineering with 1-on-1 faculty mentorship.",
-        tip: "Admissions is sub-3% acceptance. Highlight previous laboratory independence and clear scientific essay voice."
+        admissionsWeight: "Pinnacle (Highest weighted high school science research accomplishment)"
       }
     ]
   },
 
   "finance": {
     roadmap: [
-      "Phase 1 (Knowledge & Simulation): Compete in free market simulations (Wharton Investment Competition, SIFMA Stock Market Game).",
-      "Phase 2 (Club & Pitch): Founded or lead a financial literacy / investment club chapter; enter regional pitch competitions (Diamond Challenge).",
-      "Phase 3 (Selective Fellowship): Apply to Bank of America Student Leaders or university summer incubators (LaunchX).",
-      "Phase 4 (Capital & Enterprise): Launch an authentic revenue-generating venture or micro-fund; apply for Thiel Fellowship or seed grants."
+      "Phase 1 (Accounting Foundations): Master financial statements (Balance Sheet, Income Statement, Cash Flows) and the time value of money.",
+      "Phase 2 (Valuation & DCF Modeling): Learn discounted cash flow analysis and comparable company analysis using free spreadsheet templates.",
+      "Phase 3 (Investment Strategy & Portfolios): Explore low-cost index funds, risk management, and the Three-Fund Portfolio strategy.",
+      "Phase 4 (Simulations & Competitions): Test strategies in Wharton Global High School Investment simulation or pitch to the Diamond Challenge."
     ],
-    items: [
+    resources: [
       {
-        id: "fin_wharton",
-        name: "Wharton Global High School Investment Competition",
-        org: "Wharton School, University of Pennsylvania",
-        category: "competition",
-        tier: "Tier 1 Elite",
+        id: "fin_res_damodaran",
+        type: "learning",
+        format: "video",
+        level: "Intermediate",
+        name: "Aswath Damodaran: Corporate Finance & Valuation Series",
+        author: "Prof. Aswath Damodaran (NYU Stern)",
         cost: "100% Free",
-        eligibility: "High School Students (Teams of 4-7)",
-        scope: "Global Virtual -> Philadelphia Finals",
-        deadline: "Annual September Registration",
-        url: "https://globalyouth.wharton.upenn.edu/investment-competition/",
-        desc: "Teams manage a $100,000 virtual portfolio over 10 weeks to develop a customized quantitative and qualitative investment strategy for an authentic client profile.",
-        tip: "Winning teams are judged on strategic coherence and risk management, NOT short-term portfolio gains. Speculative day-trading will disqualify you."
-      },
-      {
-        id: "fin_diamond",
-        name: "The Diamond Challenge for High School Entrepreneurs",
-        org: "University of Delaware Horn Entrepreneurship",
-        category: "competition",
-        tier: "Tier 1 Elite",
-        cost: "100% Free ($100,000+ in Cash Prizes)",
-        eligibility: "Grades 9-12 Worldwide",
-        scope: "Global Virtual -> Delaware Summit",
-        deadline: "Annual January Deadline",
-        url: "https://diamondchallenge.org/",
-        desc: "The world's top entrepreneurship competition for teens. Tracks in Business Innovation and Social Innovation where students pitch validated business models.",
-        tip: "Customer discovery interviews are paramount. Teams that interviewed 50+ prospective users and demonstrate real pilot demand consistently win."
-      },
-      {
-        id: "fin_bofa",
-        name: "Bank of America Student Leaders Program",
-        org: "Bank of America Charitable Foundation",
-        category: "internship",
-        tier: "Tier 1 Elite",
-        cost: "Paid 8-Week Internship + All-Expenses-Paid DC Summit",
-        eligibility: "High School Juniors & Seniors (U.S.)",
-        scope: "Local Non-Profit Placement + Washington, DC",
-        deadline: "Annual January Deadline",
-        url: "https://about.bankofamerica.com/en/making-an-impact/student-leaders",
-        desc: "Awardees receive an 8-week paid summer internship at a leading local non-profit in their community and attend a week-long national leadership summit in Washington, DC.",
-        tip: "Focus your essays on service leadership in your local neighborhood rather than corporate ambitions."
-      },
-      {
-        id: "fin_thiel",
-        name: "The Thiel Fellowship ($100,000)",
-        org: "Thiel Foundation",
-        category: "grant",
-        tier: "Tier 1 Elite",
-        cost: "$100,000 Grant + Mentorship Network",
-        eligibility: "Ages 22 or Younger",
+        isFree: true,
         scope: "Global",
-        deadline: "Rolling Applications Year-Round",
-        url: "https://thielfellowship.org/",
-        desc: "A two-year, $100,000 grant given to young founders who want to build new tech and ventures instead of sitting in a college classroom.",
-        tip: "They want extreme builders who have already started creating products with early customer traction or revolutionary breakthroughs."
+        url: "https://www.youtube.com/@AswathDamodaranonValuation",
+        desc: "Known as the 'Dean of Valuation', Prof. Damodaran provides his entire NYU Stern MBA finance and valuation course free on YouTube.",
+        whatYouLearn: "Discounted cash flow (DCF) modeling, estimating cost of capital, analyzing corporate risk premiums, and valuing tech startups vs mature firms.",
+        time: "1 hour / lecture",
+        prereq: "Basic math & accounting comfort"
+      }
+    ],
+    classes: [
+      {
+        id: "fin_cls_plain_bagel",
+        name: "Practical Investing & Financial Literacy Bootcamp",
+        instructor: "Richard Coffin, CFA (The Plain Bagel)",
+        instructorType: "youtuber",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (Visual Case Studies & Market Breakdowns)",
+        location: "Global Online (YouTube)",
+        cost: "100% Free",
+        isFree: true,
+        duration: "Self-Paced (Comprehensive Video Modules)",
+        audience: "Beginners & Young Adults",
+        url: "https://www.youtube.com/@ThePlainBagel",
+        syllabus: "Understanding market mechanics, diversification, avoiding speculative traps, reading financial statements, and building low-fee portfolios.",
+        accessTip: "Clear educational videos without promotional sponsorships or crypto hype."
+      },
+      {
+        id: "fin_cls_khan_finance",
+        name: "Finance, Capital Markets & Macroeconomics",
+        instructor: "Sal Khan & Economics Teachers",
+        instructorType: "teacher",
+        delivery: "online",
+        deliveryLabel: "🌐 Online (Interactive Exercises)",
+        location: "Global Online",
+        cost: "100% Free",
+        isFree: true,
+        duration: "Self-paced",
+        audience: "Open to All Audiences",
+        url: "https://www.khanacademy.org/economics-finance-domain/core-finance",
+        syllabus: "Interest and debt, housing and mortgages, inflation, stocks and bonds, options and derivatives, and currency exchange.",
+        accessTip: "Free bite-sized video lessons and interactive calculation exercises."
+      }
+    ],
+    opportunities: [
+      {
+        id: "fin_opp_wharton",
+        name: "Wharton Global High School Investment Competition",
+        org: "The Wharton School, University of Pennsylvania",
+        cost: "100% Free",
+        isFree: true,
+        scope: "Global Virtual &bull; Philadelphia Finals",
+        scopeType: "international",
+        eligibility: "High School Students (Teams of 4 to 7)",
+        qualifications: "Must be enrolled in grades 9-12 and form a student team with an advisor/teacher.",
+        conducted: "10-week virtual portfolio simulation followed by a written investment policy report and live presentation.",
+        whereWhen: "September registration &bull; Contest runs October through December",
+        whatHappens: "Teams manage $100,000 in virtual capital to craft a tailored long-term investment strategy for a real-world case client.",
+        url: "https://globalyouth.wharton.upenn.edu/investment-competition/",
+        admissionsWeight: "High (Wharton's flagship global business challenge)"
       }
     ]
   }
 };
 
 /* -------------------------------------------------------------
- * HEURISTIC OPPORTUNITY SYNTHESIZER FOR ANY NICHES
+ * HEURISTIC SYNTHESIZER FOR CUSTOM USER TOPICS
+ * (Includes YouTubers, Teachers, Universities & Local In-Person Classes)
  * -----------------------------------------------------------*/
-function synthesizeDynamicOpportunities(topic, location) {
+function synthesizeDynamicData(topic, location) {
   const clean = topic.trim();
   const enc = encodeURIComponent(clean);
-  const locEnc = location ? encodeURIComponent(location) : '';
+  const locStr = location ? location.trim() : 'Global';
+  const hasLocal = location && location.toLowerCase() !== 'global';
+
+  const generatedClasses = [
+    {
+      id: `dyn_cls_yt_${Math.random().toString(36).substr(2,6)}`,
+      name: `${clean} Complete Crash Course & Practical Masterclass`,
+      instructor: `Popular Independent Educator & YouTube Creator`,
+      instructorType: "youtuber",
+      delivery: "online",
+      deliveryLabel: "🌐 Online (Live Stream & Discord Lab)",
+      location: "Global Online (YouTube)",
+      cost: "100% Free",
+      isFree: true,
+      duration: "6-8 Weeks (Self-Paced)",
+      audience: "All Audiences & Beginners",
+      url: `https://www.youtube.com/results?search_query=${enc}+complete+course+masterclass`,
+      syllabus: `Core principles, project-based exercises, real-world case studies, and common beginner pitfalls in ${clean}.`,
+      accessTip: "Watch the full masterclass series on YouTube; join community discord channels for free feedback."
+    },
+    {
+      id: `dyn_cls_teacher_${Math.random().toString(36).substr(2,6)}`,
+      name: `${clean} Interactive Study Cohort & Guided Practice`,
+      instructor: `Certified Teachers & Community Educators`,
+      instructorType: "teacher",
+      delivery: "online",
+      deliveryLabel: "🌐 Online (Live Q&A & Code/Problem Review)",
+      location: "Virtual Classroom",
+      cost: "100% Free",
+      isFree: true,
+      duration: "Weekly Interactive Sessions",
+      audience: "High School, College & Independent Learners",
+      url: `https://www.google.com/search?q=free+online+classes+workshops+${enc}`,
+      syllabus: `Step-by-step problem sets, structured weekly milestones, peer critiques, and fundamental theory in ${clean}.`,
+      accessTip: "Open enrollment with drop-in office hours and downloadable guided worksheets."
+    },
+    {
+      id: `dyn_cls_univ_${Math.random().toString(36).substr(2,6)}`,
+      name: `University Open Course: Principles of ${clean}`,
+      instructor: `Consortium Faculty & Lecturers`,
+      instructorType: "university",
+      delivery: "online",
+      deliveryLabel: "🌐 Online (Lecture Archive & Problem Sets)",
+      location: "OpenCourseWare / edX",
+      cost: "100% Free (Audit Mode)",
+      isFree: true,
+      duration: "10-12 Weeks",
+      audience: "Undergraduates & Lifelong Learners",
+      url: `https://www.edx.org/search?q=${enc}`,
+      syllabus: `Formal theoretical framework, mathematical modeling, analytical literature review, and capstone evaluation in ${clean}.`,
+      accessTip: "Select the free 'Audit Course' mode to view all lectures and assignments without paying."
+    }
+  ];
+
+  if (hasLocal) {
+    generatedClasses.unshift({
+      id: `dyn_cls_local_${Math.random().toString(36).substr(2,6)}`,
+      name: `${clean} Hands-on Workshops & Open Lab Sessions (${locStr})`,
+      instructor: `Local Teachers & Community Mentors`,
+      instructorType: "community",
+      delivery: "offline",
+      deliveryLabel: "📍 Offline / In-Person (Local Studio & Library)",
+      location: `${locStr} Public Library Tech Center & Community MakerSpace`,
+      cost: "100% Free (Public Community Access)",
+      isFree: true,
+      duration: "Weekly Drop-in (Saturdays 10:00 AM - 12:00 PM)",
+      audience: "Local Community Members, Students & Adults",
+      url: `https://www.google.com/search?q=${enc}+classes+workshops+near+${encodeURIComponent(locStr)}`,
+      syllabus: `In-person guided labs, hands-on tool demonstrations, peer project collaboration, and direct mentor Q&A in ${locStr}.`,
+      accessTip: "Free admission with local library card or walk-in community registration at the front desk."
+    });
+  }
 
   return {
     roadmap: [
-      `Phase 1 (Proof of Concept): Complete foundational self-directed projects in ${clean}; document your workflow on a public portfolio or GitHub.`,
-      `Phase 2 (Regional Contest & Chapter): Form a local student interest group or chapter; enter regional fairs, essay awards, or showcase challenges in ${clean}.`,
-      `Phase 3 (Mentor Fellowship): Cold-contact 5-10 professors or industry researchers in ${clean} proposing a collaborative sub-study.`,
-      `Phase 4 (National Honor): Submit to national competitions, apply for independent innovation grants, or publish your findings.`
+      `Phase 1 (Core Foundations): Master key concepts and terminology in ${clean} using free open tutorials and introductory lectures.`,
+      `Phase 2 (Project & Portfolio): Build 2 independent demonstration projects applying ${clean} to practical real-world scenarios.`,
+      `Phase 3 (Methodology & Literature): Read review articles and official documentation to master standard methodologies in ${clean}.`,
+      `Phase 4 (Community & Showcase): Present your work at a conference, submit to a student challenge, or contribute to an open initiative.`
     ],
-    items: [
+    resources: [
       {
-        id: `dyn_comp_${Math.random().toString(36).substr(2,6)}`,
-        name: `National & Global ${clean} Youth Awards & Competitions`,
-        org: `International Association for ${clean}`,
-        category: "competition",
-        tier: "Tier 1 Elite",
-        cost: "100% Free / Entry Grants Available",
-        eligibility: state.answers.grade,
-        scope: "Global & Regional",
-        deadline: "Annual Spring & Fall Cycles",
-        url: `https://www.google.com/search?q=${enc}+high+school+competitions+awards`,
-        desc: `Prestigious competitive showcase where students submit original research papers, prototypes, or creative portfolios in ${clean} evaluated by subject-matter authorities.`,
-        tip: `Focus on originality and measurable impact. Judges evaluate projects that present a novel angle or real-world application rather than generic summaries.`
-      },
-      {
-        id: `dyn_res_${Math.random().toString(36).substr(2,6)}`,
-        name: `University Summer Research & Lab Fellowships in ${clean}`,
-        org: "Collegiate STEM & Humanities Research Hub",
-        category: "research",
-        tier: "Tier 1 Elite",
-        cost: "Stipends / Financial Aid Available",
-        eligibility: state.answers.grade,
-        scope: location ? `Hybrid / Near ${location}` : "Global Remote & Residential",
-        deadline: "Applications open Nov - March",
-        url: `https://www.google.com/search?q=${enc}+summer+research+program+for+students`,
-        desc: `Intensive 6-8 week laboratory programs pairing students with faculty investigators working on state-of-the-art developments in ${clean}.`,
-        tip: `When drafting your outreach statement, cite 2 recent papers from the laboratory and specify which technical tools you can immediately contribute.`
-      },
-      {
-        id: `dyn_grant_${Math.random().toString(36).substr(2,6)}`,
-        name: `Emergent & Independent Project Grants for ${clean}`,
-        org: "Youth Innovation Venture Funds",
-        category: "grant",
-        tier: "Tier 2 Selective",
-        cost: "$500 to $5,000 Micro-Grants",
-        eligibility: "Students & Independent Builders",
+        id: `dyn_res_yt_${Math.random().toString(36).substr(2,6)}`,
+        type: "learning",
+        format: "video",
+        level: "Beginner",
+        name: `${clean} Masterclass & Fundamental Video Series`,
+        author: "Open Educational Creators",
+        cost: "100% Free",
+        isFree: true,
         scope: "Global",
-        deadline: "Rolling Deadlines",
-        url: `https://www.google.com/search?q=${enc}+student+project+grants+funding`,
-        desc: `Non-dilutive seed funding provided to young makers and researchers to purchase equipment, cover lab fees, or launch community initiatives in ${clean}.`,
-        tip: `Provide a specific itemized budget and demonstrable prototype milestones to prove operational readiness.`
+        url: `https://www.youtube.com/results?search_query=${enc}+lecture+course+fundamentals`,
+        desc: `High-quality video series introducing core principles, intuitive visual demonstrations, and beginner walkthroughs in ${clean}.`,
+        whatYouLearn: `Foundational vocabulary, core problem-solving frameworks, real-world case studies, and common beginner mistakes to avoid in ${clean}.`,
+        time: "15-20 min / video",
+        prereq: "None"
       },
       {
-        id: `dyn_local_${Math.random().toString(36).substr(2,6)}`,
-        name: `${clean} Regional Chapter, Club & Science Fair Networks`,
-        org: location ? `${location} Regional Hub` : "Regional Affiliate Networks",
-        category: "leadership",
-        tier: "Tier 2 Selective",
-        cost: "Free / Community",
-        eligibility: "All Students",
-        scope: location ? `In-Person (${location})` : "Local Chapters Globally",
-        deadline: "Rolling Enrollment",
-        url: `https://www.meetup.com/find/?keywords=${enc}${locEnc ? '&location=' + locEnc : ''}`,
-        desc: `Connect with local chapters, high school clubs, and student leaders running hands-on collaborative workshops in ${clean}.`,
-        tip: `Founding or holding a board position in a local regional chapter demonstrates verifiable leadership and community initiative.`
+        id: `dyn_res_doc_${Math.random().toString(36).substr(2,6)}`,
+        type: "learning",
+        format: "reading",
+        level: "Intermediate",
+        name: `Authoritative ${clean} Literature & Reference Repository`,
+        author: "Open Standards & Research Network",
+        cost: "100% Free",
+        isFree: true,
+        scope: "Global",
+        url: `https://www.google.com/search?q=${enc}+documentation+reference+guide`,
+        desc: `The definitive written manuals and reference documentation detailing terminology, methodologies, and frameworks for ${clean}.`,
+        whatYouLearn: `In-depth technical architecture, standard operational procedures, mathematical or analytical formulas, and expert best practices.`,
+        time: "Self-paced reference",
+        prereq: "Basic familiarity with fundamentals"
+      }
+    ],
+    classes: generatedClasses,
+    opportunities: [
+      {
+        id: `dyn_opp_comp_${Math.random().toString(36).substr(2,6)}`,
+        name: `Global & National Student Challenges in ${clean}`,
+        org: `International Association for ${clean}`,
+        cost: "100% Free Entry / Grants Available",
+        isFree: true,
+        scope: "Global Online",
+        scopeType: "international",
+        eligibility: "Students & Youth Worldwide",
+        qualifications: `Original project submission, paper, or prototype demonstrating innovative application of ${clean}.`,
+        conducted: "Virtual preliminary rounds followed by a national showcase or symposium.",
+        whereWhen: "Annual spring & fall cycles &bull; Online submission",
+        whatHappens: `Participants build a capstone project or scientific investigation in ${clean}, submit a detailed portfolio, and receive formal evaluation from field experts.`,
+        url: `https://www.google.com/search?q=${enc}+youth+competition+awards+student`,
+        admissionsWeight: "High (Demonstrates independent initiative and verifiable accomplishment)"
       }
     ]
   };
 }
 
-function fetchOpportunities(topic, location) {
+/* -------------------------------------------------------------
+ * DATA RETRIEVAL CONTROLLER
+ * -----------------------------------------------------------*/
+let currentDataSet = null;
+
+function fetchHubData(topic, location) {
   const norm = topic.toLowerCase();
-  for (const [key, data] of Object.entries(OPPORTUNITIES_DB)) {
+  for (const [key, data] of Object.entries(KNOWLEDGE_BASE)) {
     if (norm.includes(key) || key.includes(norm)) {
       const cloned = JSON.parse(JSON.stringify(data));
-      if (location) {
-        cloned.items.push({
+      
+      // If user provided a location, append local offline in-person classes and regional science fair!
+      if (location && location.toLowerCase() !== 'global') {
+        // Local In-Person Offline Class:
+        cloned.classes.unshift({
+          id: `local_cls_${Math.random().toString(36).substr(2,6)}`,
+          name: `${topic} Hands-on Coding & Workshop Lab (${location})`,
+          instructor: "Local Educators, Volunteers & Public Librarians",
+          instructorType: "community",
+          delivery: "offline",
+          deliveryLabel: "📍 Offline / In-Person (Local Library Lab)",
+          location: `${location} Public Library & Regional Maker Lab`,
+          cost: "100% Free (Public Drop-in)",
+          isFree: true,
+          duration: "Weekly In-Person Lab (Saturdays 10:30 AM - 12:30 PM)",
+          audience: "Community Members, High School & College Students",
+          url: `https://www.google.com/search?q=${encodeURIComponent(topic)}+free+classes+workshops+in+${encodeURIComponent(location)}`,
+          syllabus: `Collaborative hands-on project building, hardware tool demonstrations, in-person peer code reviews, and mentor assistance in ${location}.`,
+          accessTip: "Open to the public for free; bring a laptop or use the public library's desktop computers."
+        });
+
+        // Local Science Fair Opportunity:
+        cloned.opportunities.unshift({
           id: `local_fair_${Math.random().toString(36).substr(2,6)}`,
-          name: `ISEF-Affiliated Regional Science & Engineering Fair (${location})`,
-          org: "Society for Science Regional Affiliates",
-          category: "competition",
-          tier: "Tier 1 Elite",
-          cost: "Free / Nominal Entry",
-          eligibility: "Grades 6-12",
-          scope: `Local (${location} Metro)`,
-          deadline: "Annual Winter/Spring Fair",
+          name: `ISEF-Affiliated Regional Science Fair (${location})`,
+          org: "Society for Science Regional Network",
+          cost: "100% Free / Nominal Entry",
+          isFree: true,
+          scope: `Local (${location})`,
+          scopeType: "local",
+          eligibility: "Grades 6-12 Students in Regional District",
+          qualifications: `Must be a student residing or attending school in the ${location} metropolitan region.`,
+          conducted: "In-person regional fair judging with physical poster board presentations.",
+          whereWhen: `Regional convention center near ${location} &bull; Winter / Spring annually`,
+          whatHappens: "Students present original research to local scientists and university faculty. Top grand award winners advance directly to the Regeneron ISEF international championship.",
           url: "https://findafair.societyforscience.org/",
-          desc: `Your mandatory official feeder competition to qualify for Regeneron ISEF, National Junior Science & Humanities Symposium, and state honors.`,
-          tip: `Visit the official Society for Science Fair Finder to identify your regional fair coordinator and submit paperwork by December.`
+          admissionsWeight: "Extremely High (Official feeder fair to ISEF and national STEM honors)"
+        });
+
+        cloned.resources.push({
+          id: `local_meetup_${Math.random().toString(36).substr(2,6)}`,
+          type: "learning",
+          format: "projects",
+          level: "Beginner",
+          name: `${topic} Study Circles & Workshops (${location})`,
+          author: "Regional Study Network",
+          cost: "100% Free",
+          isFree: true,
+          scope: `Local (${location})`,
+          url: `https://www.meetup.com/find/?keywords=${encodeURIComponent(topic)}&location=${encodeURIComponent(location)}`,
+          desc: `Connect with local study groups, university lab presentations, and collaborative workshops in and around ${location}.`,
+          whatYouLearn: "Peer project feedback, study accountability, local lab tour connections, and collaborative research opportunities.",
+          time: "1-2 hrs / month",
+          prereq: "None"
         });
       }
       return cloned;
     }
   }
-  return synthesizeDynamicOpportunities(topic, location);
+  return synthesizeDynamicData(topic, location);
 }
 
-/* -------------------------------------------------------------
- * MAIN LOAD CONTROLLER
- * -----------------------------------------------------------*/
-let currentDataSet = null;
-
-async function loadOpportunities() {
+async function loadHubData() {
   document.getElementById('loading-block').style.display = 'block';
   document.getElementById('results-block').style.display = 'none';
 
-  await new Promise(r => setTimeout(r, 550));
+  await new Promise(r => setTimeout(r, 450));
 
-  const data = fetchOpportunities(state.topic, state.location);
+  const data = fetchHubData(state.topic, state.location);
   currentDataSet = data;
 
   document.getElementById('loading-block').style.display = 'none';
   document.getElementById('results-block').style.display = 'block';
-  renderResultsView(data);
+  renderHubView(data);
 }
 
 /* -------------------------------------------------------------
- * RENDERING RESULTS
+ * RENDERING LOGIC
  * -----------------------------------------------------------*/
 function escapeHtml(s) {
   if (!s) return '';
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-function getCategoryIcon(cat) {
-  switch(cat) {
-    case 'competition': return '🏆';
-    case 'research': return '🔬';
-    case 'internship': return '💼';
-    case 'grant': return '💰';
-    case 'leadership': return '🌍';
+function getFormatIcon(format) {
+  switch (format) {
+    case 'video': return '📺';
+    case 'reading': return '📖';
+    case 'projects': return '🛠️';
+    case 'app': return '📱';
     default: return '🌟';
   }
 }
 
-function getTierClass(tier) {
-  if (tier.includes('Tier 1')) return 'tier-1';
-  if (tier.includes('Tier 2')) return 'tier-2';
-  return 'tier-3';
+function getLevelBadge(level) {
+  const l = (level || '').toLowerCase();
+  if (l.includes('beginner')) return `<span class="tag-pill tag-level-beg">🌱 Beginner</span>`;
+  if (l.includes('advanced')) return `<span class="tag-pill tag-level-adv">⚡ Advanced</span>`;
+  return `<span class="tag-pill tag-level-int">📘 Intermediate</span>`;
 }
 
-function getTrackedStatus(id) {
-  const item = state.trackedOpportunities.find(t => t.id === id);
-  return item ? item.status : 'None';
+function getInstructorBadge(type) {
+  switch (type) {
+    case 'youtuber': return `<span class="tag-pill tag-instructor">👤 Creator / YouTuber</span>`;
+    case 'teacher': return `<span class="tag-pill tag-instructor">🏫 Teacher / Cohort</span>`;
+    case 'community': return `<span class="tag-pill tag-instructor">📍 Local Community / Library</span>`;
+    case 'university': return `<span class="tag-pill tag-instructor">🏛️ University</span>`;
+    default: return `<span class="tag-pill tag-instructor">🎓 Instructor</span>`;
+  }
 }
 
-function renderCard(item) {
-  const currentStatus = getTrackedStatus(item.id);
-  const tierClass = getTierClass(item.tier);
+function isResourceRecommended(item) {
+  const prefLevel = state.learningPrefs.level;
+  const prefFormat = state.learningPrefs.format;
+  const levelMatch = (item.level || '').toLowerCase().includes(prefLevel);
+  const formatMatch = prefFormat === 'all' || item.format === prefFormat;
+  return levelMatch && formatMatch;
+}
+
+function isTracked(id) {
+  return state.trackedItems.some(t => t.id === id);
+}
+
+/* Render a Single Learning Resource Card */
+function renderResourceCard(item) {
+  const recommended = isResourceRecommended(item);
+  const tracked = isTracked(item.id);
+  const isLocal = item.scope && item.scope.includes('Local');
 
   return `
-    <article class="opportunity-card" data-category="${item.category}" data-tier="${escapeHtml(item.tier)}" data-cost="${escapeHtml(item.cost)}" id="card-${item.id}">
-      <div class="opportunity-card-top">
+    <article class="unified-card ${recommended ? 'recommended-card' : ''}" 
+             data-type="resource"
+             data-level="${item.level ? item.level.toLowerCase() : 'beginner'}"
+             data-format="${item.format || 'reading'}"
+             data-free="${item.isFree ? 'true' : 'false'}"
+             id="card-${item.id}">
+      
+      <div class="card-top-row">
         <div class="card-title-group">
-          <div class="type-icon-box">${getCategoryIcon(item.category)}</div>
+          <div class="card-icon-badge">${getFormatIcon(item.format)}</div>
           <div>
-            <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="opportunity-title">
+            <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="card-title">
               ${escapeHtml(item.name)}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
-            <div class="opportunity-org">${escapeHtml(item.org)}</div>
+            <div class="card-org-sub">${escapeHtml(item.author || 'Open Curriculum')} &bull; ${item.format ? item.format.toUpperCase() : 'RESOURCE'}</div>
           </div>
         </div>
 
         <div class="badge-cluster">
-          <span class="tier-badge ${tierClass}">${escapeHtml(item.tier)}</span>
-          <span class="cost-badge">${escapeHtml(item.cost)}</span>
+          ${recommended ? `<span class="tag-pill tag-rec">⭐ Recommended for You</span>` : ''}
+          ${getLevelBadge(item.level)}
+          ${item.cost ? `<span class="tag-pill tag-free">${escapeHtml(item.cost)}</span>` : ''}
+          ${isLocal ? `<span class="tag-pill tag-scope local-match">📍 ${escapeHtml(item.scope)}</span>` : `<span class="tag-pill tag-scope">🌐 Global</span>`}
         </div>
       </div>
 
-      <div class="opportunity-desc">
+      <div class="card-desc">
         ${escapeHtml(item.desc)}
       </div>
 
-      <div class="insider-tip-box">
-        <strong>💡 Selection Insight:</strong> ${escapeHtml(item.tip)}
+      <div class="learn-box">
+        <div class="learn-box-title">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          What you will learn from this source:
+        </div>
+        <div class="learn-box-content">
+          ${escapeHtml(item.whatYouLearn)}
+        </div>
       </div>
 
-      <div class="opportunity-meta-row">
-        <span class="meta-tag">📅 ${escapeHtml(item.deadline)}</span>
-        <span class="meta-tag">🎓 ${escapeHtml(item.eligibility)}</span>
-        <span class="meta-tag ${item.scope.includes('Local') ? 'local' : ''}">📍 ${escapeHtml(item.scope)}</span>
+      <div class="meta-chips-row">
+        ${item.time ? `<span class="chip-tag">⏱️ ${escapeHtml(item.time)}</span>` : ''}
+        ${item.prereq ? `<span class="chip-tag">🔑 Prerequisites: ${escapeHtml(item.prereq)}</span>` : ''}
       </div>
 
       <div class="card-footer-actions">
-        <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="apply-link-btn">
+        <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="action-link-btn">
+          Open Resource
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+
+        <div class="status-select-wrap">
+          <button class="icon-btn" onclick="toggleSaveItem('${item.id}', 'resource')">
+            ${tracked ? '📌 Saved' : '🤍 Save Resource'}
+          </button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+/* Render Structured Class Card with Online/Offline Indicator */
+function renderClassCard(cls) {
+  const tracked = isTracked(cls.id);
+  const isOffline = cls.delivery === 'offline';
+  const deliveryBadge = isOffline 
+    ? `<span class="tag-pill tag-offline">📍 Offline (In-Person)</span>`
+    : `<span class="tag-pill tag-online">🌐 Online (Virtual)</span>`;
+
+  return `
+    <article class="unified-card ${isOffline ? 'offline-card' : ''}" 
+             data-type="class" 
+             data-delivery="${cls.delivery}" 
+             data-free="${cls.isFree ? 'true' : 'false'}" 
+             id="card-${cls.id}">
+      
+      <div class="card-top-row">
+        <div class="card-title-group">
+          <div class="card-icon-badge">${isOffline ? '📍' : '🎓'}</div>
+          <div>
+            <a href="${escapeHtml(cls.url)}" target="_blank" rel="noopener noreferrer" class="card-title">
+              ${escapeHtml(cls.name)}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            <div class="card-org-sub">
+              <strong>Taught by:</strong> ${escapeHtml(cls.instructor)} &bull; ${escapeHtml(cls.duration || 'Self-Paced')}
+            </div>
+          </div>
+        </div>
+
+        <div class="badge-cluster">
+          ${deliveryBadge}
+          ${getInstructorBadge(cls.instructorType)}
+          <span class="tag-pill tag-free">${escapeHtml(cls.cost)}</span>
+        </div>
+      </div>
+
+      <!-- Conducted & Location Details -->
+      <div class="detail-chips-grid">
+        <div class="detail-col">
+          <span class="detail-label">💻 Format / Delivery</span>
+          <span class="detail-val">${escapeHtml(cls.deliveryLabel || (isOffline ? '📍 In-Person Offline' : '🌐 Online Virtual'))}</span>
+        </div>
+        <div class="detail-col">
+          <span class="detail-label">📍 Where Conducted</span>
+          <span class="detail-val">${escapeHtml(cls.location || 'Global Virtual')}</span>
+        </div>
+        <div class="detail-col">
+          <span class="detail-label">👥 Who It Is For</span>
+          <span class="detail-val">${escapeHtml(cls.audience || 'All Audiences')}</span>
+        </div>
+      </div>
+
+      <div class="learn-box">
+        <div class="learn-box-title">Syllabus &amp; What You Will Practice:</div>
+        <div class="learn-box-content">${escapeHtml(cls.syllabus)}</div>
+      </div>
+
+      ${cls.accessTip ? `
+        <div style="font-size:0.86rem; color:var(--primary-blue); font-weight:600; background:var(--bg-subtle); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-blue);">
+          💡 How to attend for free: ${escapeHtml(cls.accessTip)}
+        </div>
+      ` : ''}
+
+      <div class="card-footer-actions">
+        <a href="${escapeHtml(cls.url)}" target="_blank" rel="noopener noreferrer" class="action-link-btn">
+          ${isOffline ? 'View In-Person Location / Register' : 'Join / Audit Online Class'}
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <button class="icon-btn" onclick="toggleSaveItem('${cls.id}', 'class')">
+          ${tracked ? '📌 Saved' : '🤍 Bookmark Class'}
+        </button>
+      </div>
+    </article>
+  `;
+}
+
+/* Render Opportunity Card */
+function renderOpportunityCard(opp) {
+  const tracked = isTracked(opp.id);
+  const isRecommended = state.eduQualification && matchesEduQualification(opp, state.eduQualification);
+  const isLocal = opp.scopeType === 'local';
+
+  return `
+    <article class="unified-card ${isRecommended ? 'recommended-card-opp' : ''}" 
+             data-type="opportunity" 
+             data-free="${opp.isFree ? 'true' : 'false'}" 
+             id="card-${opp.id}">
+      
+      <div class="card-top-row">
+        <div class="card-title-group">
+          <div class="card-icon-badge">🏆</div>
+          <div>
+            <a href="${escapeHtml(opp.url)}" target="_blank" rel="noopener noreferrer" class="card-title">
+              ${escapeHtml(opp.name)}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            <div class="card-org-sub">${escapeHtml(opp.org)} &bull; ${escapeHtml(opp.scope)}</div>
+          </div>
+        </div>
+
+        <div class="badge-cluster">
+          ${isRecommended ? `<span class="tag-pill tag-rec">⭐ Recommended for Your Stage</span>` : ''}
+          <span class="tag-pill tag-free">${escapeHtml(opp.cost)}</span>
+          ${isLocal ? `<span class="tag-pill tag-scope local-match">📍 Local</span>` : `<span class="tag-pill tag-scope">${opp.scopeType === 'international' ? '🌍 Global' : '🇺🇸 National'}</span>`}
+        </div>
+      </div>
+
+      <div class="detail-chips-grid">
+        <div class="detail-col">
+          <span class="detail-label">🎓 Who Qualifies</span>
+          <span class="detail-val">${escapeHtml(opp.eligibility)}</span>
+        </div>
+        <div class="detail-col">
+          <span class="detail-label">💻 How Conducted</span>
+          <span class="detail-val">${escapeHtml(opp.conducted)}</span>
+        </div>
+        <div class="detail-col">
+          <span class="detail-label">📍 Where &amp; When</span>
+          <span class="detail-val">${escapeHtml(opp.whereWhen)}</span>
+        </div>
+      </div>
+
+      <div class="card-desc">
+        <strong>What Happens:</strong> ${escapeHtml(opp.whatHappens)}
+      </div>
+
+      ${opp.qualifications ? `
+        <div style="font-size:0.86rem; color:var(--text-muted); background:var(--bg-card-alt); padding:8px 12px; border-radius:var(--radius-sm);">
+          <strong>Specific Prerequisites:</strong> ${escapeHtml(opp.qualifications)}
+        </div>
+      ` : ''}
+
+      <div class="card-footer-actions">
+        <a href="${escapeHtml(opp.url)}" target="_blank" rel="noopener noreferrer" class="action-link-btn">
           Visit Official Portal
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
 
         <div class="status-select-wrap">
-          <span>Tracker Status:</span>
-          <select class="status-select" onchange="updateItemStatus('${item.id}', this.value)">
-            <option value="None" ${currentStatus === 'None' ? 'selected' : ''}>Not Tracked</option>
-            <option value="Saved" ${currentStatus === 'Saved' ? 'selected' : ''}>📌 Saved</option>
-            <option value="In Progress" ${currentStatus === 'In Progress' ? 'selected' : ''}>⏳ In Progress</option>
-            <option value="Applied" ${currentStatus === 'Applied' ? 'selected' : ''}>🚀 Applied</option>
-            <option value="Accepted" ${currentStatus === 'Accepted' ? 'selected' : ''}>🎉 Accepted</option>
+          <span>Tracker:</span>
+          <select class="status-select" onchange="updateTrackedStatus('${opp.id}', this.value)">
+            <option value="None" ${!tracked ? 'selected' : ''}>Not Tracked</option>
+            <option value="Saved" ${tracked && getTrackedStatus(opp.id) === 'Saved' ? 'selected' : ''}>📌 Saved</option>
+            <option value="In Progress" ${getTrackedStatus(opp.id) === 'In Progress' ? 'selected' : ''}>⏳ In Progress</option>
+            <option value="Applied" ${getTrackedStatus(opp.id) === 'Applied' ? 'selected' : ''}>🚀 Applied</option>
+            <option value="Accepted" ${getTrackedStatus(opp.id) === 'Accepted' ? 'selected' : ''}>🎉 Accepted</option>
           </select>
         </div>
       </div>
@@ -1947,39 +2771,74 @@ function renderCard(item) {
   `;
 }
 
-function renderResultsView(data) {
+function matchesEduQualification(opp, qual) {
+  const el = (opp.eligibility || '').toLowerCase();
+  if (qual === 'highschool') {
+    return el.includes('high school') || el.includes('grades 9-12') || el.includes('under 19') || el.includes('worldwide');
+  }
+  if (qual === 'college') {
+    return el.includes('undergraduate') || el.includes('college') || el.includes('18+') || el.includes('worldwide');
+  }
+  if (qual === 'lifelong') {
+    return el.includes('adult') || el.includes('open to all') || el.includes('worldwide') || el.includes('18+');
+  }
+  return true;
+}
+
+function getTrackedStatus(id) {
+  const found = state.trackedItems.find(t => t.id === id);
+  return found ? found.status : 'None';
+}
+
+/* -------------------------------------------------------------
+ * MAIN RESULTS VIEW BUILDER
+ * -----------------------------------------------------------*/
+function renderHubView(data) {
   const block = document.getElementById('results-block');
   let html = '';
+
+  const resources = data.resources || [];
+  const classes = data.classes || [];
+  const opps = data.opportunities || [];
+
+  const filteredResources = resources.filter(res => {
+    if (!res.scope || !res.scope.includes('Local')) return true;
+    if (!state.location) return true;
+    return res.scope.toLowerCase().includes(state.location.toLowerCase());
+  });
+
+  const recResources = filteredResources.filter(r => isResourceRecommended(r));
+  const otherResources = filteredResources.filter(r => !isResourceRecommended(r));
 
   // 1. Header Box
   html += `
     <div class="results-header-box">
       <div class="results-meta-row">
         <span class="profile-badge">
-          🎯 ${escapeHtml(state.answers.grade)} &bull; ${escapeHtml(state.answers.prior)}
+          🎯 Current Level: ${state.learningPrefs.level.toUpperCase()} &bull; ${state.learningPrefs.format.toUpperCase()}
         </span>
-        ${state.location ? `<span style="font-size:0.85rem; color:var(--ochre); font-weight:700;">📍 Local Scope: ${escapeHtml(state.location)}</span>` : ''}
+        ${state.location ? `<span class="location-pill">📍 Locality: ${escapeHtml(state.location)}</span>` : '<span class="location-pill">🌐 Scope: Global</span>'}
       </div>
-      <h2 class="results-topic-title">${escapeHtml(state.topic)} Opportunities</h2>
+      <h2 class="results-topic-title">${escapeHtml(state.topic)} Learning &amp; Research Hub</h2>
       <p class="results-narrative">
-        Showing verified opportunities ranked by prestige, admissions value, and geographic eligibility for your background.
+        Free open tutorials, video courses, official documentation, and classes from YouTubers, teachers, and universities. Master the fundamentals without paywalls.
       </p>
 
       <div class="results-toolbar">
-        <button class="btn sm ghost" id="copy-summary-btn">
-          📋 Export Opportunity List (Markdown)
+        <button class="btn sm secondary" id="copy-summary-btn">
+          📋 Export Study Guide (Markdown)
         </button>
-        <button class="btn sm ghost" onclick="window.print()">
+        <button class="btn sm secondary" onclick="window.print()">
           🖨️ Print / Save PDF
         </button>
-        <button class="btn sm ghost" id="new-search-btn">
-          🔄 Search Another Field
+        <button class="btn sm secondary" id="new-search-btn">
+          🔄 Change Subject
         </button>
       </div>
     </div>
   `;
 
-  // 2. Extracurricular Roadmap
+  // 2. Interactive Study Roadmap
   if (data.roadmap && data.roadmap.length) {
     const topicKey = state.topic.toLowerCase().replace(/[^a-z0-9]/g, '');
     let checkedCount = 0;
@@ -2001,10 +2860,10 @@ function renderResultsView(data) {
         <div class="roadmap-header">
           <h3>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            Strategic Extracurricular Roadmap
+            Structured Study &amp; Research Milestones
           </h3>
-          <span style="font-size:0.78rem; background:var(--paper-card); padding:3px 10px; border-radius:10px; border:1px solid var(--line);" id="roadmap-status-pill">
-            ${checkedCount} of ${data.roadmap.length} milestones checked
+          <span style="font-size:0.8rem; background:var(--bg-subtle); padding:3px 12px; border-radius:var(--radius-full); border:1px solid var(--border-blue); color:var(--primary-blue);" id="roadmap-status-pill">
+            ${checkedCount} of ${data.roadmap.length} milestones completed
           </span>
         </div>
         <div class="roadmap-steps-list">
@@ -2014,97 +2873,194 @@ function renderResultsView(data) {
     `;
   }
 
-  // Count items for category badges
-  const items = data.items || [];
-  const compCount = items.filter(i => i.category === 'competition').length;
-  const resCount = items.filter(i => i.category === 'research').length;
-  const internCount = items.filter(i => i.category === 'internship').length;
-  const grantCount = items.filter(i => i.category === 'grant').length;
-  const leadCount = items.filter(i => i.category === 'leadership').length;
-
-  // 3. Filter Controls
+  // 3. Filter Controls Bar
   html += `
     <div class="filter-controls-wrap">
-      <div class="category-tabs" role="tablist">
-        <button class="category-tab ${state.activeCategory === 'all' ? 'active' : ''}" data-cat="all">
-          All Opportunities <span class="tab-count">${items.length}</span>
-        </button>
-        <button class="category-tab ${state.activeCategory === 'competition' ? 'active' : ''}" data-cat="competition">
-          🏆 Competitions <span class="tab-count">${compCount}</span>
-        </button>
-        <button class="category-tab ${state.activeCategory === 'research' ? 'active' : ''}" data-cat="research">
-          🔬 Summer &amp; Research <span class="tab-count">${resCount}</span>
-        </button>
-        <button class="category-tab ${state.activeCategory === 'internship' ? 'active' : ''}" data-cat="internship">
-          💼 Internships <span class="tab-count">${internCount}</span>
-        </button>
-        <button class="category-tab ${state.activeCategory === 'grant' ? 'active' : ''}" data-cat="grant">
-          💰 Grants &amp; Funding <span class="tab-count">${grantCount}</span>
-        </button>
-        <button class="category-tab ${state.activeCategory === 'leadership' ? 'active' : ''}" data-cat="leadership">
-          🌍 Leadership <span class="tab-count">${leadCount}</span>
-        </button>
+      <div class="filter-top-row">
+        <div class="filter-tags-row">
+          <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Level:</span>
+          <button class="filter-tag-btn ${state.filterLevel === 'all' ? 'active' : ''}" data-type="level" data-val="all">All</button>
+          <button class="filter-tag-btn ${state.filterLevel === 'beginner' ? 'active' : ''}" data-type="level" data-val="beginner">🌱 Beginner</button>
+          <button class="filter-tag-btn ${state.filterLevel === 'intermediate' ? 'active' : ''}" data-type="level" data-val="intermediate">📘 Intermediate</button>
+          <button class="filter-tag-btn ${state.filterLevel === 'advanced' ? 'active' : ''}" data-type="level" data-val="advanced">⚡ Advanced</button>
+        </div>
+
+        <label class="free-toggle-wrap">
+          <input type="checkbox" id="free-only-toggle" ${state.onlyFree ? 'checked' : ''}>
+          <span>100% Free Only</span>
+        </label>
       </div>
 
-      <div class="filter-secondary-bar">
+      <div class="filter-top-row">
+        <div class="filter-tags-row">
+          <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Format:</span>
+          <button class="filter-tag-btn ${state.filterFormat === 'all' ? 'active' : ''}" data-type="format" data-val="all">All Formats</button>
+          <button class="filter-tag-btn ${state.filterFormat === 'video' ? 'active' : ''}" data-type="format" data-val="video">📺 Videos</button>
+          <button class="filter-tag-btn ${state.filterFormat === 'projects' ? 'active' : ''}" data-type="format" data-val="projects">🛠️ Hands-on</button>
+          <button class="filter-tag-btn ${state.filterFormat === 'reading' ? 'active' : ''}" data-type="format" data-val="reading">📖 Reading &amp; Docs</button>
+        </div>
+
         <div class="input-wrap search-filter-input">
           <div class="input-icon">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           </div>
-          <input type="text" id="live-search-box" placeholder="Search opportunities by title, org, or keyword..." value="${escapeHtml(state.searchQuery)}">
-        </div>
-
-        <div class="filter-pill-groups">
-          <button class="filter-pill-btn ${state.tierFilter === 'all' ? 'active' : ''}" data-tier="all">All Tiers</button>
-          <button class="filter-pill-btn ${state.tierFilter === 'tier 1' ? 'active' : ''}" data-tier="tier 1">🌟 Tier 1 Elite</button>
-          <button class="filter-pill-btn ${state.tierFilter === 'tier 2' ? 'active' : ''}" data-tier="tier 2">⚡ Tier 2</button>
+          <input type="text" id="live-search-box" placeholder="Search resources, classes, authors..." value="${escapeHtml(state.searchQuery)}">
         </div>
       </div>
     </div>
   `;
 
-  // 4. List of Cards
-  html += `<div class="opportunities-list" id="cards-container">`;
-  items.forEach(it => {
-    html += renderCard(it);
-  });
-  html += `</div>`;
+  // 4. Recommended for You Shelf
+  if (recResources.length > 0) {
+    html += `
+      <div class="section-divider" id="sec-rec-res">
+        <div class="section-divider-label">
+          <h3>⭐ Recommended for Your Experience &amp; Style</h3>
+          <span class="section-count">${recResources.length} tailored</span>
+        </div>
+        <div class="section-divider-line"></div>
+      </div>
+      <p class="section-divider-sub">Selected specifically to match your level (${state.learningPrefs.level}) and format preference.</p>
+      
+      <div class="items-list" id="rec-resources-container">
+        ${recResources.map(r => renderResourceCard(r)).join('')}
+      </div>
+    `;
+  }
+
+  // 5. All Open Learning Resources
+  html += `
+    <div class="section-divider">
+      <div class="section-divider-label">
+        <h3>📚 All Curated Learning Resources</h3>
+        <span class="section-count">${filteredResources.length} open resources</span>
+      </div>
+      <div class="section-divider-line"></div>
+    </div>
+    <p class="section-divider-sub">Browse all verified tutorials, documentation, and tools. Each card shows clear level labels so you can advance at your own speed.</p>
+
+    <div class="items-list" id="all-resources-container">
+      ${(recResources.length > 0 ? otherResources : filteredResources).map(r => renderResourceCard(r)).join('')}
+    </div>
+  `;
+
+  // 6. Branching Decision Callout Card
+  html += `
+    <div class="branch-callout-box">
+      <h3 class="branch-callout-title">Ready to take your learning further?</h3>
+      <p class="branch-callout-sub">
+        Explore live &amp; recorded classes (taught by YouTubers, teachers, and universities — online or offline near you), or discover real-world opportunities to apply what you've learned.
+      </p>
+
+      <div class="branch-options-grid">
+        <button type="button" class="branch-btn-card" id="btn-show-classes">
+          <div class="branch-card-header">
+            <div class="branch-card-icon">🎓</div>
+            <span>See Classes Available</span>
+          </div>
+          <p class="branch-card-sub">
+            Online masterclasses by YouTubers, teacher-led cohorts, and in-person / offline workshops at local libraries &amp; community labs.
+          </p>
+          <div class="branch-card-cta">
+            <span>Explore Classes</span> &rarr;
+          </div>
+        </button>
+
+        <button type="button" class="branch-btn-card" id="btn-show-opps">
+          <div class="branch-card-header">
+            <div class="branch-card-icon">🏆</div>
+            <span>Want to See Your Opportunities?</span>
+          </div>
+          <p class="branch-card-sub">
+            Global, national, and local competitions, summer research labs, internships, and micro-grants to showcase your growth.
+          </p>
+          <div class="branch-card-cta">
+            <span>Discover Opportunities</span> &rarr;
+          </div>
+        </button>
+      </div>
+    </div>
+  `;
+
+  // 7. Structured Classes Container (Online & Offline from YouTubers, Teachers, & Universities)
+  html += `
+    <div id="classes-section-container" style="display:${state.showClassesSection ? 'block' : 'none'}; margin-top:32px;">
+      <div class="section-divider">
+        <div class="section-divider-label">
+          <h3>🎓 Classes &amp; Workshops (Online &amp; In-Person / Offline)</h3>
+          <span class="section-count">${classes.length} classes available</span>
+        </div>
+        <div class="section-divider-line"></div>
+      </div>
+      <p class="section-divider-sub">Courses and workshops taught by YouTubers, independent educators, community teachers, and universities. Filter by online vs. offline / in-person.</p>
+
+      <!-- Class Delivery Filter Pills -->
+      <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+        <button class="filter-tag-btn ${state.filterClassDelivery === 'all' ? 'active' : ''}" data-type="delivery" data-val="all">
+          All Formats (${classes.length})
+        </button>
+        <button class="filter-tag-btn ${state.filterClassDelivery === 'online' ? 'active' : ''}" data-type="delivery" data-val="online">
+          🌐 Online Classes (${classes.filter(c => c.delivery === 'online').length})
+        </button>
+        <button class="filter-tag-btn ${state.filterClassDelivery === 'offline' ? 'active' : ''}" data-type="delivery" data-val="offline">
+          📍 In-Person / Offline Classes (${classes.filter(c => c.delivery === 'offline').length})
+        </button>
+      </div>
+
+      <div class="items-list" id="classes-cards-container">
+        ${classes.map(c => renderClassCard(c)).join('')}
+      </div>
+    </div>
+  `;
+
+  // 8. Opportunities Container
+  html += `
+    <div id="opportunities-section-container" style="display:${state.showOpportunitiesSection ? 'block' : 'none'}; margin-top:32px;">
+      <div class="section-divider">
+        <div class="section-divider-label">
+          <h3>🏆 Extracurricular Opportunities &amp; Fellowships</h3>
+          <span class="section-count">${opps.length} programs</span>
+        </div>
+        <div class="section-divider-line"></div>
+      </div>
+      <p class="section-divider-sub">Global, national, international, and local competitions, summer research labs, internships, and grants.</p>
+
+      <!-- Educational Stage Qualification Selector (ONLY asked here!) -->
+      <div class="edu-stage-box">
+        <div class="edu-stage-title">Select your education stage to highlight matching opportunities:</div>
+        <div class="edu-stage-sub">All opportunities remain visible. Selecting your stage simply highlights ones you directly qualify for.</div>
+        
+        <div class="edu-options-row">
+          <button type="button" class="edu-stage-chip ${state.eduQualification === 'highschool' ? 'active' : ''}" data-edu="highschool">
+            🎒 High School (Grades 9-12)
+          </button>
+          <button type="button" class="edu-stage-chip ${state.eduQualification === 'college' ? 'active' : ''}" data-edu="college">
+            🏛️ Undergraduate / College
+          </button>
+          <button type="button" class="edu-stage-chip ${state.eduQualification === 'lifelong' ? 'active' : ''}" data-edu="lifelong">
+            🌟 Lifelong Learner / Open to All
+          </button>
+          <button type="button" class="edu-stage-chip ${!state.eduQualification ? 'active' : ''}" data-edu="all">
+            Show All (No filter)
+          </button>
+        </div>
+      </div>
+
+      <div class="items-list" id="opps-cards-container">
+        ${opps.map(o => renderOpportunityCard(o)).join('')}
+      </div>
+    </div>
+  `;
 
   block.innerHTML = html;
-  attachEvents();
-  filterVisibleCards();
+  attachHubEvents();
+  filterCards();
 }
 
 /* -------------------------------------------------------------
  * EVENT HANDLERS & FILTERS
  * -----------------------------------------------------------*/
-function attachEvents() {
-  document.querySelectorAll('.category-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      state.activeCategory = tab.dataset.cat;
-      document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      filterVisibleCards();
-    });
-  });
-
-  document.querySelectorAll('.filter-pill-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.tierFilter = btn.dataset.tier;
-      document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterVisibleCards();
-    });
-  });
-
-  const searchBox = document.getElementById('live-search-box');
-  if (searchBox) {
-    searchBox.addEventListener('input', (e) => {
-      state.searchQuery = e.target.value.toLowerCase();
-      filterVisibleCards();
-    });
-  }
-
+function attachHubEvents() {
   document.querySelectorAll('.step-checkbox').forEach(chk => {
     chk.addEventListener('change', () => {
       state.roadmapProgress[chk.dataset.key] = chk.checked;
@@ -2114,7 +3070,77 @@ function attachEvents() {
       const total = document.querySelectorAll('.step-checkbox').length;
       const checked = document.querySelectorAll('.step-checkbox:checked').length;
       const pill = document.getElementById('roadmap-status-pill');
-      if (pill) pill.textContent = `${checked} of ${total} milestones checked`;
+      if (pill) pill.textContent = `${checked} of ${total} milestones completed`;
+    });
+  });
+
+  document.querySelectorAll('.filter-tag-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.dataset.type;
+      const val = btn.dataset.val;
+      if (type === 'level') state.filterLevel = val;
+      if (type === 'format') state.filterFormat = val;
+      if (type === 'delivery') state.filterClassDelivery = val;
+
+      document.querySelectorAll(`.filter-tag-btn[data-type="${type}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterCards();
+    });
+  });
+
+  const freeToggle = document.getElementById('free-only-toggle');
+  if (freeToggle) {
+    freeToggle.addEventListener('change', (e) => {
+      state.onlyFree = e.target.checked;
+      filterCards();
+    });
+  }
+
+  const searchBox = document.getElementById('live-search-box');
+  if (searchBox) {
+    searchBox.addEventListener('input', (e) => {
+      state.searchQuery = e.target.value.toLowerCase().trim();
+      filterCards();
+    });
+  }
+
+  const btnClasses = document.getElementById('btn-show-classes');
+  if (btnClasses) {
+    btnClasses.addEventListener('click', () => {
+      state.showClassesSection = true;
+      const container = document.getElementById('classes-section-container');
+      if (container) {
+        container.style.display = 'block';
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  const btnOpps = document.getElementById('btn-show-opps');
+  if (btnOpps) {
+    btnOpps.addEventListener('click', () => {
+      state.showOpportunitiesSection = true;
+      const container = document.getElementById('opportunities-section-container');
+      if (container) {
+        container.style.display = 'block';
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  document.querySelectorAll('.edu-stage-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const edu = chip.dataset.edu;
+      state.eduQualification = (edu === 'all') ? null : edu;
+      document.querySelectorAll('.edu-stage-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      
+      if (currentDataSet && currentDataSet.opportunities) {
+        const oppsContainer = document.getElementById('opps-cards-container');
+        if (oppsContainer) {
+          oppsContainer.innerHTML = currentDataSet.opportunities.map(o => renderOpportunityCard(o)).join('');
+        }
+      }
     });
   });
 
@@ -2126,69 +3152,119 @@ function attachEvents() {
     copyBtn.addEventListener('click', () => {
       const md = generateMarkdownExport();
       navigator.clipboard.writeText(md).then(() => {
-        showToast("Opportunities list copied in Markdown format!");
-      }).catch(() => showToast("Unable to copy directly."));
+        showToast("Complete Study & Research Plan copied in Markdown!");
+      }).catch(() => showToast("Unable to copy directly to clipboard."));
     });
   }
 }
 
-function filterVisibleCards() {
-  const cards = document.querySelectorAll('.opportunity-card');
-  const cat = state.activeCategory;
-  const tier = state.tierFilter.toLowerCase();
-  const query = state.searchQuery.trim().toLowerCase();
+/* Card Filtering Logic */
+function filterCards() {
+  const cards = document.querySelectorAll('.unified-card');
+  const level = state.filterLevel;
+  const format = state.filterFormat;
+  const delivery = state.filterClassDelivery;
+  const onlyFree = state.onlyFree;
+  const query = state.searchQuery;
 
   cards.forEach(card => {
-    const cardCat = card.dataset.category;
-    const cardTier = card.dataset.tier.toLowerCase();
+    const cardType = card.dataset.type;
+    const cardLevel = card.dataset.level || '';
+    const cardFormat = card.dataset.format || '';
+    const cardDelivery = card.dataset.delivery || '';
+    const cardIsFree = card.dataset.free === 'true';
     const text = card.textContent.toLowerCase();
 
-    const matchesCat = (cat === 'all') || (cardCat === cat);
-    const matchesTier = (tier === 'all') || cardTier.includes(tier);
-    const matchesQuery = !query || text.includes(query);
+    let matches = true;
 
-    if (matchesCat && matchesTier && matchesQuery) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
+    // Resource filters
+    if (cardType === 'resource') {
+      if (level !== 'all' && !cardLevel.includes(level)) matches = false;
+      if (format !== 'all' && cardFormat !== format) matches = false;
     }
+
+    // Class delivery filter (online vs offline)
+    if (cardType === 'class') {
+      if (delivery !== 'all' && cardDelivery !== delivery) matches = false;
+    }
+
+    // Free filter
+    if (onlyFree && !cardIsFree) matches = false;
+
+    // Search query
+    if (query && !text.includes(query)) matches = false;
+
+    card.style.display = matches ? 'flex' : 'none';
   });
 }
 
 /* -------------------------------------------------------------
- * APPLICATION TRACKER SYSTEM
+ * SAVED ITEMS & TRACKER
  * -----------------------------------------------------------*/
-window.updateItemStatus = function(id, newStatus) {
-  const existingIdx = state.trackedOpportunities.findIndex(t => t.id === id);
-  const foundItem = (currentDataSet && currentDataSet.items) ? currentDataSet.items.find(i => i.id === id) : null;
-
-  if (newStatus === 'None') {
-    if (existingIdx >= 0) state.trackedOpportunities.splice(existingIdx, 1);
-    showToast("Removed from tracker.");
+window.toggleSaveItem = function(id, type) {
+  const idx = state.trackedItems.findIndex(t => t.id === id);
+  if (idx >= 0) {
+    state.trackedItems.splice(idx, 1);
+    showToast("Removed from saved library.");
   } else {
-    if (existingIdx >= 0) {
-      state.trackedOpportunities[existingIdx].status = newStatus;
-    } else if (foundItem) {
-      state.trackedOpportunities.push({
-        id: foundItem.id,
-        name: foundItem.name,
-        org: foundItem.org,
-        url: foundItem.url,
-        deadline: foundItem.deadline,
-        tier: foundItem.tier,
-        status: newStatus
-      });
+    let found = null;
+    if (currentDataSet) {
+      found = (currentDataSet.resources || []).find(r => r.id === id) ||
+              (currentDataSet.classes || []).find(c => c.id === id) ||
+              (currentDataSet.opportunities || []).find(o => o.id === id);
     }
-    showToast(`Updated to: ${newStatus}`);
+    if (found) {
+      state.trackedItems.push({
+        id: found.id,
+        name: found.name,
+        org: found.instructor || found.author || found.org || 'Open Resource',
+        url: found.url,
+        type: type,
+        status: 'Saved'
+      });
+      showToast("Saved to your personal library!");
+    }
   }
 
-  localStorage.setItem('waymark_tracker', JSON.stringify(state.trackedOpportunities));
+  localStorage.setItem('waymark_saved', JSON.stringify(state.trackedItems));
+  updateTrackerBadge();
+  if (currentDataSet) renderHubView(currentDataSet);
+};
+
+window.updateTrackedStatus = function(id, status) {
+  const existing = state.trackedItems.find(t => t.id === id);
+  if (status === 'None') {
+    if (existing) {
+      const idx = state.trackedItems.indexOf(existing);
+      state.trackedItems.splice(idx, 1);
+    }
+    showToast("Removed from tracker.");
+  } else {
+    if (existing) {
+      existing.status = status;
+    } else if (currentDataSet && currentDataSet.opportunities) {
+      const found = currentDataSet.opportunities.find(o => o.id === id);
+      if (found) {
+        state.trackedItems.push({
+          id: found.id,
+          name: found.name,
+          org: found.org,
+          url: found.url,
+          type: 'opportunity',
+          status: status
+        });
+      }
+    }
+    showToast(`Updated status to: ${status}`);
+  }
+
+  localStorage.setItem('waymark_saved', JSON.stringify(state.trackedItems));
   updateTrackerBadge();
 };
 
 function updateTrackerBadge() {
   const badge = document.getElementById('tracker-badge');
-  const count = state.trackedOpportunities.length;
+  const count = state.trackedItems.length;
   if (count > 0) {
     badge.textContent = count;
     badge.style.display = 'inline-block';
@@ -2197,17 +3273,14 @@ function updateTrackerBadge() {
   }
 }
 
-/* Tracker Modal */
+/* Modal Open / Close */
 const trackerModal = document.getElementById('tracker-modal');
-const openTrackerBtn = document.getElementById('open-tracker-btn');
-const closeTrackerBtn = document.getElementById('close-tracker-btn');
-
-openTrackerBtn.addEventListener('click', () => {
+document.getElementById('open-tracker-btn').addEventListener('click', () => {
   renderTrackerModal();
   trackerModal.classList.add('active');
 });
 
-closeTrackerBtn.addEventListener('click', () => {
+document.getElementById('close-tracker-btn').addEventListener('click', () => {
   trackerModal.classList.remove('active');
 });
 
@@ -2219,57 +3292,51 @@ function renderTrackerModal() {
   const statsBox = document.getElementById('tracker-stats-row');
   const listContainer = document.getElementById('tracker-list-container');
 
-  const total = state.trackedOpportunities.length;
-  const inProg = state.trackedOpportunities.filter(t => t.status === 'In Progress').length;
-  const applied = state.trackedOpportunities.filter(t => t.status === 'Applied').length;
-  const accepted = state.trackedOpportunities.filter(t => t.status === 'Accepted').length;
+  const total = state.trackedItems.length;
+  const resCount = state.trackedItems.filter(t => t.type === 'resource').length;
+  const clsCount = state.trackedItems.filter(t => t.type === 'class').length;
+  const oppCount = state.trackedItems.filter(t => t.type === 'opportunity').length;
 
   statsBox.innerHTML = `
-    <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
-      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">TOTAL TRACKED</div>
-      <div style="font-size:1.3rem; font-weight:700; color:var(--ink);">${total}</div>
+    <div style="flex:1; min-width:100px; background:var(--bg-subtle); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-blue);">
+      <div style="font-size:0.72rem; color:var(--text-muted); font-weight:700;">TOTAL SAVED</div>
+      <div style="font-size:1.3rem; font-weight:800; color:var(--primary-blue);">${total}</div>
     </div>
-    <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
-      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">IN PROGRESS</div>
-      <div style="font-size:1.3rem; font-weight:700; color:var(--ochre);">${inProg}</div>
+    <div style="flex:1; min-width:100px; background:var(--bg-subtle); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-blue);">
+      <div style="font-size:0.72rem; color:var(--text-muted); font-weight:700;">RESOURCES</div>
+      <div style="font-size:1.3rem; font-weight:800; color:var(--accent-sky);">${resCount}</div>
     </div>
-    <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
-      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">SUBMITTED</div>
-      <div style="font-size:1.3rem; font-weight:700; color:var(--purple);">${applied}</div>
+    <div style="flex:1; min-width:100px; background:var(--bg-subtle); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-blue);">
+      <div style="font-size:0.72rem; color:var(--text-muted); font-weight:700;">CLASSES</div>
+      <div style="font-size:1.3rem; font-weight:800; color:var(--badge-level-int-text);">${clsCount}</div>
     </div>
-    <div style="flex:1; min-width:110px; background:var(--paper); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--line);">
-      <div style="font-size:0.75rem; color:var(--charcoal-muted); font-weight:700;">ACCEPTED</div>
-      <div style="font-size:1.3rem; font-weight:700; color:#2C5729;">${accepted}</div>
+    <div style="flex:1; min-width:100px; background:var(--bg-subtle); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-blue);">
+      <div style="font-size:0.72rem; color:var(--text-muted); font-weight:700;">OPPORTUNITIES</div>
+      <div style="font-size:1.3rem; font-weight:800; color:#F59E0B;">${oppCount}</div>
     </div>
   `;
 
   if (total === 0) {
     listContainer.innerHTML = `
-      <div style="text-align:center; padding:40px 20px; color:var(--charcoal-muted);">
-        <p style="font-size:1.05rem; margin-bottom:6px;">No opportunities tracked yet.</p>
-        <p style="font-size:0.85rem;">Use the "Tracker Status" dropdown on any card to add it here.</p>
+      <div style="text-align:center; padding:36px 16px; color:var(--text-muted);">
+        <p style="font-size:1rem; margin-bottom:6px; font-weight:600;">Your saved library is empty.</p>
+        <p style="font-size:0.86rem;">Bookmark resources, classes, and track opportunities using the save buttons.</p>
       </div>
     `;
     return;
   }
 
-  let html = `<div style="display:flex; flex-direction:column; gap:12px;">`;
-  state.trackedOpportunities.forEach((it, idx) => {
+  let html = `<div style="display:flex; flex-direction:column; gap:10px;">`;
+  state.trackedItems.forEach((it, idx) => {
     html += `
-      <div style="display:flex; align-items:center; justify-content:space-between; background:var(--paper); padding:12px 16px; border-radius:var(--radius-sm); border:1px solid var(--line); flex-wrap:wrap; gap:10px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-card-alt); padding:12px 16px; border-radius:var(--radius-sm); border:1px solid var(--border-line); flex-wrap:wrap; gap:10px;">
         <div>
-          <a href="${escapeHtml(it.url)}" target="_blank" style="font-weight:700; color:var(--ink); text-decoration:none;">${escapeHtml(it.name)}</a>
-          <div style="font-size:0.78rem; color:var(--charcoal-muted);">${escapeHtml(it.org)} &bull; ${escapeHtml(it.deadline)}</div>
+          <a href="${escapeHtml(it.url)}" target="_blank" style="font-weight:700; color:var(--primary-blue); text-decoration:none;">${escapeHtml(it.name)}</a>
+          <div style="font-size:0.78rem; color:var(--text-muted);">${escapeHtml(it.org)} &bull; ${it.type.toUpperCase()}</div>
         </div>
-        <div style="display:flex; align-items:center; gap:8px;">
-          <select class="status-select" onchange="changeTrackedFromModal(${idx}, this.value)">
-            <option value="Saved" ${it.status === 'Saved' ? 'selected' : ''}>📌 Saved</option>
-            <option value="In Progress" ${it.status === 'In Progress' ? 'selected' : ''}>⏳ In Progress</option>
-            <option value="Applied" ${it.status === 'Applied' ? 'selected' : ''}>🚀 Applied</option>
-            <option value="Accepted" ${it.status === 'Accepted' ? 'selected' : ''}>🎉 Accepted</option>
-            <option value="Delete">❌ Remove</option>
-          </select>
-        </div>
+        <button class="icon-btn" onclick="removeFromModal(${idx})" style="padding:4px 10px; font-size:0.78rem;">
+          ❌ Remove
+        </button>
       </div>
     `;
   });
@@ -2277,41 +3344,66 @@ function renderTrackerModal() {
   listContainer.innerHTML = html;
 }
 
-window.changeTrackedFromModal = function(idx, val) {
-  if (val === 'Delete') {
-    state.trackedOpportunities.splice(idx, 1);
-  } else {
-    state.trackedOpportunities[idx].status = val;
-  }
-  localStorage.setItem('waymark_tracker', JSON.stringify(state.trackedOpportunities));
+window.removeFromModal = function(idx) {
+  state.trackedItems.splice(idx, 1);
+  localStorage.setItem('waymark_saved', JSON.stringify(state.trackedItems));
   updateTrackerBadge();
   renderTrackerModal();
-  if (currentDataSet) renderResultsView(currentDataSet);
+  if (currentDataSet) renderHubView(currentDataSet);
 };
 
+/* -------------------------------------------------------------
+ * MARKDOWN EXPORT
+ * -----------------------------------------------------------*/
 function generateMarkdownExport() {
   if (!currentDataSet) return '';
-  let md = `# ${state.topic} Opportunities — Waymark Hub\n`;
-  md += `**Target Profile:** ${state.answers.grade}\n`;
-  if (state.location) md += `**Location Focus:** ${state.location}\n`;
+  let md = `# ${state.topic} Learning & Research Guide — Waymark\n`;
+  md += `*Generated for Level: ${state.learningPrefs.level} &bull; Format: ${state.learningPrefs.format}*\n`;
+  if (state.location) md += `*Locality: ${state.location}*\n`;
   md += `\n---\n\n`;
 
   if (currentDataSet.roadmap) {
-    md += `## Strategic Extracurricular Roadmap\n`;
+    md += `## Strategic Study & Research Milestones\n`;
     currentDataSet.roadmap.forEach((s, i) => md += `${i+1}. ${s}\n`);
     md += `\n`;
   }
 
-  md += `## Verified Opportunities\n\n`;
-  currentDataSet.items.forEach(it => {
-    md += `### [${it.name}](${it.url}) — ${it.tier}\n`;
-    md += `- **Organization:** ${it.org}\n`;
-    md += `- **Cost & Eligibility:** ${it.cost} | ${it.eligibility}\n`;
-    md += `- **Deadline:** ${it.deadline}\n`;
-    md += `- **Scope:** ${it.scope}\n`;
-    md += `- **Description:** ${it.desc}\n`;
-    md += `- **Selection Tip:** ${it.tip}\n\n`;
-  });
+  const res = currentDataSet.resources || [];
+  if (res.length) {
+    md += `## Curated Open Learning Resources\n\n`;
+    res.forEach(it => {
+      md += `### [${it.name}](${it.url}) (${it.level} - ${it.cost})\n`;
+      md += `- **Author / Source:** ${it.author}\n`;
+      md += `- **What You Learn:** ${it.whatYouLearn}\n`;
+      if (it.time) md += `- **Time Commitment:** ${it.time}\n`;
+      md += `\n`;
+    });
+  }
+
+  const classes = currentDataSet.classes || [];
+  if (classes.length) {
+    md += `## Classes & Workshops (Online & In-Person)\n\n`;
+    classes.forEach(c => {
+      md += `### [${c.name}](${c.url}) — Taught by ${c.instructor}\n`;
+      md += `- **Format / Delivery:** ${c.deliveryLabel || c.delivery}\n`;
+      md += `- **Location / Platform:** ${c.location}\n`;
+      md += `- **Duration & Cost:** ${c.duration} | ${c.cost}\n`;
+      md += `- **Syllabus:** ${c.syllabus}\n\n`;
+    });
+  }
+
+  const opps = currentDataSet.opportunities || [];
+  if (opps.length) {
+    md += `## Extracurricular Opportunities & Research Fellowships\n\n`;
+    opps.forEach(o => {
+      md += `### [${o.name}](${o.url}) — ${o.org}\n`;
+      md += `- **Who Qualifies:** ${o.eligibility}\n`;
+      md += `- **How Conducted:** ${o.conducted}\n`;
+      md += `- **Where & When:** ${o.whereWhen}\n`;
+      md += `- **What Happens:** ${o.whatHappens}\n`;
+      md += `- **Cost / Stipend:** ${o.cost}\n\n`;
+    });
+  }
 
   return md;
 }
