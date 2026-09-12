@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Waymark — Open Learning, Research &amp; Opportunities Hub</title>
+<title>Scout — Open Learning, Research &amp; Opportunities Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1453,7 +1453,7 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
       </div>
       <div class="brand-text">
-        <h1>Waymark</h1>
+        <h1>Scout</h1>
         <p>Open Learning, Research &amp; Opportunity Navigator</p>
       </div>
     </div>
@@ -1638,7 +1638,7 @@
   <!-- APP FOOTER -->
   <footer class="app-footer">
     <div>
-      <strong>Waymark</strong> &bull; Free Open Learning, Classes (Online &amp; Offline) &amp; Opportunities Hub.
+      <strong>Scout</strong> &bull; Free Open Learning, Classes (Online &amp; Offline) &amp; Opportunities Hub.
     </div>
     <div>
       <span>100% Free Resources &bull; Local &amp; Private</span>
@@ -1690,9 +1690,9 @@ const state = {
   showClassesSection: false,
   showOpportunitiesSection: false,
   
-  trackedItems: JSON.parse(localStorage.getItem('waymark_saved') || '[]'),
-  roadmapProgress: JSON.parse(localStorage.getItem('waymark_roadmap') || '{}'),
-  theme: localStorage.getItem('waymark_theme') || 'light'
+  trackedItems: JSON.parse(localStorage.getItem('scout_saved') || '[]'),
+  roadmapProgress: JSON.parse(localStorage.getItem('scout_roadmap') || '{}'),
+  theme: localStorage.getItem('scout_theme') || 'light'
 };
 
 document.documentElement.setAttribute('data-theme', state.theme);
@@ -1703,7 +1703,7 @@ updateTrackerBadge();
 document.getElementById('theme-toggle').addEventListener('click', () => {
   state.theme = state.theme === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', state.theme);
-  localStorage.setItem('waymark_theme', state.theme);
+  localStorage.setItem('scout_theme', state.theme);
   updateThemeIcons();
 });
 
@@ -3064,7 +3064,7 @@ function attachHubEvents() {
   document.querySelectorAll('.step-checkbox').forEach(chk => {
     chk.addEventListener('change', () => {
       state.roadmapProgress[chk.dataset.key] = chk.checked;
-      localStorage.setItem('waymark_roadmap', JSON.stringify(state.roadmapProgress));
+      localStorage.setItem('scout_roadmap', JSON.stringify(state.roadmapProgress));
       chk.closest('.roadmap-step-item').classList.toggle('checked', chk.checked);
 
       const total = document.querySelectorAll('.step-checkbox').length;
@@ -3226,7 +3226,7 @@ window.toggleSaveItem = function(id, type) {
     }
   }
 
-  localStorage.setItem('waymark_saved', JSON.stringify(state.trackedItems));
+  localStorage.setItem('scout_saved', JSON.stringify(state.trackedItems));
   updateTrackerBadge();
   if (currentDataSet) renderHubView(currentDataSet);
 };
@@ -3258,7 +3258,7 @@ window.updateTrackedStatus = function(id, status) {
     showToast(`Updated status to: ${status}`);
   }
 
-  localStorage.setItem('waymark_saved', JSON.stringify(state.trackedItems));
+  localStorage.setItem('scout_saved', JSON.stringify(state.trackedItems));
   updateTrackerBadge();
 };
 
@@ -3346,7 +3346,7 @@ function renderTrackerModal() {
 
 window.removeFromModal = function(idx) {
   state.trackedItems.splice(idx, 1);
-  localStorage.setItem('waymark_saved', JSON.stringify(state.trackedItems));
+  localStorage.setItem('scout_saved', JSON.stringify(state.trackedItems));
   updateTrackerBadge();
   renderTrackerModal();
   if (currentDataSet) renderHubView(currentDataSet);
@@ -3357,7 +3357,7 @@ window.removeFromModal = function(idx) {
  * -----------------------------------------------------------*/
 function generateMarkdownExport() {
   if (!currentDataSet) return '';
-  let md = `# ${state.topic} Learning & Research Guide — Waymark\n`;
+  let md = `# ${state.topic} Learning & Research Guide — Scout\n`;
   md += `*Generated for Level: ${state.learningPrefs.level} &bull; Format: ${state.learningPrefs.format}*\n`;
   if (state.location) md += `*Locality: ${state.location}*\n`;
   md += `\n---\n\n`;
